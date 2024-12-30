@@ -1,0 +1,1900 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9719819b3fda2e844becb69673455854, type: 3}
+  m_Name: SkillDatabase
+  m_EditorClassIdentifier: 
+  skills:
+  - name: Acrobatics
+    type: 0
+    _characteristic: 4
+    _descriptor: 8
+    group: []
+    description: 'The Acrobatics skill encompasses
+
+      a variety of movement
+      techniques
+
+      unavailable to less flexible Acolytes. From
+
+      performing
+      somersaults to tumbling,
+
+      from flipping through the air to daring
+
+      leaps
+      and jumps, this Skill expands your
+
+      movement options.
+
+      Use this
+      Skill to perform some
+
+      spectacular feat of derring-do. The
+
+      Difficulty
+      depends on the desired action.
+
+      The more complicated the manoeuvre,
+
+      such
+      as somersaulting over a group of
+
+      enraged cultists to grab the skids
+      of a
+
+      Vulture as it takes off, the harder the
+
+      difficulty. The
+      more degrees of success you
+
+      attain, the more impressive the result.
+
+      There
+      are two special rules associated
+
+      with this Skill:
+
+      Disengage:
+      You may make an Acrobatics
+
+      Test when attempting a Disengage Action
+
+      to
+      reduce it to a Half Action.
+
+      Jumping & Leaping: You may
+
+      substitute
+      an Acrobatics Test for an
+
+      Agility Test when Jumping or Strength
+
+      Tests
+      when Leaping.
+
+      An Acrobatics Test is typically a Full
+
+      Action.'
+    miscBonus: 0
+  - name: Awareness
+    type: 1
+    _characteristic: 6
+    _descriptor: 0
+    group: []
+    description: 'The Awareness skill reflects your
+
+      ability to perceive hidden
+      dangers
+
+      and to notice small details about your
+
+      physical surroundings.
+      You use the
+
+      Awareness skill to notice ambushes,
+
+      spot traps
+      and discern other threats to
+
+      you and your allies. Awareness is not
+
+      tied
+      to any one sense; it encompasses
+
+      them all.
+
+      When using Awareness
+      to detect
+
+      a hidden enemy, the Test is always
+
+      Opposed. Otherwise,
+      the thing you are
+
+      trying to detect applies a Difficulty based
+
+      on
+      how cunningly concealed it is.
+
+      An Awareness Test is usually a Free
+
+      Action
+      made in reaction to something.'
+    miscBonus: 0
+  - name: Barter
+    type: 1
+    _characteristic: 8
+    _descriptor: 0
+    group: []
+    description: 'You can use the Barter skill to negotiate
+
+      deals and get
+      better prices on goods and
+
+      services. When dealing with day-to-day
+
+      affairs,
+      like haggling in a bazaar over the
+
+      price of a fine set of tarot cards,
+      or trading
+
+      lho-sticks for food in an arbitrator cell
+
+      block,
+      a single Test is sufficient. However,
+
+      for important deals, such as
+      those entailing
+
+      risk to one side, carried out under
+
+      dangerous
+      circumstances or involving a
+
+      large amount of Thrones (negotiating the
+
+      bounty
+      on the head of a dangerous alien,
+
+      for instance), the GM may call for
+      an
+
+      Opposed Test, with both sides using their
+
+      Barter skill.
+      As a rough guide, a success
+
+      will reduce the price of an item by 10%,
+
+      with
+      each additional success reducing it by
+
+      a further 5%.
+
+      A typical
+      Barter Test takes about
+
+      five minutes, but delicate dealings and
+
+      intricate
+      negotiations may require more
+
+      time, as decided by the GM.'
+    miscBonus: 0
+  - name: Blather
+    type: 0
+    _characteristic: 8
+    _descriptor: 2
+    group: []
+    description: "When you make a Blather Test, you stall for\r\ntime by running
+      off at the mouth, spewing a\r\nstream of words and nonsense in an attempt\r\nto
+      confuse and distract others. A Blather\r\nTest is always Opposed by your target\u2019s\r\nWillpower
+      (or Scrutiny). If you succeed and\r\nthe target fails, the target is distracted
+      by you\r\nand can do nothing for one Round, staring\r\ndumbfounded and wondering
+      if you are\r\ndrunk, crazy or both. For every degree of\r\nsuccess, you dumbfound
+      the target for an\r\nadditional Round.\r\nIf your target succeeds and you fail,\r\nor
+      if you both fail, your attempt at\r\nverbal acrobatics fails and the target\r\nmay
+      act normally. In the case where\r\nyou both succeed, the character that\r\nhad
+      the most degrees of success\r\ndetermines the outcome.\r\nYou can also use
+      Blather against\r\nmultiple opponents. For similar\r\nopponents\u2014those
+      that have the same\r\ngeneral Characteristics\u2014make a Blather\r\nTest as
+      normal, but the GM rolls just one\r\nWillpower Test. If you win the Opposed\r\nTest,
+      you affect a number of targets\r\nequal to your Fellowship Bonus.\r\nNPCs,
+      while confused by your banter,\r\nare unaffected by your words if they are\r\nin
+      obvious danger or if it is clear there\r\nare preparations being made to harm\r\nthem.
+      The target must understand the\r\nlanguage you are speaking or the Test\r\nautomatically
+      fails\u2014you cannot, for\r\ninstance, use this Skill against animals.\r\nA
+      Blather Test is a Full Action."
+    miscBonus: 0
+  - name: Carouse
+    type: 1
+    _characteristic: 3
+    _descriptor: 0
+    group: []
+    description: 'Whether consuming the finest amasec
+
+      brandy or the cheapest
+      stomach-stripping
+
+      hive juices, you use the Carouse skill to
+
+      resist
+      the effects of alcohol and narcotics.
+
+      Experienced carousers can build
+      up quite
+
+      a tolerance and remain clear-headed and
+
+      lucid while
+      those around them succumb
+
+      to the effects of their amusements. Use this
+
+      Skill
+      whenever you must resist the effects of
+
+      alcohol or similar intoxicants.
+
+      Each
+      time you take a drink or some
+
+      other form of intoxicant, make a Carouse
+
+      Test.
+      Failure indicates you have gained a
+
+      level of Fatigue. Should you pass
+      out as
+
+      a result, you become unconscious for a
+
+      number of hours
+      equal to 1d10 minus
+
+      your Toughness Bonus (minimum one
+
+      hour).
+      Your GM may incur further Test
+
+      penalties as a result of intoxicant
+      use as
+
+      they see fit.
+
+      A Carouse Test is a Free Action. You
+
+      use
+      this Skill whenever you imbibe.'
+    miscBonus: 0
+  - name: Charm
+    type: 1
+    _characteristic: 8
+    _descriptor: 2
+    group: []
+    description: 'The Charm skill is used to befriend
+
+      others. You make Charm
+      Tests whenever
+
+      you want to change the minds of
+
+      individuals
+      or small groups, to beg, or
+
+      seduce. You need not make a Charm
+
+      99
+
+      Test
+      every time you talk to an NPC;
+
+      only when you want to change their
+
+      opinions
+      of you or convince them to
+
+      do something for you, such as giving
+
+      you
+      a tip, a dance or a kiss.
+
+      A Charm Test can affect a number
+
+      of
+      targets equal to your Fellowship
+
+      Bonus and your targets must be
+
+      able
+      to see and hear you clearly, and
+
+      understand what you say.
+
+      A
+      Charm Test typically takes one
+
+      minute.'
+    miscBonus: 0
+  - name: Chem-Use
+    type: 0
+    _characteristic: 5
+    _descriptor: 5
+    group: []
+    description: 'You can use the Chem-Use skill
+
+      to handle and prepare chemicals
+
+      safely,
+      especially toxins, poisons and
+
+      drugs. Chem-Use covers the use and
+
+      manufacture
+      of toxins and it can also be
+
+      used to identify a variety of chemicals
+
+      (Investigation
+      use).
+
+      To prepare or apply a chemical, you
+
+      must succeed at a
+      Chem-Use Test, with
+
+      modifiers determined by the GM. On a
+
+      failed
+      test the chemical is wasted. If you fail
+
+      by five or more degrees, you
+      accidentally
+
+      poison yourself or overdose. See Chapter
+
+      V: Armoury
+      for more information on
+
+      chemicals and their effects.
+
+      When using
+      a toxin wand or
+
+      administering an antidote, the time
+
+      taken to
+      do so is halved with a successful
+
+      Chem-Use Test.
+
+      A Chem-Use
+      Test to administer a
+
+      chemical is a Full Action.
+
+      Using Chem-Use
+      to manufacture
+
+      toxins utilises the rules for Crafting
+
+      items
+      as described on page 96.'
+    miscBonus: 0
+  - name: Ciphers
+    type: 0
+    _characteristic: 5
+    _descriptor: 0
+    group:
+    - Acolyte
+    - War Cant
+    - Secret Society
+    - Occult
+    - Underworld
+    description: "The Ciphers skill reflects an\r\nunderstanding of shorthand codes\r\nemployed
+      by certain groups to confer\r\nbasic ideas, warnings, and information\r\nabout
+      a given area. This can be in the form\r\nof hand signals or as physical symbols\r\ninscribed
+      on a surface, usually in a subtle\r\nplace. Ciphers are not very sophisticated,\r\nmostly
+      used to warn of danger, mark a\r\ntarget or indicate protection. Skill Tests\r\nare
+      not required to read basic messages\r\nbut may be necessary to decipher\r\ncomplicated
+      communications or worn\r\nor damaged signs.\r\nAcolyte: Used to communicate
+      a\r\nprivate and prearranged code between\r\ngiven members of an Acolyte\u2019s
+      cell.\r\nNote that this code is unique to each\r\ncell of Acolytes.\r\nWar
+      Cant: Used to convey instructions\r\nto troops by means of hand signals, body\r\nlanguage
+      or musical code.\r\nSecret Society: Used by members\r\nof a given secret society
+      or cult to\r\nidentify one another and convey simple\r\nmessages. Note that
+      this code is unique\r\nto each secret society.\r\nOccult: Mystical gestures
+      used to\r\nfocus the mind during incantation,\r\nto identify fellow sorcerers
+      and to\r\nsupplicate or castigate Daemons.\r\nUnderworld: Convoluted systems\r\nof
+      hand gestures, clothing styles, signs\r\nand other such chicanery used by\r\ncriminal
+      fraternities to communicate\r\nkey information.\r\nA Ciphers Test usually takes
+      a Full\r\nAction to give or inscribe the sign, and\r\na Free Action to comprehend
+      it."
+    miscBonus: 0
+  - name: Climb
+    type: 1
+    _characteristic: 2
+    _descriptor: 8
+    group: []
+    description: 'Use the Climb skill to ascend or descend
+
+      surfaces described
+      as sheer. Sheer surfaces
+
+      are walls without handholds, overhangs
+
+      and
+      other poor climbing conditions.
+
+      Generally, a successful Test allows
+      you
+
+      to ascend or descend at half of your
+
+      Half Move rate. Note
+      that poor climbing
+
+      conditions may impose a penalty to the
+
+      Test.
+      See Climbing in Chapter VII:
+
+      Playing the Game for more details.
+
+      A
+      Climb Test is a Half Action.'
+    miscBonus: 0
+  - name: Command
+    type: 1
+    _characteristic: 8
+    _descriptor: 2
+    group: []
+    description: 'Command is used to make subordinates
+
+      follow your orders.
+      You may only use this
+
+      Skill on those who are under your authority.
+
+      A
+      successful Command Test indicates
+
+      that those whom you direct follow
+      your
+
+      instructions. On a failed Test, they either
+
+      misinterpret
+      the command or do nothing
+
+      at all, or if you fail by five or more degrees,
+
+      contradict
+      your orders entirely.
+
+      A Command Test can affect a number
+
+      of
+      targets equal to your Fellowship
+
+      Bonus and your targets must be able
+      to
+
+      see and hear you clearly, and understand
+
+      what you say.
+
+      A
+      Command Test is a Half Action for
+
+      simple commands and a Full Action
+      for
+
+      more involved instructions.'
+    miscBonus: 0
+  - name: Common Lore
+    type: 0
+    _characteristic: 5
+    _descriptor: 4
+    group:
+    - Adeptus Arbites
+    - Machine Cult
+    - Administratum
+    - Ecclesiarchy
+    - Imperial Creed
+    - Imperial Guard
+    - Imperium
+    - Tech
+    - Underworld
+    - War
+    description: 'Use the Common Lore skill to recall the
+
+      habits, institutions,
+      traditions, public figures
+
+      100
+
+      and superstitions of a particular
+      world,
+
+      cultural group, organisation or race. This
+
+      Skill does
+      not represent scholarly learning
+
+      (that is Scholastic Lore), nor obscure
+
+      forbidden
+      knowledge (that is Forbidden
+
+      Lore), but rather the basics you learn
+      by
+
+      growing up or travelling extensively
+
+      through a region.
+
+      When
+      making a Common Lore Test, you
+
+      recall basic information about the subject.
+
+      Each
+      degree of success reveals a bit more
+
+      information as determined by the
+      GM.
+
+      Adeptus Arbites: Knowledge of the
+
+      various arms and sub-sects
+      of the Arbites,
+
+      including such things as their ranking
+
+      structure
+      and common procedures.
+
+      Machine Cult: A general
+
+      understanding
+      of the symbols and
+
+      practices of the Mechanicus, as well
+
+      as
+      such things as formal greetings and
+
+      identifying rankings.
+
+      Administratum:
+      Broad knowledge
+
+      of the inner workings, rules and
+
+      regulations
+      of the Administratum.
+
+      Ecclesiarchy: Understanding of the
+
+      hierarchy
+      of the Cult of the Emperor, its
+
+      rankings, greetings and general practices.
+
+      Imperial
+      Creed: Knowledge of the
+
+      rites and practices of the Imperial Cult, the
+
+      most
+      common observances to the Emperor
+
+      and the most well-known saints.
+
+      Imperial
+      Guard: Basic information
+
+      about the ranking systems, logistics and
+
+      structure
+      of the Imperial Guard as well as
+
+      such things as their common practices,
+
+      both
+      tactical and strategic.
+
+      Imperium: Knowledge of the
+
+      sectors,
+      segmentums and most wellknown worlds of the Imperium.
+
+      Tech: An understanding
+      of simple
+
+      litanies and rituals to sooth and appease
+
+      machine
+      spirits.
+
+      Underworld: Understanding of
+
+      organised crime and sedition
+      within
+
+      the Imperium.
+
+      War: Knowledge of great battles,
+
+      notable
+      (and notorious) commanders and
+
+      heroes, as well as famous stratagems.
+
+      Using
+      Common Lore takes no time
+
+      at all. You either know something or
+
+      you
+      do not.'
+    miscBonus: 0
+  - name: Concealment
+    type: 1
+    _characteristic: 4
+    _descriptor: 0
+    group: []
+    description: "Concealment is used whenever you\r\nwant to hide from sight. To
+      use this\r\nSkill, there must be appropriate terrain\r\n(trees, walls, buildings
+      or some other\r\nobstacle) or some concealing effect\r\nlike fog or darkness.
+      Otherwise, the\r\ntest automatically fails. Concealment\r\nis always an Opposed
+      Test, in which\r\nyou pit your Concealment Test\r\nagainst your opponent\u2019s
+      Awareness\r\nTest (or half their Perception if they\r\ndo not have the Awareness
+      skill). You\r\nneed not Test Concealment when you\r\nhide, only when someone
+      is looking\r\nfor you. If you succeed, you remain\r\nunseen.\r\nIf you remain
+      perfectly still, you gain a\r\n+10 bonus to your Test.\r\nA Concealment Test
+      is usually a Half\r\nAction."
+    miscBonus: 0
+  - name: Contortionist
+    type: 1
+    _characteristic: 4
+    _descriptor: 8
+    group: []
+    description: "The Contortionist skill is used to\r\nwriggle free from bonds,
+      squeeze\r\nthrough a narrow opening, or slip out\r\nof chains.\r\nEscape Bonds\r\nWhenever
+      you attempt to slip free\r\nfrom any kind of bonds, you make\r\na Contortionist
+      Test. The Difficulty\r\ndepends on the Intelligence of the\r\nperson who secured
+      you in the first\r\nplace. If their Intelligence exceeds\r\nyour Agility Characteristic,
+      the Test\r\nis Hard (\u201320). Other factors may\r\nworsen or diminish the
+      Difficulty,\r\nsuch as whether simple manacles or\r\ncomplicated arbitrator
+      restraint cuffs\r\nwere used, or whether you were\r\nhastily secured or your
+      captor took\r\nhis time to ensure that you could not\r\nescape.\r\n101\r\nEscape
+      Grapple\r\nWhen you have been Grappled\r\nin combat, you may use the\r\nContortionist
+      skill to escape. Make\r\na Contortionist Test opposed by\r\nthe grappler\u2019s
+      Strength Test. If you\r\nwin you break free, otherwise you\r\nremain Grappled.\r\nSqueeze
+      through a Tight Space\r\nYou can make a Contortionist Test\r\nto squeeze through
+      a tight space,\r\nsuch as between the bars of your\r\njail cell, past a cave-in
+      blocking\r\nyour path or through the air vents\r\nof a space hulk. The difficulty
+      of\r\nthe Test is set according to how\r\ntight the space is. The GM is well\r\nwithin
+      his rights to rule that a space\r\nis simply too narrow to squeeze\r\nthrough,
+      and common sense applies\r\nas always. Success allows you\r\nto squeeze through
+      unhindered,\r\nwhereas failure means that the\r\nopening is too narrow after
+      all. If\r\nyou fail by five or more degrees,\r\nyou become stuck until you
+      can pass\r\na subsequent Contortionist Test or\r\nuntil someone helps you out
+      of your\r\npredicament by dragging you out,\r\ngreasing the passage and so
+      on.\r\nMost Contortionist Tests take one\r\nminute, with each degree of success\r\nreducing
+      this time by ten seconds.\r\nEscaping a Grapple is a Full Action\r\nattempted
+      during combat."
+    miscBonus: 0
+  - name: Decieve
+    type: 1
+    _characteristic: 8
+    _descriptor: 2
+    group: []
+    description: "The Deceive skill is used to lie and\r\ncon others. You make Deceive
+      Tests\r\nwhenever you would convince others\r\nof something that is not necessarily\r\ntrue,
+      want to dupe them or otherwise\r\nswindle and mislead them. You need\r\nnot
+      make a Deceive Test every time\r\nyou lie to an NPC; only when you\r\nwant
+      to change their opinions of you\r\nor convince them of something.\r\nA Deceive
+      Test can affect a number\r\nof targets equal to your Fellowship\r\nBonus and
+      your targets must be able\r\nto see and hear you clearly, and\r\nunderstand
+      what you say. Deceive is\r\ntypically opposed by Scrutiny.\r\nA Deceive Test
+      typically takes one\r\nminute.\r"
+    miscBonus: 0
+  - name: Demolition
+    type: 0
+    _characteristic: 5
+    _descriptor: 1
+    group: []
+    description: "You use the Demolition skill to blow\r\nthings up without blowing
+      yourself\r\nup at the same time! It is used to plant\r\nexplosive devices and
+      defuse bombs,\r\nas well as for the safe handling and\r\nmanufacture of explosives.
+      Demolition\r\ninvolves explosive devices that are\r\nplanted or set, rather
+      than those that\r\nare simply lobbed at the enemy.\r\nManufacture Explosives\r\nGiven
+      enough time and resources you\r\nmay use the Demolition skill to make\r\nan
+      explosive device from scratch, or\r\nrig an otherwise normal device to\r\nexplode.
+      The Difficulty of the Test\r\nvaries according to what ingredients\r\nyou have
+      available and how long you\r\nhave to manufacture it. Rigging a frag\r\ngrenade
+      to explode when primed is\r\na simple matter, but building a melta\r\nbomb
+      from scratch is considerably\r\nharder. Generally, manufacturing\r\nexplosives
+      uses the rules for Crafting\r\nitems described on page 96.\r\nPlanting Explosives\r\nExplosive
+      devices such as demolition\r\ncharges, melta bombs and krak grenades\r\nare
+      far more effective when planted on\r\na target. To plant an explosive make\r\na
+      Demolition Test. Success indicates\r\nthat you have successfully planted the\r\nexplosive,
+      with a trigger mechanism\r\nand condition of your choice.\r\nPossible triggers
+      include timers, fuses,\r\nproximity sensors or remote controls.\r\nFailure
+      indicates that you believe the\r\nexplosives to be planted properly, but\r\nwhen
+      triggered they fail to go off. If\r\nyou fail by five or more degrees, you\r\naccidentally
+      set the explosives off\r\nyourself ! Boom!\r\nYou may voluntarily make the
+      Test\r\nmore difficult, for example increasing\r\nthe time to plant a bomb
+      in a more\r\nvulnerable location. By doing so, the\r\nDamage dealt is increased
+      by +2 for\r\neach level of Difficulty increased or\r\nadditional minute spent
+      setting the\r\nexplosive.\r\nFor every degree of success on the\r\nDemolition
+      Test, the explosive is harder\r\nto detect and to defuse. Note the number\r\nof
+      degrees of success down when you\r\nplant an explosive\u2014it will be used
+      in\r\nany Opposed Demolition Tests made to\r\ndefuse or discover the bomb.\r\nDefusing
+      a Bomb\r\nA character can also use the Demolition\r\nskill to defuse a bomb.
+      To defuse a\r\nbomb before it explodes requires you\r\nto make an Opposed Demolition
+      Test\r\nagainst the Demolition Test of the\r\ncharacter who set the bomb in
+      the first\r\nplace. Success means that the bomb has\r\nbeen defused in time.
+      Failure means\r\nthat you have not disarmed the bomb\r\nyet, although in all
+      but a catastrophic\r\nfailure you can try again next Round,\r\nif you still
+      have the time. Failing by\r\nfive or more degrees indicates that you\r\nhave
+      accidentally set the bomb off by\r\nmistake!\r\nA Demolition Test to plant
+      or defuse\r\nan explosive is usually a Full Action. A\r\ntest made to manufacture
+      an explosive\r\ntakes at least one minute, and usually\r\nconsiderably longer,
+      depending on the\r\ncomplexity of the device."
+    miscBonus: 0
+  - name: Disguise
+    type: 1
+    _characteristic: 8
+    _descriptor: 0
+    group: []
+    description: "The Disguise skill is used to mask your\r\ntrue appearance. Appropriate
+      clothing,\r\nprops, make-up and prosthetics are\r\noften key to a successful
+      disguise, as\r\nare more radical accoutrements such\r\nas plastic surgery,
+      bionic implants\r\nor polymorphine. It is also possible\r\nto masquerade as
+      a member of the\r\nopposite sex, a different race or a\r\nspecific person,
+      though these are more\r\ndifficult to pull off. Often, Disguise\r\nis an Opposed
+      Skill Test against your\r\nfoes\u2019 Scrutiny.\r\nThe time it takes to create
+      a\r\ndisguise varies greatly depending on\r\nits complexity, but it usually
+      requires\r\na minimum of one minute to don a\r\nsimple disguise."
+    miscBonus: 0
+  - name: Dodge
+    type: 1
+    _characteristic: 4
+    _descriptor: 8
+    group: []
+    description: 'You may use the Dodge skill once per
+
+      Round to negate a
+      successful hand-tohand or ranged attack. On a successful
+
+      Test, the
+      attack deals no Damage. See
+
+      Chapter VII: Playing the Game for
+
+      more
+      information on Dodge.
+
+      A Dodge Test is a Reaction.'
+    miscBonus: 0
+  - name: Drive
+    type: 0
+    _characteristic: 4
+    _descriptor: 16
+    group:
+    - Ground Vehicle
+    - Hover Vehicle
+    - Walker
+    description: 'The Drive skill is used to control
+
+      autos, trucks, landspeeders
+      and other
+
+      land-based or hover vehicles. Driving
+
+      under normal
+      conditions does not
+
+      require a Test. However, Tests may be
+
+      called
+      for when navigating treacherous
+
+      terrain, going at excessive speed or
+
+      attempting
+      dangerous manoeuvres.
+
+      Opposed Drive Tests are made between
+
+      pursuers
+      and pursued during a chase.
+
+      A Drive Test is typically a Half
+
+      Action,
+      but certain manoeuvres may
+
+      require more or less time.'
+    miscBonus: 0
+  - name: Evaluate
+    type: 1
+    _characteristic: 5
+    _descriptor: 4
+    group: []
+    description: "You can use Evaluate to determine the\r\napproximate value of everyday
+      objects,\r\nas well as valuables such as archeotech\r\nand other objects d\u2019art.
+      A successful\r\nTest reveals the item\u2019s market price\r\nand possibly a
+      little bit about the item\r\nitself. Since a failed Test may result\r\nin the
+      miscalculation of an item\u2019s true\r\nvalue, it is recommended that the
+      GM\r\nrolls Evaluate Tests in secret and tells\r\nthe player what his character
+      believes\r\nto be true.\r\nEvaluating an item usually takes at\r\nleast one
+      minute, although the GM may\r\ndecide to give a bonus if the character\r\ntakes
+      more time or a penalty if he simply\r\ngives it a quick once over."
+    miscBonus: 0
+  - name: Forebidden Lore
+    type: 0
+    _characteristic: 5
+    _descriptor: 4
+    group:
+    - The Black Library
+    - Cults
+    - Daemonology
+    - Heresy
+    - Inquisition
+    - Archeotech
+    - Mutants
+    - Ordos
+    - Adeptus Mechanicus
+    - Psykers
+    - Warp
+    - Xenos
+    description: "Forbidden Lore skills represent dangerous and often heretical knowledge\r\ngleaned
+      from the myriad of unconventional sources an Acolyte often finds\r\nin his
+      possession. This Skill represents\r\na combination of scholarly learning\r\nand
+      knowledge gained through practical experience. Simply possessing the\r\nForbidden
+      Lore skill is often sufficient\r\nto warrant termination at the hands of\r\nthe
+      Inquisition, and a character must\r\ntread carefully when revealing such\r\nknowledge.\r\nWhen
+      making a Forbidden Lore Test,\r\nyou recall basic information about the\r\nsubject.
+      Each degree of success reveals\r\na bit more information as determined\r\nby
+      the GM.\r\nA character that learns the Forbidden\r\nLore skill in play, or
+      who uses it to\r\ngain some insight into the mysteries\r\nof the galaxy, may
+      also gain a number\r\nof Corruption or Insanity Points,\r\ndepending on the
+      danger the knowledge\r\nrepresents, at the GM\u2019s discretion.\r\nThe Black
+      Library: Secret knowledge of the Black Library, its forbidden\r\ncontents,
+      strange industries and the unspeakable pale, hairless things that toil\r\nwithin
+      its walls.\r\nCults: Knowledge of the most notorious Imperial Cults and some
+      of their\r\nsub-sects and splinter cabals.\r\nDaemonology: Terrible comprehension
+      of some of the recorded warp entities and their various manifestations.\r\nHeresy:
+      Unpleasant appreciation for\r\nthose acts and practices deemed heretical by
+      the Imperium.\r\nInquisition: A general understanding\r\n(often based on hearsay
+      and rumour) of\r\nthat most terrible and secret of organisations known as the
+      Inquisition.\r\nArcheotech: Knowledge of the\r\ngreat tech devices of ancient
+      times and\r\nclues to their function and purpose.\r\nMutants: Covering the
+      study of both\r\nstable and unstable mutations and some\r\nof their more unfortunate
+      results.\r\nOrdos: Either Malleus, Hereticus or\r\nXenos and granting some
+      slightly more\r\nspecialised knowledge of that particular\r\nordo\u2019s practices.\r\nAdeptus
+      Mechanicus: An understanding of the followers of the\r\nVehicles in the Imperium\r\nThe
+      Imperium is home to a dizzying array of vehicles, from rickety handcarts\r\nto
+      mighty Emperor class battleships. Presented here are a few examples of the\r\nkinds
+      of vehicles that Acolytes can expect to come across in Dark Heresy.\r\nRiding
+      Beasts\r\nAcross the galaxy there are innumerable creatures trained as riding
+      beasts for\r\nmankind. The most common is the horse, which spread across the
+      stars with\r\nmankind. Many planets are heavily dependent on such beasts, especially
+      feral\r\nplanets or low-tech agri-worlds.\r\nBikes\r\nBikes are common throughout
+      the Imperium, ranging from a variety of civilian\r\nmodels to heavily armed
+      and armoured vehicles designed for combat. Each can carry\r\none driver and
+      equipment, and a further passenger if room permits on the seat.\r\nGuncutters\r\nGuncutters
+      are light aircraft, often capable of reaching low orbit. They are\r\ncombat-ready
+      and usually covered with heavy weaponry. As such, they\r\nimmediately project
+      an intimidating appearance, often useful for dangerous\r\nnegotiations. Most
+      can only carry a small crew and limited passengers.\r\nChimera\r\nThe Chimera
+      Armoured Personnel Carrier is a staple transport and light support\r\nvehicle
+      for military and paramilitary organisations throughout the Imperium. It\r\nhas
+      good armour, can mount a range of heavy weapons and has the capacity to\r\ncarry
+      up to twelve passengers along with a crew of three.\r\nAquila Lander\r\nThe
+      Aquila Lander is commonly used by the Imperial Navy to carry dignitaries,\r\nofficials
+      and other high-ranking individuals to and from planetside to other orbiting\r\nvessels.
+      The vehicle name comes from the distinctive double-headed \u201Caquila\u201D
+      symbol\r\nof the Imperium embossed into its hull and wings. It has no interplanetary
+      capability,\r\nbut is an excellent light shuttle designed with style and comfort
+      in mind for an\r\nofficial and his retinue, easily carrying seven plus a crew
+      of one pilot.\r\n103\r\nMachine God, including such things\r\nas their observances,
+      common beliefs\r\nand core philosophies.\r\nPsykers: Skill in identifying the\r\nsigns
+      of psykers as well as the results\r\nof their powers and the extent of their\r\ncapabilities.\r\nWarp:
+      An understanding of the ways\r\nof the warp, especially its interaction with\r\nrealspace
+      and how its tides and eddies can\r\naffect travel between the stars.\r\nXenos:
+      Knowledge of the most\r\ncommonly encountered species of aliens\r\nwithin the
+      Imperium.\r\nUsing Forbidden Lore takes no time at\r\nall. You either know
+      something or you\r\ndo not, although the consequences for\r\nknowing such things
+      can last a lifetime\u2026.\r"
+    miscBonus: 0
+  - name: Gamble
+    type: 1
+    _characteristic: 5
+    _descriptor: 0
+    group: []
+    description: 'The Gamble skill is used to participate
+
+      in games of chance,
+      such as card games
+
+      or crude (and often violent) dice games
+
+      popular
+      amongst the lower classes.
+
+      Each participant in a game wagers the
+
+      same
+      amount and makes an Opposed
+
+      Gamble Test. The player with the most
+
+      degrees
+      of success (or fewest degrees of
+
+      failure) wins the pot. You may, at
+      your
+
+      option, choose to throw the game, in
+
+      which case you lose
+      automatically.
+
+      You may also opt to use Sleight of
+
+      Hand instead
+      of Gamble to hide cards up
+
+      your sleeve or palm dice. Success gives
+
+      you
+      a +20 bonus to your Gamble Test.
+
+      However, failing by five or more degrees
+
+      indicates
+      that your ruse is revealed with
+
+      predictably unpleasant consequences.
+
+      Making
+      a Gamble Test can represent
+
+      anything from controlling a single hand
+      of
+
+      cards to an entire day spent gaming.'
+    miscBonus: 0
+  - name: Inquiry
+    type: 1
+    _characteristic: 8
+    _descriptor: 2
+    group: []
+    description: 'The Inquiry skill is your ability to
+
+      pick up rumours, secrets
+      and guarded
+
+      information by asking questions,
+
+      buying drinks
+      and generally watching
+
+      and listening for anything of interest
+
+      that
+      might bubble up. Inquiry can be
+
+      used in one of two ways. The first
+
+      and
+      most common way is to pick
+
+      up general information about local
+
+      developments.
+      A successful Test reveals
+
+      basic information, with additional and
+
+      higher-quality
+      intelligence with each
+
+      degree of success.
+
+      Inquiry can also
+      be used as an
+
+      Investigation skill, wherein you might be
+
+      chasing
+      after a particular fact or secret.
+
+      For more information on investigation,
+
+      see
+      Chapter VII: Playing the Game.
+
+      Making an Inquiry Test usually
+
+      represents
+      an hour or so of activity, but
+
+      may represent a much longer or shorter
+
+      period
+      as circumstances dictate.'
+    miscBonus: 0
+  - name: Interrogation
+    type: 0
+    _characteristic: 7
+    _descriptor: 2
+    group: []
+    description: "The key tool in an Inquisitor\u2019s arsenal\r\nis interrogation\u2014the
+      ability to extract\r\nquality information from an unwilling\r\nsubject. There
+      is a fine line between\r\ninterrogation and crude torture. In\r\nthe case of
+      the latter, subjects tend to\r\nreveal whatever their tormenter wishes\r\nto
+      hear, but in the case of the former,\r\na skilled interrogator can tease out
+      the\r\ndarkest secrets by utilising a variety of\r\ndevices, serums and techniques.\r\nGear,
+      environmental conditions and\r\ncircumstances can all apply additional\r\nmodifiers
+      at the GM\u2019s discretion.\r\nMake an Opposed Test, pitting\r\nyour Interrogation
+      skill against your\r\nopponent\u2019s Willpower. If you beat\r\nyour opponent,
+      you get one answer\r\nplus one other answer for each degree\r\nof success.
+      If your opponent wins the\r\nOpposed Test, you get nothing of\r\nworth. On
+      a serious failure, you botch\r\nthe procedure and inflict 1d10 plus\r\nyour
+      Willpower Bonus in Damage. If\r\nyou fail by five or more degrees, you\r\ndeal
+      Damage as before but your subject\r\ngains a +30 bonus to Willpower Tests\r\nmade
+      to resist Interrogation.\r\nEach Interrogation Test inflicts one level\r\nof
+      Fatigue on the target. An Interrogation\r\nTest consumes 1d5 hours of time."
+    miscBonus: 0
+  - name: Intimidate
+    type: 1
+    _characteristic: 2
+    _descriptor: 2
+    group: []
+    description: "You make Intimidate Tests whenever you\r\nwant to coerce or frighten
+      individuals\r\nor a small group. You need not make\r\nan Intimidate Test every
+      time you make\r\na threat. Usually Intimidate is backed\r\nup by Strength,
+      but more subtle threats\r\nsuch as blackmail may use Intelligence\r\nor Fellowship
+      at the GM\u2019s option. The\r\nmore degrees of success, the more\r\nfrightened
+      your opponent becomes.\r\nAn Intimidate Test can affect a number\r\nof targets
+      equal to your Strength Bonus,\r\nIntelligence Bonus, or Fellowship Bonus,\r\ndepending
+      on the Characteristics you\r\nare using for your Test. In addition, your\r\ntargets
+      must be able to see and hear you\r\nclearly, and understand what you say.\r\nAn
+      Intimidate Test is a Full Action."
+    miscBonus: 0
+  - name: Invocation
+    type: 0
+    _characteristic: 7
+    _descriptor: 0
+    group: []
+    description: "An Invocation Test allows you to boost\r\nyour Power Roll when
+      using Psychic\r\nPowers by an amount equal to your\r\nWillpower Bonus. An Invocation
+      Test is\r\na Full Action. During this time, you clear\r\nyour mind through
+      various means, such as\r\nmuttering mantras, meditating, fingering\r\npsychic-foci
+      and so on. A successful Test\r\nindicates that your mind is well prepared\r\nto
+      touch the warp. On the next Round,\r\nyou may add your Willpower Bonus in\r\naddition
+      to any other bonus you add to\r\nyour Power Roll.\n\nFailure on an Invocation
+      Test indicates\r\nthat you are not composed enough to\r\ngain any benefits
+      from your preparations.\r\nIf you make a successful Invocation Test\r\nand
+      then do not take the Focus Power\r\nAction on the following Turn, there are\r\nno
+      side effects (aside from you possibly\r\nlooking a little foolish).\n\nExample:\nDoc
+      Skul decides to visit the Inflict Pain\r\nMinor Psychic Power on his hated
+      rival,\r\nSlippery Zim. He spends a full Turn shaking\r\nhis bone rattle and
+      muttering spitefully under\r\nhis breath as part of his Invocation Test. He\r\nrolls
+      to see if these preparations will help him\r\nFocus Power. He rolls 15\u2014a
+      success! On\r\nthe following Round, he attempts to manifest\r\nInflict Pain.
+      He gets 4 on his Power Roll and\r\nadds his Willpower Bonus of 3 to this as\r\nnormal.
+      Because of his successful Invocation,\r\nhe may now add an additional 3 points\r\nto
+      this roll. In total, Doc Skul has made a\r\nPower Roll of 10 (4+3+3=10). His
+      Focus\r\nPower Action succeeds, and Slippery Zim\r\ndoubles over in pain!"
+    miscBonus: 0
+  - name: Lip Reading
+    type: 0
+    _characteristic: 6
+    _descriptor: 0
+    group: []
+    description: "Use the Lip Reading skill to \u201Clisten\r\nin\u201D on conversations
+      that take place\r\nout of earshot. To use this Skill, you\r\nmust have an unobstructed
+      view of the\r\nspeaker\u2019s mouth and you must also be\r\nable to understand
+      the language spoken.\r\nDistance is the biggest factor. The further\r\naway
+      the subject is, the harder the Test.\r\nThe base Difficulty is Challenging
+      (+0),\r\nbut it worsens by one step for every ten\r\nmetres of distance. Note
+      that equipment\r\nthat magnifies vision can be used to offset\r\nthis penalty
+      and even provide bonuses.\r\nA successful Test reveals the general\r\ngist
+      of the conversation, such as the\r\nperson is talking about the weather,\r\nnew
+      tariffs at the space dock, and so\r\non. Each degree of success reveals more\r\nspecific
+      details.\r\nA Lip Reading Test is a Full Action,\r\nthough it lasts as long
+      as the target speaks."
+    miscBonus: 0
+  - name: Literacy
+    type: 0
+    _characteristic: 5
+    _descriptor: 0
+    group: []
+    description: "The Literacy skill enables you to read\r\nany language you can
+      speak. You\r\nnormally do not need to Test Literacy\r\nfor everyday instances
+      of reading or\r\nwriting, but the GM may call for a\r\nLiteracy Test when you
+      attempt to read\r\na challenging dialect, poor penmanship,\r\ndecipher obscure
+      phraseology, archaic\r\nusage or unusual idioms.\r\nTo read one page of text\u2014\r\napproximately
+      750 words\u2014a Literacy\r\nTest takes about a minute.\r"
+    miscBonus: 0
+  - name: Logic
+    type: 1
+    _characteristic: 5
+    _descriptor: 4
+    group: []
+    description: "Logic represents your proficiency at\r\nmathematics and your ability
+      at problem\r\nsolving. Logic Tests might be made to\r\ndecipher a code or to
+      solve a particularly\r\ntroublesome equation. Logic is also used\r\nby Tech-Priests
+      to incant mathematical\r\nrituals on machinery. Note that Logic is\r\na purely
+      theoretical Skill\u2014Tech-Use is\r\nits practical counterpart.\r\nA Logic
+      Test usually takes one minute\r\nof pondering and thinking, although\r\nespecially
+      difficult problems might\r\nrequire much longer."
+    miscBonus: 0
+  - name: Medicae
+    type: 0
+    _characteristic: 5
+    _descriptor: 0
+    group: []
+    description: "The Medicae skill is used to treat and\r\nrepair injuries by closing
+      wounds and\r\nrestoring the balance of the body\u2019s\r\nhumors. There are
+      two general methods\r\nfor using Medicae: First Aid and\r\nExtended Care. You
+      can use the former\r\nto attend fallen or injured comrades,\r\nwhile the latter
+      serves to hasten the\r\nremoval of damage.\r\n\nFirst Aid\r\nUsing the Medicae
+      skill to perform\r\nFirst Aid offers a quick fix for injured\r\nor dying characters.
+      A successful\r\nMedicae Test removes Damage equal\r\nto your Intelligence Bonus
+      to Lightly\r\nWounded characters, 1 Damage from\r\nHeavily Wounded characters
+      and 1\r\npoint of Critical Damage from Critically\r\nWounded characters. On
+      a failure, the\r\npatient is not adversely affected and\r\nsimply removes Damage
+      at the natural\r\nhealing rate. However, a failure by three\r\nor more degrees
+      indicates that Lightly\r\nor Heavily Wounded take a point of\r\nDamage, whilst
+      a character on 0 Wounds\r\nmust make a Toughness Test or die.\r\nFirst Aid
+      may only be applied to each\r\nWound once and is a Full Action by\r\nyou and
+      your patient.\r\n\nExtended Care\r\nExtended Care speeds the healing\r\nprocess.
+      You can attend a number of\r\npatients equal to your Intelligence\r\nBonus.
+      Each patient above this number\r\nimposes a cumulative \u201310 penalty to\r\nyour
+      Medicae Tests to provide extended\r\ncare. For Lightly Wounded patients\r\nmake
+      one Test at the end of each day. For\r\nHeavily or Critically Wounded patients,\r\nTest
+      once at the end of each week. On\r\na success, your patient removes twice\r\nthe
+      normal Damage (removing Critical\r\nDamage first then normal Damage), plus\r\n1
+      Damage for each degree of success. On\r\na failure, your patients are not adversely\r\naffected,
+      removing Damage at the normal\r\nrates. A failure by three or more degrees\r\nindicates
+      that all Lightly Wounded or\r\nHeavily Wounded characters take 1\r\nDamage\u2014use
+      Sudden Death to resolve\r\nCritical Damage. Failing by five or\r\nmore degrees
+      indicates that all patients\r\ntake 1d10 Damage\u2014again, use Sudden\r\nDeath
+      to resolve Critical Damage.\r\nFor more information on Healing,\r\nsee Chapter
+      VII: Playing the Game.\r\nSpecial: The Master Churgeon talent\r\nexpands your
+      options with the Medicae\r\nskill, see page 118."
+    miscBonus: 0
+  - name: Navigation
+    type: 0
+    _characteristic: 5
+    _descriptor: 0
+    group:
+    - Surface
+    - Stellar
+    description: "You employ the Navigation skill\r\nwhenever you want to use maps,\r\ntechnical
+      readouts, innate knowledge\r\nand landmarks to chart a proper course\r\nand
+      avoid becoming lost. A successful\r\nNavigation Test can also estimate\r\ntravel
+      times based on geography,\r\ncosmography, time of year, weather and\r\nso on.
+      Under normal circumstances,\r\na single successful Test each day is\r\nsufficient
+      to keep you on track, though\r\nthe GM may call for additional Tests\r\nif
+      there are unusual conditions, such as\r\nfluctuating landmasses, swirling eddies\r\nof
+      plasma or violent storms.\r\nSurface Navigation is used to\r\nnavigate across
+      a planet\u2019s surface, using\r\nlogi-compasses, map readouts and\r\ngeographical
+      knowledge.\r\nStellar Navigation is used to\r\nnavigate in space between planets,
+      using\r\nstar charts and carto mantic rituals.\r\nA Navigation Test usually
+      represents\r\nseveral hours of charting courses, consulting\r\nmaps and making
+      heading corrections, but\r\nit may take one minute or less if its purpose\r\nis
+      just to find out where you are."
+    miscBonus: 0
+  - name: Performer
+    type: 0
+    _characteristic: 8
+    _descriptor: 0
+    group:
+    - Dancer
+    - Musician
+    - Singer
+    - Storyteller
+    description: "Use the Performer skill to entertain\r\nand enthrall crowds of
+      spectators.\r\nThe Performer skill may be used to\r\nearn an income, much as
+      with Trade.\r\nIn addition, the Performer skill may\r\nbe substituted for certain
+      Skills under\r\nspecific circumstances.\r\nCharming Performance: You\r\nmay
+      make a Difficult (\u201310) Performer\r\n(Storyteller) or Performer (Singer)
+      Test\r\ninstead of Charm, to win round your\r\naudience, causing them to respond\r\nmore
+      favourably to you.\r\nEnthralling Performance: You\r\nmay make a Difficult
+      (\u201310) Performer\r\n(Musician) or Performer (Singer) Test\r\ninstead of
+      Blather, utterly enthralling and\r\ndistracting your audience for a moment.\r\nThis
+      use is subject to the normal rules\r\ngoverning the Blather skill.\r\nA Performer
+      Test can take a variable\r\namount of time, and can represent\r\nanything from
+      a short poem or song to\r\nan elaborate and long-winded opera.\r"
+    miscBonus: 0
+  - name: Pilot
+    type: 0
+    _characteristic: 4
+    _descriptor: 16
+    group:
+    - Civilian Craft
+    - Military Craft
+    - Spacecraft
+    description: 'The Pilot skill is used to fly anything
+
+      from small atmospheric
+      craft such as
+
+      ornithopters and landers, all the way
+
+      up to spaceship-sized
+      vessels. Piloting
+
+      a ship under normal conditions does
+
+      not require
+      a Test. However, Tests may
+
+      be called for when flying in conditions
+
+      such
+      as storms, going at excessive speed
+
+      or attempting dangerous manoeuvres.
+
+      When
+      chasing another vehicle, you
+
+      and your opponent make Opposed
+
+      Pilot
+      Tests.
+
+      A Pilot Test is typically a Half Action,
+
+      but certain
+      manoeuvres may require
+
+      more or less time.'
+    miscBonus: 0
+  - name: Psyniscience
+    type: 0
+    _characteristic: 6
+    _descriptor: 0
+    group: []
+    description: "You can use the Psyniscience skill\r\nto become attuned with the
+      ebb and\r\nflow of the warp and the immaterium.\r\nThe most common application
+      of\r\nthis Skill is to detect the presence or\r\nabsence of Daemons or other
+      psykers.\r\nTo do so, make a Psyniscience Test.\r\nOn a success, you extend
+      your senses\r\nout to a number of metres equal to\r\nyour Perception Bonus
+      plus 1d10.\r\nEach degree of success allows you to\r\nadd 1d10+PB metres to
+      your roll.\r\nYou can also Test to detect unusual\r\npsychic phenomena, areas
+      where\r\nrealspace has been \u201Cdisrupted\u201D, areas\r\nwhere the immaterium
+      seems to be\r\nblocked (or shielded against), and so\r\non. The GM may wish
+      to make the Test\r\nin secret depending on just what it is\r\nthat the psyker
+      may detect.\r\nThe results of any Psyniscience Test\r\nare summarised on the
+      following chart:\r\nDegrees\r\n of\r\nSuccess Result\r\nStandard Awareness
+      that success the\r\nimmaterium is being disrupted.\r\nOne General location
+      from where\r\nthe phenomena emanates.\r\nTwo+ Exact location of the individual\r\nchannelling
+      or blocking the\r\nimmaterium.\r\nUsing Psyniscience is a Full Action."
+    miscBonus: 0
+  - name: Scholastic Lore
+    type: 0
+    _characteristic: 5
+    _descriptor: 4
+    group:
+    - Archaic
+    - Astromancy
+    - Beasts
+    - Bureaurcracy
+    - Chymistry
+    - Cryptology
+    - Heraldry
+    - Imperial Creed
+    - Judgement
+    - Legend
+    - Numerology
+    - Occult
+    - Philosophy
+    - Tactica Imperialis
+    description: "The Scholastic Lore skill grants you\r\nknowledge of a particular
+      scholarly\r\nsubject. A successful Test enables you\r\nto recall pertinent
+      facts and\u2014if you\r\nhave access to the proper facilities or\r\nresources\u2014to
+      do research. Scholastic\r\nLore represents a depth of learning\r\nfar beyond
+      Common Lore and it\r\nrequires extensive study.\r\nYou make Scholastic Lore
+      Tests to\r\nidentify an object, creature or place\r\nthat falls under your
+      particular area\r\nof expertise. A successful Test about\r\na subject related
+      to your speciality\r\nreveals the basic information. Each\r\ndegree of success
+      reveals more\r\ninformation as follows:\r\nDegrees\r\n of\r\nSuccess Result\r\nStandard
+      Reveals basic information\r\nsuccess known to people of your\r\ntraining.\r\nOne
+      Reveals uncommonly known\r\ninformation, even among\r\nyour peers.\r\nTwo Reveals
+      obscure information\r\nabout the subject. Such\r\ninformation is known to but\r\na
+      few scholars.\r\nThree+ Reveals extremely obscure\r\ninformation, known only
+      to\r\na handful of experts.\r\nIn some areas, Scholastic Lore overlaps\r\nwith
+      Common Lore and Forbidden\r\nLore, but almost always represents a far\r\ngreater\u2014and
+      more academic\u2014level of\r\nstudy. A character with Common Lore\r\n(Imperial
+      Creed) might understand the\r\nday-to-day rituals and prayers gained\r\nfrom
+      living under the creed, whereas a\r\ncharacter with Scholastic Lore (Imperial\r\nCreed)
+      might be able to explain why\r\nsuch rituals exist and how they have\r\nchanged
+      over the millennia.\r\nTo recall a fact or titbit about the\r\nsubject, a Scholastic
+      Lore Test takes no\r\ntime at all. You either know the fact\r\nor not. Researching,
+      assuming you are\r\nin the proper environment to do so,\r\ntakes far longer.
+      You may make one\r\nAcademic Lore Test every 1d10 hours.\r\nSee Chapter VII:
+      Playing the Game\r\nfor details.\r\nArchaic: An understanding of the\r\nmurky
+      past of the Imperium and how\r\nthe long millennia have changed the\r\nface
+      of mankind.\r\nAstromancy: A knowledge of\r\nstars, heavenly bodies and the
+      nature\r\nof worlds, as well as theoretical\r\nunderstanding of how to use
+      telescopes,\r\nastrolabes and so on.\r\nBeasts: An understanding of the\r\nclassification
+      of animals and familiarity\r\nwith the properties of many types of\r\nsemi-sentient
+      creatures.\r\nBureaucracy: An understanding\r\nof how to deal with governments,\r\nparticularly
+      the Administratum, and\r\ntheir many and varied departments,\r\nforms and policies.\r\n106\r\nChymistry:
+      A knowledge of\r\nchemicals, their alchemical applications\r\nand their use
+      throughout the Imperium.\r\nCryptology: An understanding of\r\ncodes, ciphers,
+      secret languages and\r\nnumerical keys. This may be used to\r\neither crack
+      a code, or create one.\r\nHeraldry: A grasp of the principles\r\nof heraldry,
+      as well as a knowledge of\r\nthe most common liveries, seals and\r\nheraldic
+      devices used in the Imperium.\r\nImperial Creed: An understanding\r\nof the
+      rituals of the Ecclesiarchy, the\r\nconstruction of their temples and the\r\nfiner
+      points of liturgy. May be used to\r\nconduct rituals for others.\r\nJudgement:
+      Knowledge of the\r\nproper punishments for the myriad\r\nof crimes and heresies
+      punishable by\r\nImperial law.\r\nLegend: A knowledge of the great\r\nhistories
+      of old, such as the terrible Horus\r\nHeresy and the Dark Age of Technology.\r\nNumerology:
+      An understanding of\r\nthe mysterious properties of numbers,\r\nfrom Catastrophe
+      theory to the\r\nSadleirian litany.\r\nOccult: An understanding of occult\r\nritual,
+      theories and superstitions, as\r\nwell as the better known mystical uses\r\nof
+      occult items.\r\nPhilosophy: A knowledge of the\r\ntheories of thought, belief
+      and criticism.\r\nMay be used for debate and for creating\r\nphilosophical
+      works.\r\nTactica Imperialis: A grounding in\r\nthe Tactica Imperialis, as
+      well as other\r\ntheories of war, troop deployment and\r\nbattle techniques.
+      May be used to plan a\r\nbattle or deduce the likely flow of war.\r"
+    miscBonus: 0
+  - name: Scrutiny
+    type: 1
+    _characteristic: 6
+    _descriptor: 0
+    group: []
+    description: "Use the Scrutiny skill to make\r\nassessments about people you
+      encounter,\r\nto determine if someone is lying to you,\r\nto sense ulterior
+      motives and generally\r\nappraise the worth of another being.\r\nWhen trying
+      to perceive a falsehood,\r\nor some other form of deception, you\r\nmake an
+      Opposed Test, pitting your\r\nScrutiny against the target\u2019s Deceive. If\r\nyou
+      beat your opponent by achieving\r\nmore degrees of success, you get a\r\nhunch
+      that something is not right.\r\nNote that Scrutiny does not confer\r\ntelepathy
+      and cannot be used to reveal\r\nall the secrets about a target. Rather, this\r\nSkill
+      serves to counteract attempts to\r\nmanipulate you through Interaction skills\r\nsuch
+      as Charm, Deceive and Intimidate."
+    miscBonus: 0
+  - name: Search
+    type: 1
+    _characteristic: 6
+    _descriptor: 0
+    group: []
+    description: "Use the Search skill whenever you\r\nwant to examine an area for
+      concealed\r\nobjects, clues and anything else that\r\nmight be hidden. Search
+      differs from\r\nAwareness in that you Test Awareness\r\npassively, Testing
+      whenever some\r\nhidden danger might appear or to\r\nnotice a small detail
+      as you move past\r\nit. Search, on the other hand, represents\r\nan active
+      effort to check an area.\r\nA single Search Test is sufficient to\r\ncover
+      a small room or area. When an\r\nobject or individual is deliberately\r\nhidden,
+      a Search Test is resolved as an\r\nOpposed Test, pitting your Search Test\r\nagainst
+      your target\u2019s Concealment Test.\r\nA Search Test takes a minimum of\r\nfive
+      minutes, dependent on the area\r\nbeing examined."
+    miscBonus: 0
+  - name: Secret Tongue
+    type: 0
+    _characteristic: 5
+    _descriptor: 0
+    group:
+    - Acolyte
+    - Administratum
+    - Ecclesiarchy
+    - Gutter
+    - Military
+    - Tech
+    description: 'Secret Tongue is used to speak and
+
+      comprehend a particularly
+      obscure and
+
+      arcane language known to only those of
+
+      a specific
+      profession, organisation or class.
+
+      Secret tongues are more like codes
+      than
+
+      real languages. By the use of signifiers,
+
+      body language
+      and code words, users
+
+      can speak in one tongue but use a secret
+
+      language
+      to impart deeper meaning
+
+      or to relay a lot of information quickly.
+
+      Under
+      normal circumstances, Skill Tests
+
+      are unnecessary if all speakers know
+      the
+
+      secret language. They may be required in
+
+      adverse conditions
+      such as communicating
+
+      in a noisy venue, or during the chaos of
+
+      battle.
+      Groups of Acolytes may develop
+
+      their own coded language, unique to
+
+      their
+      cell. This is represented by the
+
+      Secret Tongue (Acolyte) skill.
+
+      Acolyte:
+      A pre-arranged series of
+
+      code phrases and inflections intelligible
+
+      only
+      to a fellow cell member. Note
+
+      that each cell of Acolytes has a unique
+
+      version
+      of this language.
+
+      Administratum: A collection of
+
+      acronyms,
+      jargon and procedural
+
+      formalities used by the Administratum.
+
+      Note
+      that this is an exceedingly longwinded language.
+
+      Ecclesiarchy: An allegorical
+      language
+
+      of devotion and politics, full of strange
+
+      metaphors
+      and specialised High Gothic.
+
+      Gutter: A pidgin version of Low
+
+      Gothic
+      spoken by the lowest levels
+
+      of Imperial society, incorporating a
+
+      mishmash
+      of colourful slang terms.
+
+      Military: A selection of coded
+
+      phrases,
+      jargon, references to ancient
+
+      battles and a surprising number of
+
+      terms
+      for death.
+
+      Tech: The Lingua Technis of the
+
+      Adeptus Mechanicus,
+      comprising of
+
+      jargon, binary and in some cases low or
+
+      high
+      frequency sound waves.
+
+      A Secret Tongue Test is usually a Free
+
+      Action.'
+    miscBonus: 0
+  - name: Security
+    type: 0
+    _characteristic: 4
+    _descriptor: 0
+    group: []
+    description: 'You can use the Security skill to bypass
+
+      locks and other
+      security systems. The
+
+      Difficulty of the Test depends on the
+
+      quality
+      of the defence. Generally one
+
+      Test is sufficient, but more complicated
+
+      systems
+      may require additional Tests or
+
+      degrees of success.
+
+      A Security
+      Test takes one minute,
+
+      with each degree of success reducing
+
+      this
+      time by ten seconds.'
+    miscBonus: 0
+  - name: Shadowing
+    type: 0
+    _characteristic: 4
+    _descriptor: 0
+    group: []
+    description: "The Shadowing skill allows you to\r\nfollow another creature or
+      vehicle\r\nwithout being seen. Shadowing differs\r\nfrom Concealment in that
+      you are\r\nmoving while masking your presence,\r\noften slipping from one place
+      of cover to\r\nanother or, if that is not possible, acting\r\nas if you are
+      doing something else,\r\nsuch as reading through a data-slate,\r\nscrutinizing
+      a wanted poster or anything\r\nelse that makes you blend in with your\r\nenvironment.
+      A Shadowing Test is\r\nalways an Opposed Test, pitting your\r\nSkill against
+      your opponent\u2019s Awareness\r\nskill (or half their Perception if they do\r\nnot
+      have the Awareness skill).\r\nA single Shadowing Test is sufficient\r\nto follow
+      your opponent unseen for one\r\nminute."
+    miscBonus: 0
+  - name: Silent Move
+    type: 1
+    _characteristic: 4
+    _descriptor: 0
+    group: []
+    description: "Use the Silent Move skill whenever\r\nyou want to creep about without\r\nmaking
+      a noise. The Difficulty\r\ndepends on the surface on which\r\nyou walk\u2014broken
+      glass, twigs,\r\ngravel and so on, can all make extra\r\nnoise. A Silent Move
+      Test is always\r\nan Opposed Test, pitting your Skill\r\nagainst your opponent\u2019s
+      Awareness\r\nskill (or half their Perception if they\r\ndo not have the Awareness
+      skill).\r\nA Silent Move Test is usually a Free\r\nAction made as part of a
+      Move Action."
+    miscBonus: 0
+  - name: Sleight of Hand
+    type: 0
+    _characteristic: 4
+    _descriptor: 0
+    group: []
+    description: "The Sleight of Hand skill is used to\r\npalm objects, pick pockets
+      or perform\r\ntricks with small items like coins\r\nand cards. The smaller
+      the object,\r\nthe easier it is to pick up, which\r\nis reflected in the task\u2019s
+      Difficulty\r\nas set by the GM. In most cases, a\r\nSleight of Hand Test is
+      an Opposed\r\nTest, pitting your Skill against your\r\nopponent\u2019s Awareness
+      skill (or half\r\ntheir Perception if they do not have\r\nthe Awareness skill).\r\nYou
+      may also opt to use Sleight\r\nof Hand instead of Gamble to\r\nhide cards up
+      your sleeve or palm\r\ndice. See the Gamble skill for more\r\ninformation.\r\nSleight
+      of Hand is usually a Half\r\nAction. You may make a Sleight of\r\nHand Test
+      as a Free Action, but you\r\nworsen the Difficulty by \u201310."
+    miscBonus: 0
+  - name: Speak Language
+    type: 0
+    _characteristic: 5
+    _descriptor: 0
+    group:
+    - High Gothic
+    - Hive Dialect
+    - Low Gothic
+    - Ship Dialect
+    - Tribal Dialect
+    description: "The Speak Language skill is used\r\nto communicate with others
+      using\r\na common tongue. Although the\r\npeople of the Imperium are widely\r\nscattered,
+      they are united by an\r\nofficial tongue\u2014that of Low Gothic.\r\nHowever,
+      every world has its own\r\nlocal dialects and peculiarities, and\r\nsometimes
+      even its own language.\r\nUnder normal circumstances, Tests\r\nare unnecessary
+      if all speakers know\r\nthe language.\r\nHigh Gothic: The language of\r\nnobility,
+      law and Ecclesiarchy liturgy.\r\nHive Dialect: A debased form of\r\nLow Gothic
+      unique to a given hive.\r\nLow Gothic: The common tongue\r\nof the Imperium.\r\nShip
+      Dialect: Code, slang and idiom\r\nunique to a given vessel.\r\nTribal Dialect:
+      The rough and\r\nprimitive tongue spoken by the natives\r\nof a particular
+      planet.\r\nA Speak Language Test is usually a\r\nFree Action."
+    miscBonus: 0
+  - name: Survival
+    type: 0
+    _characteristic: 5
+    _descriptor: 0
+    group: []
+    description: "You use the Survival skill to subsist in\r\nthe wild. This Skill
+      encompasses such\r\nactivities as fishing, game hunting,\r\nmaking fires, finding
+      edible food,\r\nconstructing improvised shelters,\r\nfinding safe resting places,
+      and so on.\r\nThe Difficulty of the Test depends on\r\nthe environment, with
+      death worlds\r\nbeing much more difficult to survive\r\non than an agri-world.\r\nFailing
+      a Survival Test usually\r\nindicates that you have failed to\r\nfind what you
+      are looking for, either\r\nbecause you are inept or because\r\nit is simply
+      not there to be found.\r\nFailing by five or more degrees\r\nindicates that
+      you fail spectacularly,\r\nusually by bringing trouble down on\r\nyour head\u2014perhaps
+      by triggering a\r\nrockslide, or stirring up a den of angry\r\nsilt-bears or
+      foolishly consuming\r\npoisoned berries.\r\nA Survival Test takes one hour,
+      with\r\neach degree of success reducing this\r\ntime by ten minutes. Under
+      certain\r\ncircumstances, like trying to find a\r\ncrude shelter from a meteor
+      storm, the\r\nDifficulty can be increased and the time\r\ntaken reduced to
+      one minute"
+    miscBonus: 0
+  - name: Swim
+    type: 1
+    _characteristic: 2
+    _descriptor: 8
+    group: []
+    description: 'The Swim skill is used to swim and dive.
+
+      Swimming under
+      normal conditions
+
+      does not require a Test. However,
+
+      Tests may
+      be called for when waters
+
+      are rough or when swimming for an
+
+      extended
+      period is required. For more
+
+      information on the Swim skill, see
+
+      Swimming
+      in Chapter VII: Playing
+
+      the Game, page 214.
+
+      The Swim skill
+      assumes a character
+
+      is attempting to swim in water, but
+
+      on
+      alien worlds a character might
+
+      encounter unusual substances such as
+
+      lakes
+      of sulphuric acid. The Difficulty
+
+      of the Test might be increased to
+
+      represent
+      particular conditions. Swim
+
+      does not protect a character from harm
+
+      when
+      swimming in toxic or otherwise
+
+      dangerous liquids, nor does it negate
+
+      the
+      need for protective clothing.
+
+      A Swim test is a Free Action made as
+
+      part
+      of a Move Action.'
+    miscBonus: 0
+  - name: Tech-Use
+    type: 0
+    _characteristic: 5
+    _descriptor: 0
+    group: []
+    description: "A character may use Tech-Use to repair\r\nmechanical items and
+      to work out how\r\nunusual technical artefacts work. When\r\nusing a basic,
+      simple piece of mechanical\r\nequipment under normal circumstances,\r\nsuch
+      as a vox or auspex, no Test is\r\nrequired. A Tech-Use Test is needed if\r\nthe
+      item is unusual, malfunctioning or\r\nconditions are especially troublesome,\r\nsuch
+      as attempting to use an auspex\r\nduring an electrical storm, or trying to\r\nget
+      an ancient warp engine to start up\r\nafter a thousand years\u2019 disuse.\r\nTech-Use
+      may also be used to repair\r\nfaulty or damaged items, the difficulty\r\ndepending
+      on the complexity of the\r\nitem and the damage dealt to it.\r\nTech-Use might
+      sometimes be used\r\nto build an item from scratch, although\r\na relevant
+      Trade skill is more commonly\r\nused.\r\nA Tech-Use Test to figure out how
+      an\r\nitem works usually takes one minute, but\r\nmight take less or more time
+      depending\r\non the complexity. A Test made to repair\r\nan item can take much
+      longer, usually\r\none hour but reduced by ten minutes for\r\nevery degree
+      of success."
+    miscBonus: 0
+  - name: Tracking
+    type: 0
+    _characteristic: 5
+    _descriptor: 0
+    group: []
+    description: "The Tracking skill is used to follow prey,\r\nbe it animal or otherwise.
+      Following\r\nobvious tracks requires no Test and\r\ncan be done without slowing
+      down.\r\nHowever, any instance when climate,\r\nlighting or terrain conditions
+      would\r\ninterfere always require a Tracking Test.\r\nThe Difficulty depends
+      on the quality\r\nof the prints and the circumstances. For\r\nexample, a recent
+      snowfall would make\r\ntracking prints Difficult (\u201310) or even\r\nHard
+      (\u201320). When following obscure\r\ntracks, the tracker\u2019s Movement rate\r\ndrops
+      to half.\r\nSometimes you will be following\r\nquarry that has attempted to
+      cover its\r\ntracks, in which case this becomes an\r\nOpposed Test made against
+      the quarry\u2019s\r\nConcealment Test result.\r\nYou may also make Tests to
+      deduce\r\nyour distance from the quarry, their\r\nnumbers and their racial
+      type.\r\nA Tracking Test is a Free Action made\r\nas part of a Move Action."
+    miscBonus: 0
+  - name: Trade
+    type: 0
+    _characteristic: 5
+    _descriptor: 1
+    group:
+    - Agri (S)
+    - Apothcary (Int)
+    - Armourer (S)
+    - Artist (Ag)
+    - Cartographer (Ag)
+    - Cook (Int)
+    - Copyist (Int)
+    - Embalmer (Int)
+    - Mason (Ag)
+    - Merchant (Fel)
+    - Miner (S)
+    - Prospector (S)
+    - Scrimshawer (Ag)
+    - Smith (S)
+    - Soothsayer (Fel)
+    - Tanner (S)
+    - Technomat (Int)
+    - Valet (Fel)
+    - Wright (Int)
+    description: "Having a Trade skill indicates that you\r\nknow how to practice
+      a trade or craft.\r\nWith this Skill, you can make a living\r\nor create items
+      suited to your trade. You\r\ncan also make a Trade Test to identify the\r\nhandiwork
+      of a particular craftsman, or to\r\nknow something about a particular item.\r\nSee
+      page 96 for rules on Crafting.\r\nA Trade Test normally represents a\r\nday\u2019s
+      hard work. A Trade Test made to\r\nidentify an item or craftsman is usually\r\na
+      Full Action, during which time the\r\ntradesman sucks his teeth and sighs\r\nbefore
+      making his prognosis.\r\nAgri: Used to grow, care and harvest\r\ncrops and
+      animals.\r\nApothecary: Used to blend and\r\nprepare herbal remedies.\r\nArmourer:
+      Used to create and\r\nmaintain armour and weapons.\r\nArtist: Used to create
+      works of art.\r\nCartographer: Used to take accurate\r\nmeasurements and turn
+      them into\r\nmaps.\r\nCook: Used to create and identify\r\nfood.\r\nCopyist:
+      Used to swiftly copy\r\ntext, illuminate manuscripts and forge\r\nwritten material.\r\nEmbalmer:
+      Used to prepare and\r\npreserve corpses.\r\nMason: Used to assess and construct\r\nstone
+      buildings.\r\nMerchant: Used to find, bargain and\r\nsell trade goods.\r\nMiner:
+      Used to extract minerals,\r\nmaintain mines and identify common\r\nhazards.\r\nProspector:
+      Used to find and\r\nidentify valuable materials.\r\nScrimshawer: Used to inscribe\r\npatterns,
+      text and imagery onto materials.\r\nSmith: Used to forge metals into\r\nshape.\r\nSoothsayer:
+      Used to give the\r\nappearance of telling the future.\r\nTanner: Used to prepare
+      and tan\r\nhides.\r\nTechnomat: Used to maintain\r\nmechanical and tech items,
+      often\r\nwithout any understanding of a\r\nmachine\u2019s true purpose.\r\nValet:
+      Used to refine the appearance,\r\ngive droll asides and tend to the needs\r\nof
+      superiors in a gentlemanly fashion.\r\nWright: Used to assess, design and\r\nconstruct
+      buildings, vehicles and the like."
+    miscBonus: 0
+  - name: Wrangling
+    type: 0
+    _characteristic: 5
+    _descriptor: 0
+    group: []
+    description: 'This Skill may be used in order
+
+      to ride domesticated animals
+      of
+
+      appropriate size.
+
+      The Wrangling skill also allows you
+
+      to
+      care for and control domesticated
+
+      animals, like bloodhounds, Spike
+      Pigs,
+
+      horses, Grox and the like. Routine
+
+      care and feeding requires
+      no Test.
+
+      Tests are most commonly made to
+
+      spot developing illnesses
+      or signs of
+
+      discomfort, or for special grooming
+
+      (preparing
+      a mount for a parade, for
+
+      instance).
+
+      Wrangling can also be
+      used to
+
+      train animals to perform tricks and
+
+      obey simple commands.
+      Properly
+
+      training an animal takes some time.
+
+      Tests should be
+      made once a week
+
+      during training. A simple trick can
+
+      be learned
+      with one successful Test,
+
+      a moderately difficult trick can be
+
+      learned
+      with three successful Tests
+
+      and a difficult trick can be learned
+
+      with
+      ten successful Tests. Common
+
+      tricks include guarding, fetching,
+
+      attacking,
+      and so on.
+
+      You may also use this Skill to
+
+      befriend animals.
+      Domestic animals
+
+      are always friendly to you. Wild
+
+      animals or
+      those trained to be hostile
+
+      (like attack dogs) can be calmed with
+
+      a
+      successful Test. GMs may impose
+
+      penalties for particularly loyal or
+
+      ornery
+      animals.
+
+      Wrangling is of no use against cyberanimals such as familiars,
+      even if they
+
+      are built to resemble an animal.
+
+      A Wrangling Test
+      takes a variable
+
+      amount of time, depending on
+
+      what the character
+      is attempting
+
+      to accomplish. Training an animal
+
+      takes at least
+      a week of hard work,
+
+      whereas attempting to befriend an
+
+      animal
+      is a Full Action.'
+    miscBonus: 0
