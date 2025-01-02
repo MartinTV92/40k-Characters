@@ -33,5 +33,7 @@ namespace SunJack.DarkHeresy
 
 
         public static List<Skill> GetSkillsByType(Skill.Type skillType) => Instance.skills.Where(x => x.type == skillType).ToList();
+
+        public static Skill GetSkill(string name) => Instance.skills.Where(x => x.name == name).FirstOrDefault();
     }
 }

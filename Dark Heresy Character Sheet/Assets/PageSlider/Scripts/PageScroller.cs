@@ -81,7 +81,7 @@ namespace TS.PageSlider
 
         private ScrollRect _scrollRect;
 
-        private int _currentPage; // Index of the currently active page.
+        public int _currentPage; // Index of the currently active page.
         private int _targetPage; // Index of the target page during a page change animation.
 
         private float _startNormalizedPosition; // Normalized position of the scroll bar when drag begins.
