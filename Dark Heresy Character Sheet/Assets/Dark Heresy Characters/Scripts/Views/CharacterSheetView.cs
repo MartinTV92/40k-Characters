@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -27,9 +26,9 @@ namespace SunJack.DarkHeresy
 
 		public static CharacterSheetView Instance { get; private set; }
 
-        [ShowInInspector]
-        public static Character target;
+		#region UI
 
+		[ShowInInspector] public static Character target;
 
 		[FoldoutGroup("Basic Info")] public TextMeshProUGUI nameUI;
 		[FoldoutGroup("Basic Info")] public TextMeshProUGUI careerUI;
@@ -42,6 +41,8 @@ namespace SunJack.DarkHeresy
 		[FoldoutGroup("Skills")] public List<SkillView> advancedSkills;
 
 		public PageDictionary pageDict;
+
+		#endregion
 
 		#endregion
 
@@ -84,7 +85,6 @@ namespace SunJack.DarkHeresy
 
         public void Redraw()
         {
-            Debug.Log("Reddrawing Character");
             nameUI.text = $"+{target.Name}+";
             careerUI.text = target.CareerPath.ToString();
             rankUI.text = $"-- (1/8)";
@@ -132,8 +132,6 @@ namespace SunJack.DarkHeresy
 			Destroy(list[index].gameObject);
             list.RemoveAt(index);
 		}
-
-
 
 		#endregion
 	}

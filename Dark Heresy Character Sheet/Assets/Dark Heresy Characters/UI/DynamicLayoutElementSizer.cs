@@ -24,10 +24,14 @@ namespace SunJack.UI
 			Resize();
 		}
 
+		#if UNITY_EDITOR
+
 		protected override void OnValidate()
 		{
 			Resize();
 		}
+
+		#endif
 
 		[Button("Resize")]
 		/// <summary> Resizes all the LayoutElements' prefered widths and heights. </summary>
