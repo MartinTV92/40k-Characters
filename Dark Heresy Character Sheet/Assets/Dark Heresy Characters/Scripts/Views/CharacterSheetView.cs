@@ -85,7 +85,7 @@ namespace SunJack.DarkHeresy
 
         public void Redraw()
         {
-            nameUI.text = $"+{target.Name}+";
+            nameUI.text = $"{target.Name}";
             careerUI.text = target.CareerPath.ToString();
             rankUI.text = $"-- (1/8)";
 

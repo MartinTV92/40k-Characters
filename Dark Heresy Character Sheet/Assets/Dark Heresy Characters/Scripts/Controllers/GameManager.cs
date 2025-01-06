@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
 		CharacterSheet,
 	}
 
+
+
 	#endregion
 
 
@@ -30,6 +32,8 @@ public class GameManager : MonoBehaviour
 
 
 	#region----- VARIABLES -----
+
+	public PopupManager popupManager;
 
 	// State Machine
 	public StateMachine<State>	stateMachine {get; private set;} = new();
@@ -50,6 +54,7 @@ public class GameManager : MonoBehaviour
 		if (Instance == null)
 			Instance = this;
 
+		popupManager.Setup();
 		RegisterStates();
     }
 

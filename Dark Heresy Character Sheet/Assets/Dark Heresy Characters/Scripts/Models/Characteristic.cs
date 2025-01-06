@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 using Sirenix.OdinInspector;
 
 namespace SunJack.DarkHeresy
@@ -74,7 +71,15 @@ namespace SunJack.DarkHeresy
         private int _base = 0;
 
 		[ShowInInspector, PropertyOrder(0), ReadOnly, HorizontalGroup("R1", Width = 0.2f), HideLabel] 
-        public int Value { get=> _base + (advancesTaken * 5); set => _base = Mathf.Clamp(value, 0, 100); }
+        public int Value 
+		{ 
+			get => _base + (advancesTaken * 5); 
+			set
+			{ 
+				_base = Mathf.Clamp(value, 0, 100);
+				OnValueChanged?.Invoke();
+			}
+		}
         
 		public int advancesTaken
 		{
@@ -93,6 +98,9 @@ namespace SunJack.DarkHeresy
 		[ShowInInspector, PropertyOrder(-1), ReadOnly, HorizontalGroup("R1", Width = 0.3f), HideLabel]
 		public Type characteristic = Type.WeaponSkill;
         public Advancement[] advances;
+
+		// Events
+		public event Action OnValueChanged;
 
 		#endregion
 
@@ -114,6 +122,7 @@ namespace SunJack.DarkHeresy
 		    };
 		}
 
+		public override string ToString() => $"{characteristic}: {Value}({advancesTaken}/4)";
 
 		#endregion
 	}

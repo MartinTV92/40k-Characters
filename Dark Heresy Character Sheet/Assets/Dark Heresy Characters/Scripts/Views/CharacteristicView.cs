@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -37,6 +35,11 @@ namespace SunJack.DarkHeresy
 		#endregion
 
 		#region----- MONOBEHAVIOURS -----
+
+		private void OnDisable()
+		{
+			UnSubscribe();
+		}
 
 		#endregion
 
@@ -77,18 +80,27 @@ namespace SunJack.DarkHeresy
 
 		public void Setup(Characteristic characteristic)
 		{
+			UnSubscribe();
 			targetModel = characteristic;
+			Subscribe();
 			Redraw();
+		}
+
+		void Subscribe()
+		{
+			if(targetModel != null)
+				targetModel.OnValueChanged += Redraw;
+		}
+
+		void UnSubscribe()
+		{
+			if (targetModel != null)
+				targetModel.OnValueChanged -= Redraw;
 		}
 
 		[Button("Redraw")]
 		public void Redraw()
 		{
-			if(nameText == null)
-				Debug.Log($"Name Text in {name} is null");
-			if(targetModel == null)
-				Debug.Log($"target in {name} is null");
-
 			nameText.text = useShortName ? GetShortName(targetModel.characteristic) : GetLongName(targetModel.characteristic);
 			
 			if(valueTextInputField)

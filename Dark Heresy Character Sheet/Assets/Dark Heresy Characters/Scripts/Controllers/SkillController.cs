@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,7 +23,7 @@ namespace SunJack.DarkHeresy
 
 		#region----- CUSTOM BEHAVIORUS -----
 
-		void OpenSkillDescription() =>	SkillDescriptionView.Open(view.skill);
+		void OpenSkillDescription() =>	PopupManager.Open(view.skill);
 
 		#endregion
 	}

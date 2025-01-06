@@ -3,6 +3,10 @@ using Sirenix.OdinInspector;
 
 namespace SunJack.DarkHeresy
 {
+    /// <summary>
+    /// Defines an apptitude for a given area of expertise such as driving, knowledge or tech-use.
+    /// Furthermore, defines the mastery and other bonuses applied to skill.
+    /// </summary>
     [System.Serializable]
     public struct Skill
     {
