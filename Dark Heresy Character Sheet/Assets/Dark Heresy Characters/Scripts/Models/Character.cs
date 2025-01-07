@@ -39,6 +39,7 @@ namespace SunJack.DarkHeresy
 
 		public List<Skill> basicSkills = new List<Skill>();
 		public List<Skill> advancedSkills = new List<Skill>();
+		public List<Talent> talents = new List<Talent>();
 
 		#endregion
 
@@ -82,7 +83,9 @@ namespace SunJack.DarkHeresy
 		    };
 
 			basicSkills = SkillDatabase.GetSkillsByType(Skill.Type.Basic);
-			advancedSkills = new();
+			//advancedSkills = new();
+			advancedSkills = SkillDatabase.GetSkillsByType(Skill.Type.Advanced);
+			talents = TalentDatabase.GetAllTalents();
 		}
 
         /// <summary> Change the character's name. </summary>

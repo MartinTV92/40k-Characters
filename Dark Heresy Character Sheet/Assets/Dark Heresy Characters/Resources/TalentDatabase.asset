@@ -15,12 +15,12 @@ MonoBehaviour:
   talents:
   - name: Air of Authority
     shortDescription: Affect more targets with Test.
-    description: "You exude a natural aura of command,\r instilling subservience
-      in all around you.\r\n\nOn a successful Command Test, you\r may affect a number
-      of targets equal\r to 1d10 plus your Fellowship Bonus.\r\nSuch is the authority
-      in your voice that\r even those who are not in your service\r jump to attention
-      when you speak. You\r may attempt to get non-servants to\r follow your commands
-      by making a\r Command Test with a \u201310 penalty."
+    description: "You exude a natural aura of command, instilling subservience in
+      all around you.\n\nOn a successful Command Test, you may affect a number of
+      targets equal to 1d10 plus your Fellowship Bonus. Such is the authority in
+      your voice that even those who are not in your service jump to attention when
+      you speak. You may attempt to get non-servants to follow your commands by making
+      a Command Test with a \u201310 penalty."
     group: []
   - name: Ambidextrous
     shortDescription: Use either hand equally well.

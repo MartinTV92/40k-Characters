@@ -27,6 +27,8 @@ namespace SunJack.DarkHeresy
 		[Button("Alphabetize")]
 		private void Alphabetize() => talents.Sort((A, B) => string.Compare(A.name, B.name));
 
-		public static Talent Talent(string name) => Instance.talents.Where(x => x.name == name).FirstOrDefault();
+		public static Talent GetTalent(string name) => Instance.talents.Where(x => x.name == name).FirstOrDefault();
+
+		public static List<Talent> GetAllTalents() => Instance.talents;
 	}
 }

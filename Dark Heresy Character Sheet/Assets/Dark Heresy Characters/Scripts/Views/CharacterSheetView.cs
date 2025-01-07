@@ -2,6 +2,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Sirenix.OdinInspector;
+using SunJack.Utilities;
+using System.Linq;
+using TS.PageSlider;
 
 namespace SunJack.DarkHeresy
 { 
@@ -40,7 +43,16 @@ namespace SunJack.DarkHeresy
 		[FoldoutGroup("Skills")] public List<SkillView> basicSkills;
 		[FoldoutGroup("Skills")] public List<SkillView> advancedSkills;
 
+		[FoldoutGroup("Talents")] public TalentView talentPrefab;
+		[FoldoutGroup("Talents")] public List<TalentView> talents;
+
+
+        public PageScroller scroller;
 		public PageDictionary pageDict;
+
+        // Object Pool
+        ObjectPoolHelper<SkillView> skillPool;
+        ObjectPoolHelper<TalentView> talentPool;
 
 		#endregion
 
@@ -74,6 +86,12 @@ namespace SunJack.DarkHeresy
                 for(int i = 0; i < characteristics.Length; i++)
                     characteristics[i].Setup(target.characteristics[(Characteristic.Type) i]);
 
+            skillPool = new ObjectPoolHelper<SkillView>(skillPrefab);
+            talentPool = new ObjectPoolHelper<TalentView>(talentPrefab);
+
+            scroller = GetComponentInChildren<PageScroller>();
+            scroller.SetPage(0);
+
             Redraw();
         }
 
@@ -93,45 +111,70 @@ namespace SunJack.DarkHeresy
 				characteristics[i].Setup(target.characteristics[(Characteristic.Type)i]);
 
             RedrawSkills(Skill.Type.Basic);
+			RedrawSkills(Skill.Type.Advanced);
+            RedrawTalents();
 		}
 
+        // SKILLS
         void RedrawSkills(Skill.Type skillType)
         {
 			var skillList = skillType == Skill.Type.Basic ? target.basicSkills : target.advancedSkills;
 			var uiList = skillType == Skill.Type.Basic ? basicSkills : advancedSkills;
+			var page = skillType == Skill.Type.Basic ? Page.BasicSkills : Page.AdvancedSkills;
 
-			for (int i = 0; i < skillList.Count; i++)
-            {
-                var need2Add = uiList.Count < skillList.Count;
-                if(need2Add)
-                    AddSkill(skillList[i], skillType);
-                else
-                    break;
-            }
+			foreach (var ui in uiList)
+                skillPool.Release(ui);
 
-            if(uiList.Count > target.basicSkills.Count)
-                for(int i = uiList.Count - 1; i >= 0; i--)
-                    RemoveSkill(skillList[i], skillType);
+			foreach(var skill in skillList)
+                AddSkill(skill, skillType);
         }
 
-        void AddSkill(Skill skill, Skill.Type skillType)
+        public void AddSkill(Skill skill, Skill.Type skillType)
         {
             var page = skillType == Skill.Type.Basic ? Page.BasicSkills : Page.AdvancedSkills;
-            var list = skillType == Skill.Type.Basic ? basicSkills : advancedSkills;
-			var skillUI = Instantiate(skillPrefab, pageDict[page].content);
-            skillUI.gameObject.name = $"Skill_{skill.name}";
-            skillUI.SetSkill(skill);
-            list.Add(skillUI);
+            var skillList = skillType == Skill.Type.Basic ? basicSkills : advancedSkills;
+
+			var view = skillPool.Get();
+			view.transform.SetParent(pageDict[page].content);
+            view.gameObject.name = $"Skill_{skill.name}";
+			view.transform.localScale = Vector3.one;
+			view.SetSkill(skill);
+			skillList.Add(view);
+		}
+
+        public void RemoveSkill(Skill skill)
+        {
+            var list2Search = skill.type == Skill.Type.Basic ? basicSkills : advancedSkills;
+            var skillUI = list2Search.Where(x => x.name == skill.name).FirstOrDefault();
+            skillPool.Release(skillUI);
         }
 
-        void RemoveSkill(Skill skill, Skill.Type skillType)
+
+        // TALENTS & TRAITS
+        void RedrawTalents()
         {
-			var page = skillType == Skill.Type.Basic ? Page.BasicSkills : Page.AdvancedSkills;
-			var list = skillType == Skill.Type.Basic ? basicSkills : advancedSkills;
-            var index = list.FindIndex(x => x.name == skill.name);
-			Destroy(list[index].gameObject);
-            list.RemoveAt(index);
+            foreach(var talentUI in talents)
+                talentPool.Release(talentUI);
+
+            foreach(var talent in target.talents)
+                AddTalent(talent);
+        }
+
+        public void AddTalent(Talent talent)
+        {
+            var view = talentPool.Get();
+            view.transform.SetParent(pageDict[Page.TalentsTraits].content);
+            view.gameObject.name = $"Talent_{talent.name}";
+            view.transform.localScale = Vector3.one;
+            view.SetTalent(talent);
+        }
+
+		public void RemoveSkill(Talent skill)
+		{
+			var view = talents.Where(x => x.name == skill.name).FirstOrDefault();
+			talentPool.Release(view);
 		}
+
 
 		#endregion
 	}

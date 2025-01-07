@@ -66,7 +66,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Page Title
+  m_text: 'Page Title
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 85371107872d6334c9ad2e92b3998e8f, type: 2}
   m_sharedMaterial: {fileID: 4488952090172386583, guid: 85371107872d6334c9ad2e92b3998e8f, type: 2}
@@ -241,7 +243,8 @@ GameObject:
   - component: {fileID: 6608507183807009824}
   - component: {fileID: 5642460090937018956}
   - component: {fileID: 3012974604111373182}
-  - component: {fileID: 6735281545445354472}
+  - component: {fileID: 1120424717020889455}
+  - component: {fileID: 2646122687902153923}
   m_Layer: 5
   m_Name: Viewport
   m_TagString: Untagged
@@ -307,7 +310,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6735281545445354472
+--- !u!114 &1120424717020889455
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -320,6 +323,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
+--- !u!114 &2646122687902153923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4591556877148693982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding: {x: 0, y: 0, z: 0, w: 0}
+  m_Softness: {x: 0, y: 0}
 --- !u!1 &4762602184247569754
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,7 +619,19 @@ MonoBehaviour:
       m_Calls: []
   OnActiveStateChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4762602184247569754}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
 --- !u!114 &4171068747844338328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -784,8 +813,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4404308367409458116}
   m_HandleRect: {fileID: 8916986508936487382}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -910,8 +939,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4621381977357746457}
   m_HandleRect: {fileID: 6541315779353870334}
   m_Direction: 0
-  m_Value: -0.000004844851
-  m_Size: 0.83276755
+  m_Value: -0.00000079233587
+  m_Size: 0
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

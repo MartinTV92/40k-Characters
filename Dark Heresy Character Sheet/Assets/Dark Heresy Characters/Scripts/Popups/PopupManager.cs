@@ -34,6 +34,7 @@ namespace SunJack.DarkHeresy
 
 		#endregion
 
+
 		#region----- CUSTOM BEHAVIOURS -----
 
         public static void Open<T>(T target)

@@ -1,14 +1,16 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace SunJack.DarkHeresy
 { 
 
-    public class SkillController : MonoBehaviour
+    public class TalentController : MonoBehaviour
     {
 		#region----- VARIABLES -----
 
-		public SkillView view;
+		public TalentView view;
 		public Button moreInfoButton;
 
 		#endregion
@@ -23,7 +25,7 @@ namespace SunJack.DarkHeresy
 
 		#region----- CUSTOM BEHAVIORUS -----
 
-		void Open() =>	PopupManager.Open(view.skill);
+		void Open() => PopupManager.Open(view.talent);
 
 		#endregion
 	}
