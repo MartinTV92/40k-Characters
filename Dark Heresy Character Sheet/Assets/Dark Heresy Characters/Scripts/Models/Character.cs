@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using Sirenix.OdinInspector;
+using System;
 
 namespace SunJack.DarkHeresy
 { 
@@ -27,6 +28,7 @@ namespace SunJack.DarkHeresy
 
 		#endregion
 
+
 		#region----- VARIABLES -----
 
         /// <summary> The character's name. </summary>
@@ -37,13 +39,80 @@ namespace SunJack.DarkHeresy
         public Career CareerPath { get => careerPath; private set => careerPath = value; }
         private Career careerPath = default;
 
+		int _xp = 0;
+		public int xp
+		{
+			get => _xp; 
+			set => _xp = Mathf.Clamp(value, 0, int.MaxValue);
+		}
+
+		public int xpSpent
+		{
+			get
+			{
+				int sum = 0;
+				foreach(var p in advancements)
+					sum += p.xp;
+				return sum;
+			}
+		}
+
         public CharacteristicDict characteristics = new();
 
-		public List<Skill> basicSkills = new List<Skill>();
-		public List<Skill> advancedSkills = new List<Skill>();
-		public List<Talent> talents = new List<Talent>();
+		public List<Skill> _basicSkills = new ();
+		public List<Skill> basicSkills
+		{
+			get => _basicSkills;
+			set
+			{
+				_basicSkills = value;
+				OnSkillChanged?.Invoke(Skill.Type.Basic);
+			}
+		}
+
+		public List<Skill> _advancedSkills = new ();
+		public List<Skill> advancedSkills
+		{
+			get => _advancedSkills;
+			set
+			{
+				_advancedSkills = value;
+				OnSkillChanged?.Invoke(Skill.Type.Advanced);
+			}
+		}
+
+
+		public List<Talent> _talents = new ();
+		public List<Talent> talents
+		{
+			get => _talents;
+			set
+			{
+				_talents = value;
+				OnTalentsChanged?.Invoke();
+			}
+		}
+
+
+		public List<Advancement> _advancements = new();
+		public List<Advancement> advancements
+		{
+			get => _advancements;
+			set
+			{
+				_advancements = value;
+				OnAdvancesChanged?.Invoke();
+			}
+		}
+
+		// Events
+		public event Action OnCharacterChanged;
+		public event Action<Skill.Type> OnSkillChanged;
+		public event Action OnTalentsChanged;
+		public event Action OnAdvancesChanged;
 
 		#endregion
+
 
 		#region----- CUSTOM BEHAVIOURS -----
 
@@ -95,24 +164,60 @@ namespace SunJack.DarkHeresy
         public void ChangeName(string newName) => Name = newName;
 
 		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="value"></param>
+		public void Add(object value)
+		{
+			if(value is Skill skill)
+				Add(skill);
+			if(value is Skill.Info info)
+				Add(info);
+			if(value is Talent talent)
+				Add(talent);
+
+		}
+
+		public void Add(Skill.Info info) => Add(new Skill(info), info.type);
+
+		public void Add(Skill.Info info, Skill.Type type) => Add(new Skill(info), type);
+
+		public void Add(Skill skill) => Add(skill, skill.type);
+
+		/// <summary>
 		/// Adds a skill to the character sheet. If the skill is already present,
 		/// Increases the training level of the current one.
 		/// </summary>
 		/// <param name="skill"> The skill to add. </param>
-		/// <param name="skillType"> The list ot add it too. </param>
-		public void Add(Skill skill, Skill.Type skillType)
+		/// <param name="type"> The list ot add it too. </param>
+		public void Add(Skill skill, Skill.Type type)
 		{
-			var list = skillType == Skill.Type.Basic ? basicSkills : advancedSkills;
+			var list = type == Skill.Type.Basic ? basicSkills : advancedSkills;
 			var existingSkill = list.Where(x => x.name == skill.name).First();
 
-			if(existingSkill.IsNull())
+			if(existingSkill != null)
 				list.Add(skill);
 			else
 				existingSkill.Train(skill);
 		}
 
-		#endregion
+		public void Add(Talent talent)
+		{
+			if(talents.Contains(talent) == false)
+				talents.Add(talent);
+		}
 
+
+		public void Purchase(Advancement purchase)
+		{
+			if(purchase.CanBuy(this) == false)
+				return;
+
+			advancements.Add(purchase);
+			Add(purchase.Value);
+		}
+
+		#endregion
 
 
 		#region----- EDITOR -----

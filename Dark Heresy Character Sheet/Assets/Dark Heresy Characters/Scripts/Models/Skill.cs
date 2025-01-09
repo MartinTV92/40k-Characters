@@ -39,52 +39,6 @@ namespace SunJack.DarkHeresy
 
 			[FoldoutGroup("$name/Description"), TextArea(3, 15), HideLabel]
 			public string description;
-
-			public Info(Skill skill)
-            {
-                name = skill.name;
-                type = skill.type;
-                characteristic = skill.characteristic;
-                descriptor = skill.descriptor;
-                description = skill.description;
-            }
-
-            /*
-            [Button("Split Groups")]
-            public void SplitGroups()
-            {
-				string patternB4 = @"^(.*?)(?=<u>)";
-				Match matchB4 = Regex.Match(description, patternB4, RegexOptions.Singleline);
-
-				// Updated regex pattern to match the <u> tag and its associated paragraph
-				string pattern = @"<u>([^<]+)</u>\s*(.+?)(?=(\r?\n\r?\n|$))";
-
-				// Find matches
-				MatchCollection matches = Regex.Matches(description, pattern, RegexOptions.Singleline);
-
-				foreach (Match match in matches)
-				{
-					string title = match.Groups[1].Value; // Title between <u> tags
-					string paragraph = match.Groups[2].Value; // Paragraph text associated with the title
-
-                    var info = new Info()
-                    {
-                        name = $"{this.name}: {title}",
-                        type = type,
-                        characteristic = characteristic,
-                        descriptor = descriptor,
-                        description = $"{matchB4.Groups[1].Value}<u>{title}</u>\n{paragraph}"
-                    };
-
-                    SkillDatabase.Instance.skillInfo.Add(info);
-
-				}
-
-                SkillDatabase.Instance.skillInfo.Remove(this);
-                SkillDatabase.Instance.Alphabetize();
-			}
-
-            // */
 		}
 
         /// <summary> The basic flag(s) that can be used to describe the uses a skill has </summary>
@@ -115,10 +69,10 @@ namespace SunJack.DarkHeresy
 		#region----- VARIABLES -----
 
         // CONSTANTS
-		private const int MAX_MASTERY = 2;
+		public const int MAX_MASTERY = 2;
         private const int MAX_BONUS = 60;
         private const int MIN_BONUS = -60;
-        private const int MASTERY_BONUS = 10;
+        public const int MASTERY_BONUS = 10;
 
         // EVENTS
         public event Action OnValueChanged;
@@ -180,15 +134,13 @@ namespace SunJack.DarkHeresy
         /// </summary>
         /// <param name="skill">The skill to check for training. </param>
         /// <param name="enforceProgression"> Enforces training through progression in order. </param>
-		public void Train(Skill skill, bool enforceProgression = true)
+		public void Train(Skill skill)
         {
-            if(skill.name != name || (enforceProgression && skill.mastery <= mastery))
+            if(skill.name != name || skill.mastery <= mastery)
                 return;
 
             mastery++;
         }
-
-        public bool IsNull() => string.IsNullOrEmpty(name);
 
 		#endregion
 	}

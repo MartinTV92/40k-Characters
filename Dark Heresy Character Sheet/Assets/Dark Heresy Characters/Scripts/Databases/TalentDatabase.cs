@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 using System.Linq;
+using System.Collections;
 
 namespace SunJack.DarkHeresy
 {
@@ -30,5 +31,7 @@ namespace SunJack.DarkHeresy
 		public static Talent GetTalent(string name) => Instance.talents.Where(x => x.name == name).FirstOrDefault();
 
 		public static List<Talent> GetAllTalents() => Instance.talents;
+
+		public static IEnumerable TalentDropdown() => Instance.talents.Select(x => x.name);
 	}
 }

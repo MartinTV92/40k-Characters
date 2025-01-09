@@ -27,34 +27,25 @@ MonoBehaviour:
   ranks:
   - xp: 499
     path:
-    - name: Trooper
-      advances:
-      - 
+    - {fileID: 11400000, guid: a4a31211e7ec33340ad341a49acbfda4, type: 2}
   - xp: 999
     path:
-    - name: Encorcer
-      advances: []
+    - {fileID: 0}
   - xp: 1999
     path:
-    - name: Regulator
-      advances: []
+    - {fileID: 0}
   - xp: 2999
     path:
-    - name: Investigator
-      advances: []
+    - {fileID: 0}
   - xp: 5999
     path:
-    - name: Arbitrator
-      advances: []
+    - {fileID: 0}
   - xp: 7999
     path:
-    - name: 
-      advances: []
+    - {fileID: 0}
   - xp: 9999
     path:
-    - name: 
-      advances: []
+    - {fileID: 0}
   - xp: 14999
     path:
-    - name: 
-      advances: []
+    - {fileID: 0}

@@ -30,16 +30,10 @@ namespace SunJack.DarkHeresy
 		[System.Serializable]
 		public class Rank
 		{
-			[System.Serializable]
-			public class Path
-			{
-				public string name;
-				public string[] advances;
-			}
 
 			public int xp = 0;
 
-			public Path[] path = new Path[1] { new Path() };
+			public Path[] path = new Path[0];
 
 			public Rank(int xp)
 			{

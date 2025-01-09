@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 using System.Linq;
+using System.Collections;
 
 namespace SunJack.DarkHeresy
 {
@@ -60,6 +61,8 @@ namespace SunJack.DarkHeresy
 
 		[Button("Alphabetize")]
 		public void Alphabetize() => skillInfo.Sort((A, B) => string.Compare(A.name, B.name));
+
+		public static IEnumerable SkillDropdown() => GetAllSkillInfo().Select(x => x.name);
 
 		#endregion
 	}
