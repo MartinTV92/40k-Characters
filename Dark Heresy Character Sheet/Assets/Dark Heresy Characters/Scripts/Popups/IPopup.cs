@@ -1,6 +1,6 @@
 using System;
 
-namespace SunJack.DarkHeresy
+namespace JollyRoger.DarkHeresy
 {   
     public interface IPopup
     {

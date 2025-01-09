@@ -1,9 +1,9 @@
-using SunJack.FinateStateMachine;
+using JollyRoger.FinateStateMachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SunJack.DarkHeresy
+namespace JollyRoger.DarkHeresy
 { 
 
     public class MainMenuController : MonoBehaviour
@@ -13,6 +13,7 @@ namespace SunJack.DarkHeresy
 		public static MainMenuController Instance { get; private set; }
 
 		#endregion
+
 
 		#region----- MONOBEHAVIOURS -----
 

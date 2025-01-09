@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
-namespace SunJack.DarkHeresy
+namespace JollyRoger.DarkHeresy
 {
 	[CreateAssetMenu(menuName = "Database Object / Career")]
     public class Career : ScriptableObject
@@ -13,6 +13,10 @@ namespace SunJack.DarkHeresy
 		[System.Serializable]
 		public class CharacteristicAdvanceDict : UnitySerializedDictionary<Characteristic.Type, CharacteristicAdvance> { }
 
+		/// <summary>
+		/// Helper method to define characteristic advances for a character. 
+		/// Will need a refactor to follow the Advancement structure for Skills and Talents.
+		/// </summary>
 		[System.Serializable]
 		public class CharacteristicAdvance
 		{
@@ -27,20 +31,24 @@ namespace SunJack.DarkHeresy
 			public int GetAdvance(Characteristic.Advancement advancement) => GetAdvance((int) advancement.level);
 		}
 
+		/// <summary>
+		/// Defines the career paths available to the character at the given rank. In most cases there is one
+		/// but at higher ranks, usually beyond the 5th, there are divergent paths.
+		/// </summary>
 		[System.Serializable]
 		public class Rank
 		{
-
+			/// <summary> Minimum XP threshold to enter this rank </summary>
 			public int xp = 0;
 
-			public Path[] path = new Path[0];
+			/// <summary> The paths available at this rank. </summary>
+			public Path[] paths = new Path[0];
 
 			public Rank(int xp)
 			{
 				this.xp = xp;
 			}
 		}
-
 
 		#endregion
 

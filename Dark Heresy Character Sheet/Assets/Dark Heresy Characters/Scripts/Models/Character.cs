@@ -5,7 +5,7 @@ using System.Linq;
 using Sirenix.OdinInspector;
 using System;
 
-namespace SunJack.DarkHeresy
+namespace JollyRoger.DarkHeresy
 { 
 
     public class Character
@@ -164,7 +164,7 @@ namespace SunJack.DarkHeresy
         public void ChangeName(string newName) => Name = newName;
 
 		/// <summary>
-		/// 
+		/// General add method for character sheet
 		/// </summary>
 		/// <param name="value"></param>
 		public void Add(object value)

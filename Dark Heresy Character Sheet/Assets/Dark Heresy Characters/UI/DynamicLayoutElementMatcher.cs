@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace SunJack.UI
+namespace JollyRoger.UI
 {
     [RequireComponent(typeof(LayoutElement))]
     public class DynamicLayoutElementMatcher : MonoBehaviour

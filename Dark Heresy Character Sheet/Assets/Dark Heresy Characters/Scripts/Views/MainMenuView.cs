@@ -6,7 +6,7 @@ using TMPro;
 using Sirenix.OdinInspector;
 using System;
 
-namespace SunJack.DarkHeresy
+namespace JollyRoger.DarkHeresy
 { 
 
     public class MainMenuView : MonoBehaviour

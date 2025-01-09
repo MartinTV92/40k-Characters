@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-namespace SunJack.DarkHeresy
+namespace JollyRoger.DarkHeresy
 { 
 
     public class TalentPopup : MonoBehaviour, IPopup

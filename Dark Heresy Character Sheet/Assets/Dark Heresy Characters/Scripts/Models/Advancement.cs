@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
-namespace SunJack.DarkHeresy
+namespace JollyRoger.DarkHeresy
 {
     [InlineProperty, System.Serializable]
     public class Advancement

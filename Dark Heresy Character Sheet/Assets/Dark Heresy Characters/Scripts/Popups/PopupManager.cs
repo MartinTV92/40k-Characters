@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
-namespace SunJack.DarkHeresy
+namespace JollyRoger.DarkHeresy
 { 
     /// <summary>
     /// Manages all the popups in the application and is the entry point for 

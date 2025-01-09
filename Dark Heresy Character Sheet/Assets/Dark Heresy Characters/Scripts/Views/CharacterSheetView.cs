@@ -2,11 +2,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Sirenix.OdinInspector;
-using SunJack.Utilities;
+using JollyRoger.Utilities;
 using System.Linq;
 using TS.PageSlider;
 
-namespace SunJack.DarkHeresy
+namespace JollyRoger.DarkHeresy
 { 
 
     public class CharacterSheetView : MonoBehaviour

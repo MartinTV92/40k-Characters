@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace SunJack.DarkHeresy
+namespace JollyRoger.DarkHeresy
 { 
     public class CharacteristicController : MonoBehaviour
     {
@@ -16,19 +16,19 @@ namespace SunJack.DarkHeresy
 
 		#region----- MONOBEHAVIOURS -----
 
-		private void OnEnable() => editButton.onClick.AddListener(OpenEditPopup);
+		private void OnEnable() => editButton.onClick.AddListener(Open);
 
-		private void OnDisable() => editButton.onClick.RemoveListener(OpenEditPopup);
+		private void OnDisable() => editButton.onClick.RemoveListener(Open);
 
 		#endregion
 
 
 		#region----- BEHAVIOURS -----
 
-		public void OpenEditPopup()
-		{
-			PopupManager.Open(view.targetModel);
-		}
+		/// <summary>
+		/// Opens the characteristic edit window.
+		/// </summary>
+		public void Open() => PopupManager.Open(view.targetModel);
 
 		#endregion
 	}

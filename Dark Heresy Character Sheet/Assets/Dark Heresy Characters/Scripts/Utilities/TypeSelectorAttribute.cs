@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace SunJack.Attributes
+namespace JollyRoger.Attributes
 { 
 	[AttributeUsage(AttributeTargets.Field, AllowMultiple = false)]
 	public class TypeSelectorAttribute : PropertyAttribute

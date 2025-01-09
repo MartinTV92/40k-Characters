@@ -4,11 +4,13 @@ using Sirenix.OdinInspector;
 using System.Linq;
 using System.Collections;
 
-namespace SunJack.DarkHeresy
+namespace JollyRoger.DarkHeresy
 {
 	[CreateAssetMenu(menuName = "Database Object / Talents")]
 	public class TalentDatabase : ScriptableObject
     {
+		#region----- VARIABLES -----
+
 		private static TalentDatabase _instance;
 		public static TalentDatabase Instance
 		{
@@ -25,6 +27,10 @@ namespace SunJack.DarkHeresy
 		[OnValueChanged("Alphabetize")]
 		public List<Talent> talents;
 
+		#endregion
+
+		#region----- METHODS -----
+
 		[Button("Alphabetize")]
 		private void Alphabetize() => talents.Sort((A, B) => string.Compare(A.name, B.name));
 
@@ -33,5 +39,7 @@ namespace SunJack.DarkHeresy
 		public static List<Talent> GetAllTalents() => Instance.talents;
 
 		public static IEnumerable TalentDropdown() => Instance.talents.Select(x => x.name);
+
+		#endregion
 	}
 }

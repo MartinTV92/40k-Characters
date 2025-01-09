@@ -4,7 +4,7 @@ using TMPro;
 using Sirenix.OdinInspector;
 using System.Text.RegularExpressions;
 
-namespace SunJack.DarkHeresy
+namespace JollyRoger.DarkHeresy
 { 
 
 	public class CharacteristicView : MonoBehaviour

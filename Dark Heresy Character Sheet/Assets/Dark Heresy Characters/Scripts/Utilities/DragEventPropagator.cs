@@ -2,12 +2,12 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using Sirenix.OdinInspector;
-using SunJack.Attributes;
+using JollyRoger.Attributes;
 using System.Collections.Generic;
 using System;
 using System.Collections;
 
-namespace SunJack.UI.Utilities
+namespace JollyRoger.UI.Utilities
 { 
 
 	public class DragEventPropagator : EventPropagator, IBeginDragHandler, IEndDragHandler, IDragHandler, IScrollHandler, IInitializePotentialDragHandler

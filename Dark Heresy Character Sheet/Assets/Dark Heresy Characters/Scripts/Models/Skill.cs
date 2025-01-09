@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 using UnityEngine.Windows;
 using System.Collections.Generic;
 
-namespace SunJack.DarkHeresy
+namespace JollyRoger.DarkHeresy
 {
     /// <summary>
     /// Defines an apptitude for a given area of expertise such as driving, knowledge or tech-use.

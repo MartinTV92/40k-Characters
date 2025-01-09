@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using SunJack.FinateStateMachine;
-using SunJack.DarkHeresy;
+using JollyRoger.FinateStateMachine;
+using JollyRoger.DarkHeresy;
 using System;
 
 public class GameManager : MonoBehaviour
 {
 	#region----- NESTED -----
 
+	/// <summary>
+	/// The general state of the application.
+	/// </summary>
 	public enum State
 	{
 		None,
@@ -18,8 +21,6 @@ public class GameManager : MonoBehaviour
 		CharacterCreation,
 		CharacterSheet,
 	}
-
-
 
 	#endregion
 
@@ -47,7 +48,6 @@ public class GameManager : MonoBehaviour
 
 
 	#region----- MONOBEHAVIOURS -----
-
 	
 	void Awake()
     {
@@ -73,6 +73,9 @@ public class GameManager : MonoBehaviour
 
 	#region----- CUSTOM BEHAVIOURS -----
 
+	/// <summary> 
+	/// Registers all states to the state machine. 
+	/// </summary>
 	private void RegisterStates()
 	{
 		stateMachine.RegisterState(State.Boot, bootState);
@@ -82,8 +85,16 @@ public class GameManager : MonoBehaviour
 		stateMachine.RegisterState(State.CharacterSheet, characterSheetState);
 	}
 
+	/// <summary> 
+	/// Gets the currents tate of the application. 
+	/// </summary>
+	/// <returns> The state of the game (a state greater than 'None') or 'None' if no game manager is available. </returns>
 	public static State GetState() => Instance ? Instance.stateMachine.currentState : State.None;
 
+	/// <summary> 
+	/// Adds a listener to the update of the state machine. 
+	/// </summary>
+	/// <param name="callBack">The Listener. </param>
 	public static void AddStateUpdateListener(Action<State> callBack)
 	{
 		if (Instance == null)
@@ -92,6 +103,10 @@ public class GameManager : MonoBehaviour
 		Instance.stateMachine.OnStateUpdate += callBack;
 	}
 
+	/// <summary> 
+	/// Adds a listener to the ChangeState event in the state machine. 
+	/// </summary>
+	/// <param name="callBack">The listener </param>
 	public static void AddStateChangeListener(Action<State, State> callBack)
 	{
 		if(Instance == null)
@@ -100,6 +115,10 @@ public class GameManager : MonoBehaviour
 		Instance.stateMachine.OnStateChanged += callBack;
 	}
 
+	/// <summary> 
+	/// Removes a listener to the update of the state machine. 
+	/// </summary>
+	/// <param name="callBack">The Listener. </param>
 	public static void RemoveStateUpdateListener(Action<State> callBack)
 	{
 		if (Instance == null)
@@ -108,6 +127,10 @@ public class GameManager : MonoBehaviour
 		Instance.stateMachine.OnStateUpdate -= callBack;
 	}
 
+	/// <summary> 
+	/// Removes a listener to the ChangeState event in the state machine. 
+	/// </summary>
+	/// <param name="callBack">The listener </param>
 	public static void RemoveStateChangeListener(Action<State, State> callBack)
 	{
 		if(Instance == null) 
@@ -116,10 +139,19 @@ public class GameManager : MonoBehaviour
 		Instance.stateMachine.OnStateChanged -= callBack;
 	}
 
+	/// <summary>
+	/// Helper method to allow UnityEvents (from UI) to go to charater creation state.
+	/// </summary>
 	public void GoToCharacterCreation() => stateMachine.ChangeState(State.CharacterCreation);
-	
+
+	/// <summary>
+	/// Helper method to allow UnityEvents (from UI) to go to Menu state.
+	/// </summary>
 	public void GoToMenu() => stateMachine.ChangeState(State.MainMenu);
 
+	/// <summary>
+	/// Helper method to allow UnityEvents (from UI) to go to charater creation state and creates a new character.
+	/// </summary>
 	public void CreateCharacter()
 	{
 		var charName = MainMenuView.Instance.GetEnteredName();
@@ -128,6 +160,9 @@ public class GameManager : MonoBehaviour
 		stateMachine.ChangeState(State.CharacterSheet);
 	}
 
+	/// <summary>
+	/// Quits the application enforcing save (not implemented yet)
+	/// </summary>
 	public void Quit()
 	{
 		Application.Quit();

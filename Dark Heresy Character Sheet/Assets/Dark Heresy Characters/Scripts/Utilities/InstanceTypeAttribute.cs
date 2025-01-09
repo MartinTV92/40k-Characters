@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SunJack.Attributes
+namespace JollyRoger.Attributes
 {
     internal class InstanceTypeAttribute : Attribute
     {

@@ -1,5 +1,5 @@
 using Sirenix.OdinInspector;
-using SunJack.FinateStateMachine;
+using JollyRoger.FinateStateMachine;
 
 /// <summary>
 /// Boot state for applicaiton, it just setups the UIs so none are active when uneeded.

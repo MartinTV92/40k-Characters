@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
-namespace SunJack.DarkHeresy
+namespace JollyRoger.DarkHeresy
 {
     /// <summary>
     /// Popup window for showing more detailed information on a skill.

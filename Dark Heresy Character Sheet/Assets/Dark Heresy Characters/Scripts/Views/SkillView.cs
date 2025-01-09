@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using Sirenix.OdinInspector;
 
-namespace SunJack.DarkHeresy
+namespace JollyRoger.DarkHeresy
 {
     public class SkillView : MonoBehaviour
     {

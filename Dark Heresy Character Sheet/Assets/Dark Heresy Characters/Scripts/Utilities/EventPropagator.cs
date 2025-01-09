@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SunJack.UI.Utilities
+namespace JollyRoger.UI.Utilities
 { 
     public abstract class EventPropagator : MonoBehaviour
     {

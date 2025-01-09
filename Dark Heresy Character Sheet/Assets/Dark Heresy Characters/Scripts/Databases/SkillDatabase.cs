@@ -4,7 +4,7 @@ using Sirenix.OdinInspector;
 using System.Linq;
 using System.Collections;
 
-namespace SunJack.DarkHeresy
+namespace JollyRoger.DarkHeresy
 {
     [CreateAssetMenu(menuName = "Database Object / Skills")]
     public class SkillDatabase : ScriptableObject
@@ -57,7 +57,7 @@ namespace SunJack.DarkHeresy
 			return result;
 		}
 
-        // SORT FUNCTIONS
+        // HELPER FUNCTIOSN
 
 		[Button("Alphabetize")]
 		public void Alphabetize() => skillInfo.Sort((A, B) => string.Compare(A.name, B.name));

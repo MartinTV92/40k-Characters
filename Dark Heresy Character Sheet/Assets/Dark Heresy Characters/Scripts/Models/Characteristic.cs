@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
-namespace SunJack.DarkHeresy
+namespace JollyRoger.DarkHeresy
 { 
     /// <summary>
     /// A number beteen 0-100 that represents the character's natural capacity in some regard.

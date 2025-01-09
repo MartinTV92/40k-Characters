@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using SunJack.Attributes;
+using JollyRoger.Attributes;
 using System;
 using Sirenix.OdinInspector;
 using UnityEngine.EventSystems;
 
-namespace SunJack.UI.Utilities
+namespace JollyRoger.UI.Utilities
 {
     [System.Serializable]
     public abstract class PropegateMethod

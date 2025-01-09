@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 using Sirenix.OdinInspector;
 using UnityEngine.UI;
 
-namespace SunJack.UI
+namespace JollyRoger.UI
 { 
 	/// <summary>
 	/// For use with PageSliders, ensures that the pages match the size of the window they'll be in.

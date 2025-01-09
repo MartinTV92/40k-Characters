@@ -1,7 +1,7 @@
 using UnityEngine;
 using System;
 
-namespace SunJack.DarkHeresy
+namespace JollyRoger.DarkHeresy
 { 
     public class CharacteristicPopup : MonoBehaviour, IPopup
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-namespace SunJack.DarkHeresy
+namespace JollyRoger.DarkHeresy
 { 
     public class TalentView : MonoBehaviour
     {

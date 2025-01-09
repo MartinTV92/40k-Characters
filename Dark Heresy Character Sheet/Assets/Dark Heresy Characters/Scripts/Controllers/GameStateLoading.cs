@@ -1,4 +1,4 @@
-using SunJack.FinateStateMachine;
+using JollyRoger.FinateStateMachine;
 using TMPro;
 using UnityEngine;
 using Sirenix.OdinInspector;

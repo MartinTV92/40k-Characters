@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SunJack.DarkHeresy
+namespace JollyRoger.DarkHeresy
 {
+	/// <summary>
+	/// Prerequisite for defining minimum characteristic requirement for a Talent advancement.
+	/// </summary>
 	[System.Serializable]
 	public class CharacteristicPrerequisite : Prerequisite
 	{

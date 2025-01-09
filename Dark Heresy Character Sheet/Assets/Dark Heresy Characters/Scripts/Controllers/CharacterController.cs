@@ -1,13 +1,13 @@
 using UnityEngine;
 
-namespace SunJack.DarkHeresy
+namespace JollyRoger.DarkHeresy
 { 
 
-	public class CharacterSheetController : MonoBehaviour
+	public class CharacterController : MonoBehaviour
 	{
 		#region----- VARIABLES -----
 
-		public static CharacterSheetController Instance { get; private set; }
+		public static CharacterController Instance { get; private set; }
 
 		#endregion
 
@@ -24,6 +24,10 @@ namespace SunJack.DarkHeresy
 
 		#region----- CUSTOM BEHAVIOURS -----
 
+		/// <summary>
+		/// Sets the character the view will need to display
+		/// </summary>
+		/// <param name="character"></param>
 		public void SetCharacter(Character character)
 		{
 			CharacterSheetView.Instance.SetCharacter(character);

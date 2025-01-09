@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using SunJack.Attributes;
+using JollyRoger.Attributes;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TS.PageSlider;
 
-namespace SunJack.UI.Utilities
+namespace JollyRoger.UI.Utilities
 {
 	/// <summary>
 	/// Searches up the parent hierachy for an appropriate UI component to propegate events to.
