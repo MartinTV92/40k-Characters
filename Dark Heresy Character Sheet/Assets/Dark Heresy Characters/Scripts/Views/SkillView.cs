@@ -28,7 +28,9 @@ namespace SunJack.DarkHeresy
 
 		public void SetSkill(Skill skill)
 		{
+			UnSubscribe();
 			this.skill = skill;
+			Subscribe();
 			Redraw();
 		}
 
@@ -38,12 +40,17 @@ namespace SunJack.DarkHeresy
 			characteristicTxt.text = $"({CharacteristicView.GetShortName(skill.characteristic)})";
 			bonusTxt.text = $"(+{skill.bonus})";
 			for(int i = 0; i < trainingLevels.Length; i++)
-				trainingLevels[i].isOn = skill.mastery > 0 && skill.mastery >= i;
+				trainingLevels[i].isOn = skill.mastery >= i;
 		}
 
-		public void OpenInformationPopup()
+		void Subscribe()
 		{
+			skill.OnValueChanged += Redraw;
+		}
 
+		void UnSubscribe()
+		{
+			skill.OnValueChanged -= Redraw;
 		}
 
 		#endregion

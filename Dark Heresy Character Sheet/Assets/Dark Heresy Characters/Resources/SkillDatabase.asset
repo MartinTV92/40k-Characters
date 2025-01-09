@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9719819b3fda2e844becb69673455854, type: 3}
   m_Name: SkillDatabase
   m_EditorClassIdentifier: 
-  skills:
+  skillInfo:
   - name: Acrobatics
     type: 0
-    _characteristic: 4
-    _descriptor: 8
-    group: []
+    characteristic: 4
+    descriptor: 0
     description: "The Acrobatics skill encompasses a variety of movement techniques
       unavailable to less flexible Acolytes. From performing somersaults to tumbling,
       from flipping through the air to daring leaps and jumps, this Skill expands
@@ -31,12 +30,10 @@ MonoBehaviour:
       a Half Action.\n\n<u>Jumping & Leaping:</u> You may substitute an Acrobatics
       Test for an Agility Test when Jumping or Strength Tests when Leaping.\nAn Acrobatics
       Test is typically a Full Action."
-    miscBonus: 0
   - name: Awareness
     type: 1
-    _characteristic: 6
-    _descriptor: 0
-    group: []
+    characteristic: 6
+    descriptor: 0
     description: "The Awareness skill reflects your ability to perceive hidden dangers
       and to notice small details about your physical surroundings. \n\nYou use the
       Awareness skill to notice ambushes, spot traps and discern other threats to
@@ -45,12 +42,10 @@ MonoBehaviour:
       Opposed. Otherwise, the thing you are trying to detect applies a Difficulty
       based on how cunningly concealed it is.\n\nAn Awareness Test is usually a Free
       Action made in reaction to something."
-    miscBonus: 0
   - name: Barter
     type: 1
-    _characteristic: 8
-    _descriptor: 0
-    group: []
+    characteristic: 8
+    descriptor: 0
     description: "You can use the Barter skill to negotiate deals and get better
       prices on goods and services. \n\nWhen dealing with day-to-day affairs, like
       haggling in a bazaar over the price of a fine set of tarot cards, or trading
@@ -63,12 +58,10 @@ MonoBehaviour:
       success reducing it by a further 5%. A typical Barter Test takes about five
       minutes, but delicate dealings and intricate negotiations may require more
       time, as decided by the GM."
-    miscBonus: 0
   - name: Blather
     type: 0
-    _characteristic: 8
-    _descriptor: 2
-    group: []
+    characteristic: 8
+    descriptor: 0
     description: "When you make a Blather Test, you stall for time by running off
       at the mouth, spewing a stream of words and nonsense in an attempt to confuse
       and distract others. \n\nA Blather Test is always Opposed by your target\u2019s
@@ -88,12 +81,10 @@ MonoBehaviour:
       must understand the language you are speaking or the Test automatically fails\u2014you
       cannot, for instance, use this Skill against animals. \n\nA Blather Test is
       a Full Action."
-    miscBonus: 0
   - name: Carouse
     type: 1
-    _characteristic: 3
-    _descriptor: 0
-    group: []
+    characteristic: 3
+    descriptor: 0
     description: "Whether consuming the finest amasec brandy or the cheapest stomach-stripping
       hive juices, you use the Carouse skill to resist the effects of alcohol and
       narcotics. \n\nExperienced carousers can build up quite a tolerance and remain
@@ -105,12 +96,10 @@ MonoBehaviour:
       hours equal to 1d10 minus your Toughness Bonus (minimum one hour). Your GM
       may incur further Test penalties as a result of intoxicant use as they see
       fit. \n\nA Carouse Test is a Free Action. You use this Skill whenever you imbibe."
-    miscBonus: 0
   - name: Charm
     type: 1
-    _characteristic: 8
-    _descriptor: 2
-    group: []
+    characteristic: 8
+    descriptor: 0
     description: "The Charm skill is used to befriend others. You make Charm Tests
       whenever you want to change the minds of individuals or small groups, to beg,
       or seduce. \n\nYou need not make a Charm Test every time you talk to an NPC;
@@ -119,12 +108,10 @@ MonoBehaviour:
       affect a number of targets equal to your Fellowship Bonus and your targets
       must be able to see and hear you clearly, and understand what you say. \n\nA
       Charm Test typically takes one minute."
-    miscBonus: 0
   - name: Chem-Use
     type: 0
-    _characteristic: 5
-    _descriptor: 5
-    group: []
+    characteristic: 5
+    descriptor: 0
     description: 'You can use the Chem-Use skill to handle and prepare chemicals
       safely, especially toxins, poisons, and drugs. Chem-Use covers the use and
       manufacture of toxins and it can also be used to identify a variety of chemicals
@@ -139,17 +126,10 @@ MonoBehaviour:
       time taken to do so is halved with a successful Chem-Use Test. A Chem-Use Test
       to administer a chemical is a Full Action. Using Chem-Use to manufacture toxins
       utilizes the rules for Crafting items as described on page 96.'
-    miscBonus: 0
   - name: Ciphers
     type: 0
-    _characteristic: 5
-    _descriptor: 0
-    group:
-    - Acolyte
-    - War Cant
-    - Secret Society
-    - Occult
-    - Underworld
+    characteristic: 5
+    descriptor: 0
     description: "The Ciphers skill reflects an understanding of shorthand codes
       employed by certain groups to confer basic ideas, warnings, and information
       about a given area. This can be in the form of hand signals or as physical
@@ -169,12 +149,10 @@ MonoBehaviour:
       fraternities to communicate key information.\n\nA Ciphers Test usually takes
       a Full Action to give or inscribe the sign, and a Free Action to comprehend
       it."
-    miscBonus: 0
   - name: Climb
     type: 1
-    _characteristic: 2
-    _descriptor: 8
-    group: []
+    characteristic: 2
+    descriptor: 0
     description: 'Use the Climb skill to ascend or descend surfaces described as
       sheer. Sheer surfaces are walls without handholds, overhangs, and other poor
       climbing conditions. Generally, a successful Test allows you to ascend or descend
@@ -184,12 +162,10 @@ MonoBehaviour:
 
 
       A Climb Test is a Half Action.'
-    miscBonus: 0
   - name: Command
     type: 1
-    _characteristic: 8
-    _descriptor: 2
-    group: []
+    characteristic: 8
+    descriptor: 0
     description: 'Command is used to make subordinates follow your orders. You may
       only use this Skill on those who are under your authority. A successful Command
       Test indicates that those whom you direct follow your instructions. On a failed
@@ -205,53 +181,220 @@ MonoBehaviour:
 
       A Command Test is a Half Action for simple commands and a
       Full Action for more involved instructions.'
-    miscBonus: 0
-  - name: Common Lore
+  - name: 'Common Lore: Adeptus Arbites'
     type: 0
-    _characteristic: 5
-    _descriptor: 4
-    group:
-    - Adeptus Arbites
-    - Machine Cult
-    - Administratum
-    - Ecclesiarchy
-    - Imperial Creed
-    - Imperial Guard
-    - Imperium
-    - Tech
-    - Underworld
-    - War
-    description: "Use the Common Lore skill to recall the habits, institutions, traditions,
+    characteristic: 5
+    descriptor: 0
+    description: 'Use the Common Lore skill to recall the habits, institutions, traditions,
       public figures and superstitions of a particular world, cultural group, organisation
       or race. This Skill does not represent scholarly learning (that is Scholastic
       Lore), nor obscure forbidden knowledge (that is Forbidden Lore), but rather
-      the basics you learn by growing up or travelling extensively through a region.\n\nWhen
+      the basics you learn by growing up or travelling extensively through a region.
+
+
+      When
       making a Common Lore Test, you recall basic information about the subject.
       Each degree of success reveals a bit more information as determined by the
-      GM.\n\n<u>Adeptus Arbites</u>\nKnowledge of the various arms and sub-sects
-      of the Arbites, including such things as their ranking structure and common
-      procedures.\n\n<u>Machine Cult</u>\nA general understanding of the symbols
-      and practices of the Mechanicus, as well as such things as formal greetings
-      and identifying rankings.\n\n<u>Administratum</u>\nBroad knowledge of the inner
-      workings, rules and regulations of the Administratum.\n\n<u>Ecclesiarchy</u>\n
-      Understanding of the hierarchy of the Cult of the Emperor, its rankings, greetings
-      and general practices.\nImperial Creed: Knowledge of the rites and practices
-      of the Imperial Cult, the most common observances to the Emperor and the most
-      well-known saints.\n\n<u>Imperial Guard</u>\nBasic information about the ranking
-      systems, logistics and structure of the Imperial Guard as well as such things
-      as their common practices, both tactical and strategic.\n\n<u>Imperium</u>\nKnowledge
-      of the sectors, segmentums and most well-known worlds of the Imperium.\n\n<u>Tech</u>\n
-      An understanding of simple litanies and rituals to sooth and appease machine
-      spirits.\nUnderworld: Understanding of organised crime and sedition within
-      the Imperium.\n\n<u>War</u>\n Knowledge of great battles, notable (and notorious)
-      commanders and heroes, as well as famous stratagems.\n\nUsing Common Lore takes
-      no time at all. You either know something or you do not."
-    miscBonus: 0
+      GM.
+
+
+      Using Common Lore takes no time at all. You either know something
+      or you do not.
+
+
+      <u>Adeptus Arbites</u>
+
+      Knowledge of the various
+      arms and sub-sects of the Arbites, including such things as their ranking structure
+      and common procedures.'
+  - name: 'Common Lore: Administratum'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: 'Use the Common Lore skill to recall the habits, institutions, traditions,
+      public figures and superstitions of a particular world, cultural group, organisation
+      or race. This Skill does not represent scholarly learning (that is Scholastic
+      Lore), nor obscure forbidden knowledge (that is Forbidden Lore), but rather
+      the basics you learn by growing up or travelling extensively through a region.
+
+
+      When
+      making a Common Lore Test, you recall basic information about the subject.
+      Each degree of success reveals a bit more information as determined by the
+      GM.
+
+
+      Using Common Lore takes no time at all. You either know something
+      or you do not.
+
+
+      <u>Administratum</u>
+
+      Broad knowledge of the inner
+      workings, rules and regulations of the Administratum.'
+  - name: 'Common Lore: Ecclesiarchy'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: 'Use the Common Lore skill to recall the habits, institutions, traditions,
+      public figures and superstitions of a particular world, cultural group, organisation
+      or race. This Skill does not represent scholarly learning (that is Scholastic
+      Lore), nor obscure forbidden knowledge (that is Forbidden Lore), but rather
+      the basics you learn by growing up or travelling extensively through a region.
+
+
+      When
+      making a Common Lore Test, you recall basic information about the subject.
+      Each degree of success reveals a bit more information as determined by the
+      GM.
+
+
+      Using Common Lore takes no time at all. You either know something
+      or you do not.
+
+
+      <u>Ecclesiarchy</u>
+
+      Understanding of the hierarchy
+      of the Cult of the Emperor, its rankings, greetings and general practices.
+
+      Imperial
+      Creed: Knowledge of the rites and practices of the Imperial Cult, the most
+      common observances to the Emperor and the most well-known saints.'
+  - name: 'Common Lore: Imperial Guard'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: 'Use the Common Lore skill to recall the habits, institutions, traditions,
+      public figures and superstitions of a particular world, cultural group, organisation
+      or race. This Skill does not represent scholarly learning (that is Scholastic
+      Lore), nor obscure forbidden knowledge (that is Forbidden Lore), but rather
+      the basics you learn by growing up or travelling extensively through a region.
+
+
+      When
+      making a Common Lore Test, you recall basic information about the subject.
+      Each degree of success reveals a bit more information as determined by the
+      GM.
+
+
+      Using Common Lore takes no time at all. You either know something
+      or you do not.
+
+
+      <u>Imperial Guard</u>
+
+      Basic information about
+      the ranking systems, logistics and structure of the Imperial Guard as well
+      as such things as their common practices, both tactical and strategic.'
+  - name: 'Common Lore: Imperium'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: 'Use the Common Lore skill to recall the habits, institutions, traditions,
+      public figures and superstitions of a particular world, cultural group, organisation
+      or race. This Skill does not represent scholarly learning (that is Scholastic
+      Lore), nor obscure forbidden knowledge (that is Forbidden Lore), but rather
+      the basics you learn by growing up or travelling extensively through a region.
+
+
+      When
+      making a Common Lore Test, you recall basic information about the subject.
+      Each degree of success reveals a bit more information as determined by the
+      GM.
+
+
+      Using Common Lore takes no time at all. You either know something
+      or you do not.
+
+
+      <u>Imperium</u>
+
+      Knowledge of the sectors, segmentums
+      and most well-known worlds of the Imperium.'
+  - name: 'Common Lore: Machine Cult'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: 'Use the Common Lore skill to recall the habits, institutions, traditions,
+      public figures and superstitions of a particular world, cultural group, organisation
+      or race. This Skill does not represent scholarly learning (that is Scholastic
+      Lore), nor obscure forbidden knowledge (that is Forbidden Lore), but rather
+      the basics you learn by growing up or travelling extensively through a region.
+
+
+      When
+      making a Common Lore Test, you recall basic information about the subject.
+      Each degree of success reveals a bit more information as determined by the
+      GM.
+
+
+      Using Common Lore takes no time at all. You either know something
+      or you do not.
+
+
+      <u>Machine Cult</u>
+
+      A general understanding of
+      the symbols and practices of the Mechanicus, as well as such things as formal
+      greetings and identifying rankings.'
+  - name: 'Common Lore: Tech'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: 'Use the Common Lore skill to recall the habits, institutions, traditions,
+      public figures and superstitions of a particular world, cultural group, organisation
+      or race. This Skill does not represent scholarly learning (that is Scholastic
+      Lore), nor obscure forbidden knowledge (that is Forbidden Lore), but rather
+      the basics you learn by growing up or travelling extensively through a region.
+
+
+      When
+      making a Common Lore Test, you recall basic information about the subject.
+      Each degree of success reveals a bit more information as determined by the
+      GM.
+
+
+      Using Common Lore takes no time at all. You either know something
+      or you do not.
+
+
+      <u>Tech</u>
+
+      An understanding of simple litanies
+      and rituals to sooth and appease machine spirits.
+
+      Underworld: Understanding
+      of organised crime and sedition within the Imperium.'
+  - name: 'Common Lore: War'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: 'Use the Common Lore skill to recall the habits, institutions, traditions,
+      public figures and superstitions of a particular world, cultural group, organisation
+      or race. This Skill does not represent scholarly learning (that is Scholastic
+      Lore), nor obscure forbidden knowledge (that is Forbidden Lore), but rather
+      the basics you learn by growing up or travelling extensively through a region.
+
+
+      When
+      making a Common Lore Test, you recall basic information about the subject.
+      Each degree of success reveals a bit more information as determined by the
+      GM.
+
+
+      Using Common Lore takes no time at all. You either know something
+      or you do not.
+
+
+      <u>War</u>
+
+      Knowledge of great battles, notable
+      (and notorious) commanders and heroes, as well as famous stratagems.'
   - name: Concealment
     type: 1
-    _characteristic: 4
-    _descriptor: 0
-    group: []
+    characteristic: 4
+    descriptor: 0
     description: "Concealment is used whenever you want to hide from sight. To use
       this Skill, there must be appropriate terrain (trees, walls, buildings or some
       other obstacle) or some concealing effect like fog or darkness. Otherwise,
@@ -261,12 +404,10 @@ MonoBehaviour:
       need not Test Concealment when you hide, only when someone is looking for you.
       If you succeed, you remain unseen.\n\nIf you remain perfectly still, you gain
       a +10 bonus to your Test.\nA Concealment Test is usually a Half Action."
-    miscBonus: 0
   - name: Contortionist
     type: 1
-    _characteristic: 4
-    _descriptor: 8
-    group: []
+    characteristic: 4
+    descriptor: 0
     description: "The Contortionist skill is used to wriggle free from bonds, squeeze
       through a narrow opening, or slip out of chains.\n\n<u>Escape Bonds</u>\nWhenever
       you attempt to slip free from any kind of bonds, you make a Contortionist Test.
@@ -290,12 +431,10 @@ MonoBehaviour:
       out of your predicament by dragging you out, greasing the passage, and so on.\n\nMost
       Contortionist Tests take one minute, with each degree of success reducing this
       time by ten seconds. Escaping a Grapple is a Full Action attempted during combat."
-    miscBonus: 0
   - name: Decieve
     type: 1
-    _characteristic: 8
-    _descriptor: 2
-    group: []
+    characteristic: 8
+    descriptor: 0
     description: 'The Deceive skill is used to lie and con others. You make Deceive
       Tests whenever you would convince others of something that is not necessarily
       true, want to dupe them, or otherwise swindle and mislead them. You need not
@@ -311,12 +450,10 @@ MonoBehaviour:
 
       A Deceive Test typically takes one
       minute.'
-    miscBonus: 0
   - name: Demolition
     type: 0
-    _characteristic: 5
-    _descriptor: 1
-    group: []
+    characteristic: 5
+    descriptor: 0
     description: "You use the Demolition skill to blow things up without blowing
       yourself up at the same time!\n\nIt is used to plant explosive devices and
       defuse bombs, as well as for the safe handling and manufacture of explosives.
@@ -353,12 +490,10 @@ MonoBehaviour:
       by mistake!\n\nA Demolition Test to plant or defuse an explosive is usually
       a Full Action. A test made to manufacture an explosive takes at least one minute,
       and usually considerably longer, depending on the complexity of the device."
-    miscBonus: 0
   - name: Disguise
     type: 1
-    _characteristic: 8
-    _descriptor: 0
-    group: []
+    characteristic: 8
+    descriptor: 0
     description: "The Disguise skill is used to mask your true appearance. \n\nAppropriate
       clothing, props, make-up and prosthetics are often key to a successful disguise,
       as are more radical accoutrements such as plastic surgery, bionic implants
@@ -368,38 +503,54 @@ MonoBehaviour:
       Scrutiny. The time it takes to create a disguise varies greatly depending on
       its complexity, but it usually requires a minimum of one minute to don a simple
       disguise."
-    miscBonus: 0
   - name: Dodge
     type: 1
-    _characteristic: 4
-    _descriptor: 8
-    group: []
+    characteristic: 4
+    descriptor: 0
     description: "You may use the Dodge skill once per Round to negate a successful
       hand-to-hand or ranged attack. On a successful Test, the attack deals no Damage.
       See Chapter VII: Playing the Game for more information on Dodge. \n\nA Dodge
       Test is a Reaction."
-    miscBonus: 0
-  - name: Drive
+  - name: 'Drive: Ground Vehicle'
     type: 0
-    _characteristic: 4
-    _descriptor: 16
-    group:
-    - Ground Vehicle
-    - Hover Vehicle
-    - Walker
+    characteristic: 4
+    descriptor: 0
     description: "The Drive skill is used to control autos, trucks, landspeeders,
       and other land-based or hover vehicles.\n\nDriving under normal conditions
       does not require a Test. However, Tests may be called for when navigating treacherous
       terrain, going at excessive speed, or attempting dangerous manoeuvres. Opposed
       Drive Tests are made between pursuers and pursued during a chase. \n\nA Drive
       Test is typically a Half Action, but certain manoeuvres may require more or
-      less time."
-    miscBonus: 0
+      less time.\n\n<u>Ground Vehicle</u>\nMost convential forms of travel that have
+      wheels and make contact with the ground"
+  - name: 'Drive: Hover Vehicle'
+    type: 0
+    characteristic: 4
+    descriptor: 0
+    description: "The Drive skill is used to control autos, trucks, landspeeders,
+      and other land-based or hover vehicles.\n\nDriving under normal conditions
+      does not require a Test. However, Tests may be called for when navigating treacherous
+      terrain, going at excessive speed, or attempting dangerous manoeuvres. Opposed
+      Drive Tests are made between pursuers and pursued during a chase. \n\nA Drive
+      Test is typically a Half Action, but certain manoeuvres may require more or
+      less time.\n\n<u>Hover Vehicle</u>\nTypes of vehicles that hover in the air
+      a small distance above the ground."
+  - name: 'Drive: Walkers'
+    type: 0
+    characteristic: 4
+    descriptor: 0
+    description: "The Drive skill is used to control autos, trucks, landspeeders,
+      and other land-based or hover vehicles.\n\nDriving under normal conditions
+      does not require a Test. However, Tests may be called for when navigating treacherous
+      terrain, going at excessive speed, or attempting dangerous manoeuvres. Opposed
+      Drive Tests are made between pursuers and pursued during a chase. \n\nA Drive
+      Test is typically a Half Action, but certain manoeuvres may require more or
+      less time.\n\n<u>Walkers</u>\nAn unconvential and mostly military class of
+      vehicle that, as the name suggest, sport some amount of legs."
   - name: Evaluate
     type: 1
-    _characteristic: 5
-    _descriptor: 4
-    group: []
+    characteristic: 5
+    descriptor: 0
     description: "You can use Evaluate to determine the approximate value of everyday
       objects, as well as valuables such as archeotech and other objects d\u2019art.\n\n
       A successful Test reveals the item\u2019s market price and possibly a little
@@ -409,28 +560,14 @@ MonoBehaviour:
       \n\nEvaluating an item usually takes at least one minute, although the GM may
       decide to give a bonus if the character takes more time or a penalty if he
       simply gives it a quick once over."
-    miscBonus: 0
-  - name: Forebidden Lore
+  - name: 'Forebidden Lore: Adeptus Mechanicus'
     type: 0
-    _characteristic: 5
-    _descriptor: 4
-    group:
-    - The Black Library
-    - Cults
-    - Daemonology
-    - Heresy
-    - Inquisition
-    - Archeotech
-    - Mutants
-    - Ordos
-    - Adeptus Mechanicus
-    - Psykers
-    - Warp
-    - Xenos
+    characteristic: 5
+    descriptor: 0
     description: "Forbidden Lore skills represent dangerous and often heretical knowledge
       gleaned from the myriad of unconventional sources an Acolyte often finds in
-      his possession. This Skill represents a combination of scholarly learning and
-      knowledge gained through practical experience. Simply possessing the Forbidden
+      his possession. \n\nThis Skill represents a combination of scholarly learning
+      and knowledge gained through practical experience. Simply possessing the Forbidden
       Lore skill is often sufficient to warrant termination at the hands of the Inquisition,
       and a character must tread carefully when revealing such knowledge. When making
       a Forbidden Lore Test, you recall basic information about the subject. Each
@@ -438,35 +575,210 @@ MonoBehaviour:
       character that learns the Forbidden Lore skill in play, or who uses it to gain
       some insight into the mysteries of the galaxy, may also gain a number of Corruption
       or Insanity Points, depending on the danger the knowledge represents, at the
-      GM\u2019s discretion.\n\n<u>The Black Library</u>\nSecret knowledge of the
-      Black Library, its forbidden contents, strange industries and the unspeakable
-      pale, hairless things that toil within its walls.\n\n<u>Cults</u>\nKnowledge
-      of the most notorious Imperial Cults and some of their sub-sects and splinter
-      cabals.\n\n<u>Daemonology</u> \nTerrible comprehension of some of the recorded
-      warp entities and their various manifestations.\n\n<u>Heresy</u> \nUnpleasant
-      appreciation for those acts and practices deemed heretical by the Imperium.\n\n<u>Inquisition</u>
-      \nA general understanding (often based on hearsay and rumour) of that most
-      terrible and secret of organisations known as the Inquisition.\n\n<u>Archeotech</u>\nKnowledge
-      of the great tech devices of ancient times and clues to their function and
-      purpose.\n\n<u>Mutants</u>\nCovering the study of both stable and unstable
-      mutations and some of their more unfortunate results.\n\n<u>Ordos</u>\nEither
-      Malleus, Hereticus or Xenos and granting some slightly more specialised knowledge
-      of that particular ordo\u2019s practices.\n\n<u>Adeptus Mechanicus</u>\nAn
-      understanding of the followers of the Machine God, including such things as
-      their observances, common beliefs and core philosophies.\n\n<u>Psykers</u>\nSkill
-      in identifying the signs of psykers as well as the results of their powers
-      and the extent of their capabilities.\nWarp: An understanding of the ways of
-      the warp, especially its interaction with realspace and how its tides and eddies
-      can affect travel between the stars.\n\n<u>Xenos</u>\nKnowledge of the most
-      commonly encountered species of aliens within the Imperium.\n\nUsing Forbidden
-      Lore takes no time at all. You either know something or you do not, although
-      the consequences for knowing such things can last a lifetime\u2026."
-    miscBonus: 0
+      GM\u2019s discretion.\n\nUsing Forbidden Lore takes no time at all. You either
+      know something or you do not, although the consequences for knowing such things
+      can last a lifetime\u2026.\n\n<u>Adeptus Mechanicus</u>\nAn understanding of
+      the followers of the Machine God, including such things as their observances,
+      common beliefs and core philosophies."
+  - name: 'Forebidden Lore: Archeotech'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "Forbidden Lore skills represent dangerous and often heretical knowledge
+      gleaned from the myriad of unconventional sources an Acolyte often finds in
+      his possession. \n\nThis Skill represents a combination of scholarly learning
+      and knowledge gained through practical experience. Simply possessing the Forbidden
+      Lore skill is often sufficient to warrant termination at the hands of the Inquisition,
+      and a character must tread carefully when revealing such knowledge. When making
+      a Forbidden Lore Test, you recall basic information about the subject. Each
+      degree of success reveals a bit more information as determined by the GM. A
+      character that learns the Forbidden Lore skill in play, or who uses it to gain
+      some insight into the mysteries of the galaxy, may also gain a number of Corruption
+      or Insanity Points, depending on the danger the knowledge represents, at the
+      GM\u2019s discretion.\n\nUsing Forbidden Lore takes no time at all. You either
+      know something or you do not, although the consequences for knowing such things
+      can last a lifetime\u2026.\n\n<u>Archeotech</u>\nKnowledge of the great tech
+      devices of ancient times and clues to their function and purpose."
+  - name: 'Forebidden Lore: Cults'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "Forbidden Lore skills represent dangerous and often heretical knowledge
+      gleaned from the myriad of unconventional sources an Acolyte often finds in
+      his possession. \n\nThis Skill represents a combination of scholarly learning
+      and knowledge gained through practical experience. Simply possessing the Forbidden
+      Lore skill is often sufficient to warrant termination at the hands of the Inquisition,
+      and a character must tread carefully when revealing such knowledge. When making
+      a Forbidden Lore Test, you recall basic information about the subject. Each
+      degree of success reveals a bit more information as determined by the GM. A
+      character that learns the Forbidden Lore skill in play, or who uses it to gain
+      some insight into the mysteries of the galaxy, may also gain a number of Corruption
+      or Insanity Points, depending on the danger the knowledge represents, at the
+      GM\u2019s discretion.\n\nUsing Forbidden Lore takes no time at all. You either
+      know something or you do not, although the consequences for knowing such things
+      can last a lifetime\u2026.\n\n<u>Cults</u>\nKnowledge of the most notorious
+      Imperial Cults and some of their sub-sects and splinter cabals."
+  - name: 'Forebidden Lore: Daemonology'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "Forbidden Lore skills represent dangerous and often heretical knowledge
+      gleaned from the myriad of unconventional sources an Acolyte often finds in
+      his possession. \n\nThis Skill represents a combination of scholarly learning
+      and knowledge gained through practical experience. Simply possessing the Forbidden
+      Lore skill is often sufficient to warrant termination at the hands of the Inquisition,
+      and a character must tread carefully when revealing such knowledge. When making
+      a Forbidden Lore Test, you recall basic information about the subject. Each
+      degree of success reveals a bit more information as determined by the GM. A
+      character that learns the Forbidden Lore skill in play, or who uses it to gain
+      some insight into the mysteries of the galaxy, may also gain a number of Corruption
+      or Insanity Points, depending on the danger the knowledge represents, at the
+      GM\u2019s discretion.\n\nUsing Forbidden Lore takes no time at all. You either
+      know something or you do not, although the consequences for knowing such things
+      can last a lifetime\u2026.\n\n<u>Daemonology</u>\nTerrible comprehension of
+      some of the recorded warp entities and their various manifestations."
+  - name: 'Forebidden Lore: Heresy'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "Forbidden Lore skills represent dangerous and often heretical knowledge
+      gleaned from the myriad of unconventional sources an Acolyte often finds in
+      his possession. \n\nThis Skill represents a combination of scholarly learning
+      and knowledge gained through practical experience. Simply possessing the Forbidden
+      Lore skill is often sufficient to warrant termination at the hands of the Inquisition,
+      and a character must tread carefully when revealing such knowledge. When making
+      a Forbidden Lore Test, you recall basic information about the subject. Each
+      degree of success reveals a bit more information as determined by the GM. A
+      character that learns the Forbidden Lore skill in play, or who uses it to gain
+      some insight into the mysteries of the galaxy, may also gain a number of Corruption
+      or Insanity Points, depending on the danger the knowledge represents, at the
+      GM\u2019s discretion.\n\nUsing Forbidden Lore takes no time at all. You either
+      know something or you do not, although the consequences for knowing such things
+      can last a lifetime\u2026.\n\n<u>Heresy</u>\nUnpleasant appreciation for those
+      acts and practices deemed heretical by the Imperium."
+  - name: 'Forebidden Lore: Inquisition'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "Forbidden Lore skills represent dangerous and often heretical knowledge
+      gleaned from the myriad of unconventional sources an Acolyte often finds in
+      his possession. \n\nThis Skill represents a combination of scholarly learning
+      and knowledge gained through practical experience. Simply possessing the Forbidden
+      Lore skill is often sufficient to warrant termination at the hands of the Inquisition,
+      and a character must tread carefully when revealing such knowledge. When making
+      a Forbidden Lore Test, you recall basic information about the subject. Each
+      degree of success reveals a bit more information as determined by the GM. A
+      character that learns the Forbidden Lore skill in play, or who uses it to gain
+      some insight into the mysteries of the galaxy, may also gain a number of Corruption
+      or Insanity Points, depending on the danger the knowledge represents, at the
+      GM\u2019s discretion.\n\nUsing Forbidden Lore takes no time at all. You either
+      know something or you do not, although the consequences for knowing such things
+      can last a lifetime\u2026.\n\n<u>Inquisition</u>\nA general understanding (often
+      based on hearsay and rumour) of that most terrible and secret of organisations
+      known as the Inquisition."
+  - name: 'Forebidden Lore: Mutants'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "Forbidden Lore skills represent dangerous and often heretical knowledge
+      gleaned from the myriad of unconventional sources an Acolyte often finds in
+      his possession. \n\nThis Skill represents a combination of scholarly learning
+      and knowledge gained through practical experience. Simply possessing the Forbidden
+      Lore skill is often sufficient to warrant termination at the hands of the Inquisition,
+      and a character must tread carefully when revealing such knowledge. When making
+      a Forbidden Lore Test, you recall basic information about the subject. Each
+      degree of success reveals a bit more information as determined by the GM. A
+      character that learns the Forbidden Lore skill in play, or who uses it to gain
+      some insight into the mysteries of the galaxy, may also gain a number of Corruption
+      or Insanity Points, depending on the danger the knowledge represents, at the
+      GM\u2019s discretion.\n\nUsing Forbidden Lore takes no time at all. You either
+      know something or you do not, although the consequences for knowing such things
+      can last a lifetime\u2026.\n\n<u>Mutants</u>\nCovering the study of both stable
+      and unstable mutations and some of their more unfortunate results."
+  - name: 'Forebidden Lore: Ordos'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "Forbidden Lore skills represent dangerous and often heretical knowledge
+      gleaned from the myriad of unconventional sources an Acolyte often finds in
+      his possession. \n\nThis Skill represents a combination of scholarly learning
+      and knowledge gained through practical experience. Simply possessing the Forbidden
+      Lore skill is often sufficient to warrant termination at the hands of the Inquisition,
+      and a character must tread carefully when revealing such knowledge. When making
+      a Forbidden Lore Test, you recall basic information about the subject. Each
+      degree of success reveals a bit more information as determined by the GM. A
+      character that learns the Forbidden Lore skill in play, or who uses it to gain
+      some insight into the mysteries of the galaxy, may also gain a number of Corruption
+      or Insanity Points, depending on the danger the knowledge represents, at the
+      GM\u2019s discretion.\n\nUsing Forbidden Lore takes no time at all. You either
+      know something or you do not, although the consequences for knowing such things
+      can last a lifetime\u2026.\n\n<u>Ordos</u>\nEither Malleus, Hereticus or Xenos
+      and granting some slightly more specialised knowledge of that particular ordo\u2019s
+      practices."
+  - name: 'Forebidden Lore: Psykers'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "Forbidden Lore skills represent dangerous and often heretical knowledge
+      gleaned from the myriad of unconventional sources an Acolyte often finds in
+      his possession. \n\nThis Skill represents a combination of scholarly learning
+      and knowledge gained through practical experience. Simply possessing the Forbidden
+      Lore skill is often sufficient to warrant termination at the hands of the Inquisition,
+      and a character must tread carefully when revealing such knowledge. When making
+      a Forbidden Lore Test, you recall basic information about the subject. Each
+      degree of success reveals a bit more information as determined by the GM. A
+      character that learns the Forbidden Lore skill in play, or who uses it to gain
+      some insight into the mysteries of the galaxy, may also gain a number of Corruption
+      or Insanity Points, depending on the danger the knowledge represents, at the
+      GM\u2019s discretion.\n\nUsing Forbidden Lore takes no time at all. You either
+      know something or you do not, although the consequences for knowing such things
+      can last a lifetime\u2026.\n\n<u>Psykers</u>\nSkill in identifying the signs
+      of psykers as well as the results of their powers and the extent of their capabilities.\nWarp:
+      An understanding of the ways of the warp, especially its interaction with realspace
+      and how its tides and eddies can affect travel between the stars."
+  - name: 'Forebidden Lore: The Black Library'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "Forbidden Lore skills represent dangerous and often heretical knowledge
+      gleaned from the myriad of unconventional sources an Acolyte often finds in
+      his possession. \n\nThis Skill represents a combination of scholarly learning
+      and knowledge gained through practical experience. Simply possessing the Forbidden
+      Lore skill is often sufficient to warrant termination at the hands of the Inquisition,
+      and a character must tread carefully when revealing such knowledge. When making
+      a Forbidden Lore Test, you recall basic information about the subject. Each
+      degree of success reveals a bit more information as determined by the GM. A
+      character that learns the Forbidden Lore skill in play, or who uses it to gain
+      some insight into the mysteries of the galaxy, may also gain a number of Corruption
+      or Insanity Points, depending on the danger the knowledge represents, at the
+      GM\u2019s discretion.\n\nUsing Forbidden Lore takes no time at all. You either
+      know something or you do not, although the consequences for knowing such things
+      can last a lifetime\u2026.\n\n<u>The Black Library</u>\nSecret knowledge of
+      the Black Library, its forbidden contents, strange industries and the unspeakable
+      pale, hairless things that toil within its walls."
+  - name: 'Forebidden Lore: Xenos'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "Forbidden Lore skills represent dangerous and often heretical knowledge
+      gleaned from the myriad of unconventional sources an Acolyte often finds in
+      his possession. \n\nThis Skill represents a combination of scholarly learning
+      and knowledge gained through practical experience. Simply possessing the Forbidden
+      Lore skill is often sufficient to warrant termination at the hands of the Inquisition,
+      and a character must tread carefully when revealing such knowledge. When making
+      a Forbidden Lore Test, you recall basic information about the subject. Each
+      degree of success reveals a bit more information as determined by the GM. A
+      character that learns the Forbidden Lore skill in play, or who uses it to gain
+      some insight into the mysteries of the galaxy, may also gain a number of Corruption
+      or Insanity Points, depending on the danger the knowledge represents, at the
+      GM\u2019s discretion.\n\nUsing Forbidden Lore takes no time at all. You either
+      know something or you do not, although the consequences for knowing such things
+      can last a lifetime\u2026.\n\n<u>Xenos</u>\nKnowledge of the most commonly
+      encountered species of aliens within the Imperium."
   - name: Gamble
     type: 1
-    _characteristic: 5
-    _descriptor: 0
-    group: []
+    characteristic: 5
+    descriptor: 0
     description: "The Gamble skill is used to participate in games of chance, such
       as card games or crude (and often violent) dice games popular amongst the lower
       classes. \n\nEach participant in a game wagers the same amount and makes an
@@ -478,12 +790,10 @@ MonoBehaviour:
       degrees indicates that your ruse is revealed with predictably unpleasant consequences.
       \n\nMaking a Gamble Test can represent anything from controlling a single hand
       of cards to an entire day spent gaming."
-    miscBonus: 0
   - name: Inquiry
     type: 1
-    _characteristic: 8
-    _descriptor: 2
-    group: []
+    characteristic: 8
+    descriptor: 0
     description: "The Inquiry skill is your ability to pick up rumours, secrets,
       and guarded information by asking questions, buying drinks, and generally watching
       and listening for anything of interest that might bubble up. \n\nInquiry can
@@ -495,12 +805,10 @@ MonoBehaviour:
       VII: Playing the Game.\n\nMaking an Inquiry Test usually represents an hour
       or so of activity, but may represent a much longer or shorter period as circumstances
       dictate."
-    miscBonus: 0
   - name: Interrogation
     type: 0
-    _characteristic: 7
-    _descriptor: 2
-    group: []
+    characteristic: 7
+    descriptor: 0
     description: "The key tool in an Inquisitor\u2019s arsenal is interrogation\u2014the
       ability to extract quality information from an unwilling subject. There is
       a fine line between interrogation and crude torture. \n\nIn the case of the
@@ -517,12 +825,10 @@ MonoBehaviour:
       a +30 bonus to Willpower Tests made to resist Interrogation.\n\nEach Interrogation
       Test inflicts one level of Fatigue on the target. An Interrogation Test consumes
       1d5 hours of time."
-    miscBonus: 0
   - name: Intimidate
     type: 1
-    _characteristic: 2
-    _descriptor: 2
-    group: []
+    characteristic: 2
+    descriptor: 0
     description: "You make Intimidate Tests whenever you want to coerce or frighten
       individuals or a small group. \n\nYou need not make an Intimidate Test every
       time you make a threat. Usually, Intimidate is backed up by Strength, but more
@@ -533,12 +839,10 @@ MonoBehaviour:
       you are using for your Test. In addition, your targets must be able to see
       and hear you clearly, and understand what you say.\n\nAn Intimidate Test is
       a Full Action."
-    miscBonus: 0
   - name: Invocation
     type: 0
-    _characteristic: 7
-    _descriptor: 0
-    group: []
+    characteristic: 7
+    descriptor: 0
     description: "An Invocation Test allows you to boost your Power Roll when using
       Psychic Powers by an amount equal to your Willpower Bonus. \n\nAn Invocation
       Test is a Full Action. During this time, you clear your mind through various
@@ -559,12 +863,10 @@ MonoBehaviour:
       now add an additional 3 points to this roll. In total, Doc Skul has made a
       Power Roll of 10 (4+3+3=10). His Focus Power Action succeeds, and Slippery
       Zim doubles over in pain!"
-    miscBonus: 0
   - name: Lip Reading
     type: 0
-    _characteristic: 6
-    _descriptor: 0
-    group: []
+    characteristic: 6
+    descriptor: 0
     description: "You can use the Lip Reading skill to \"listen in\" on conversations
       that take place out of earshot. To use this Skill, you must have an unobstructed
       view of the speaker\u2019s mouth and you must also be able to understand the
@@ -576,24 +878,20 @@ MonoBehaviour:
       about the weather, new tariffs at the space dock, and so on. Each degree of
       success reveals more specific details.\n\nA Lip Reading Test is a Full Action,
       though it lasts as long as the target speaks."
-    miscBonus: 0
   - name: Literacy
     type: 0
-    _characteristic: 5
-    _descriptor: 0
-    group: []
+    characteristic: 5
+    descriptor: 0
     description: "The Literacy skill enables you to read any language you can speak.
       \n\nYou normally do not need to Test Literacy for everyday instances of reading
       or writing, but the GM may call for a Literacy Test when you attempt to read
       a challenging dialect, poor penmanship, decipher obscure phraseology, archaic
       usage, or unusual idioms.\n\nTo read one page of text\u2014approximately 750
       words\u2014a Literacy Test takes about a minute."
-    miscBonus: 0
   - name: Logic
     type: 1
-    _characteristic: 5
-    _descriptor: 4
-    group: []
+    characteristic: 5
+    descriptor: 0
     description: "Logic represents your proficiency at mathematics and your ability
       at problem-solving. \n\nLogic Tests might be made to decipher a code or to
       solve a particularly troublesome equation. Logic is also used by Tech-Priests
@@ -601,12 +899,10 @@ MonoBehaviour:
       Skill\u2014Tech-Use is its practical counterpart.\n\nA Logic Test usually takes
       one minute of pondering and thinking, although especially difficult problems
       might require much longer."
-    miscBonus: 0
   - name: Medicae
     type: 0
-    _characteristic: 5
-    _descriptor: 0
-    group: []
+    characteristic: 5
+    descriptor: 0
     description: "The Medicae skill is used to treat and repair injuries by closing
       wounds and restoring the balance of the body\u2019s humors. There are two general
       methods for using Medicae: First Aid and Extended Care. You can use the former
@@ -635,14 +931,24 @@ MonoBehaviour:
       use Sudden Death to resolve Critical Damage.\n\n\nFor more information on Healing,
       see Chapter VII: Playing the Game.\nSpecial: The Master Churgeon talent expands
       your options with the Medicae skill, see page 118."
-    miscBonus: 0
-  - name: Navigation
+  - name: 'Navigation: Stellar Navigation'
     type: 0
-    _characteristic: 5
-    _descriptor: 0
-    group:
-    - Surface
-    - Stellar
+    characteristic: 5
+    descriptor: 0
+    description: "You employ the Navigation skill whenever you want to use maps,
+      technical readouts, innate knowledge, and landmarks to chart a proper course
+      and avoid becoming lost. \n\nA successful Navigation Test can also estimate
+      travel times based on geography, cosmography, time of year, weather, and so
+      on. Under normal circumstances, a single successful Test each day is sufficient
+      to keep you on track, though the GM may call for additional Tests if there
+      are unusual conditions, such as fluctuating landmasses, swirling eddies of
+      plasma, or violent storms.\n\n<u>Stellar Navigation</u>\nStellar Navigation
+      is used to navigate in space between planets, using star charts and cartomantic
+      rituals."
+  - name: 'Navigation: Surface Navigation'
+    type: 0
+    characteristic: 5
+    descriptor: 0
     description: "You employ the Navigation skill whenever you want to use maps,
       technical readouts, innate knowledge, and landmarks to chart a proper course
       and avoid becoming lost. \n\nA successful Navigation Test can also estimate
@@ -652,21 +958,11 @@ MonoBehaviour:
       are unusual conditions, such as fluctuating landmasses, swirling eddies of
       plasma, or violent storms.\n\n<u>Surface Navigation</u>\nSurface Navigation
       is used to navigate across a planet\u2019s surface, using logi-compasses, map
-      readouts, and geographical knowledge.\n\n<u>Stellar Navigation</u>\nStellar
-      Navigation is used to navigate in space between planets, using star charts
-      and cartomantic rituals.\n\nA Navigation Test usually represents several hours
-      of charting courses, consulting maps, and making heading corrections, but it
-      may take one minute or less if its purpose is just to find out where you are."
-    miscBonus: 0
+      readouts, and geographical knowledge."
   - name: Performer
     type: 0
-    _characteristic: 8
-    _descriptor: 0
-    group:
-    - Dancer
-    - Musician
-    - Singer
-    - Storyteller
+    characteristic: 8
+    descriptor: 0
     description: "Use the Performer skill to entertain and enthrall crowds of spectators.
       The Performer skill may be used to earn an income, much like with Trade. In
       addition, the Performer skill may be substituted for certain Skills under specific
@@ -679,15 +975,25 @@ MonoBehaviour:
       the Blather skill.\n\nA Performer Test can take a variable amount of time and
       can represent anything from a short poem or song to an elaborate and long-winded
       opera."
-    miscBonus: 0
-  - name: Pilot
+  - name: 'Pilot: Civilian Craft'
     type: 0
-    _characteristic: 4
-    _descriptor: 16
-    group:
-    - Civilian Craft
-    - Military Craft
-    - Spacecraft
+    characteristic: 4
+    descriptor: 0
+    description: "The Pilot skill is used to fly anything from small atmospheric
+      craft such as ornithopters and landers, all the way up to spaceship-sized vessels.\n\nPiloting
+      a ship under normal conditions does not require a Test. However, Tests may
+      be called for when flying in conditions such as storms, going at excessive
+      speed, or attempting dangerous maneuvers.\n\nWhen chasing another vehicle,
+      you and your opponent make Opposed Pilot Tests.\n\nA Pilot Test is typically
+      a Half Action, but certain maneuvers may require more or less time.\n\n<u>Civilian
+      Craft</u>\nSimple and less capable forms of aircraft used for common purposes.
+      These aircraft don't have weapons, have lower top speeds and are less capable
+      of  derring combat maneuvers\r.  \n\nAlthough one could argue that perfoming
+      such maneuvers in a craft not fit for it is more impressive."
+  - name: 'Pilot: Military Craft'
+    type: 0
+    characteristic: 4
+    descriptor: 0
     description: 'The Pilot skill is used to fly anything from small atmospheric
       craft such as ornithopters and landers, all the way up to spaceship-sized vessels.
 
@@ -703,13 +1009,42 @@ MonoBehaviour:
 
 
       A Pilot Test is typically
-      a Half Action, but certain maneuvers may require more or less time.'
-    miscBonus: 0
+      a Half Action, but certain maneuvers may require more or less time.
+
+
+      <u>Military
+      Craft</u>
+
+      Military craft encompases a wide variety of purpose built
+      vehicles. In general, they''re fitted with some form of armament, are capable
+      of super-sonic speeds (but not always) and sometimes capable of flying in space
+      however only short distances such as for the purposes of combat or ship to
+      planet-side and back.
+
+
+      In such cases, these vehicles are not capable
+      of warp travel, they''re much too small to possibly house a warp drive.'
+  - name: 'Pilot: Space Craft'
+    type: 0
+    characteristic: 4
+    descriptor: 0
+    description: "The Pilot skill is used to fly anything from small atmospheric
+      craft such as ornithopters and landers, all the way up to spaceship-sized vessels.\n\nPiloting
+      a ship under normal conditions does not require a Test. However, Tests may
+      be called for when flying in conditions such as storms, going at excessive
+      speed, or attempting dangerous maneuvers.\n\nWhen chasing another vehicle,
+      you and your opponent make Opposed Pilot Tests.\n\nA Pilot Test is typically
+      a Half Action, but certain maneuvers may require more or less time.\n\n<u>Space
+      Craft</u>\nThe largest and most techknowlogically capable of all craft often
+      requiring the coordination of hundres of crew. Very few have the honour to
+      pilot one of these behemoths. \n\nThese vehicles are not capable of atmospheric
+      flight, come equipped with some of the most sophisticated and archaic technology
+      such as void shields, lances and nova cannons while also being capable of warp
+      travel."
   - name: Psyniscience
     type: 0
-    _characteristic: 6
-    _descriptor: 0
-    group: []
+    characteristic: 6
+    descriptor: 0
     description: "You can use the Psyniscience skill to become attuned with the ebb
       and flow of the warp and the immaterium. The most common application of this
       skill is to detect the presence or absence of Daemons or other psykers. To
@@ -725,26 +1060,10 @@ MonoBehaviour:
       where the phenomena emanates. \n\nTwo or more degrees of success reveal the
       exact location of the individual channeling or blocking the immaterium.\n\nUsing
       Psyniscience is a Full Action."
-    miscBonus: 0
-  - name: Scholastic Lore
+  - name: 'Scholastic Lore: Archaic'
     type: 0
-    _characteristic: 5
-    _descriptor: 4
-    group:
-    - Archaic
-    - Astromancy
-    - Beasts
-    - Bureaurcracy
-    - Chymistry
-    - Cryptology
-    - Heraldry
-    - Imperial Creed
-    - Judgement
-    - Legend
-    - Numerology
-    - Occult
-    - Philosophy
-    - Tactica Imperialis
+    characteristic: 5
+    descriptor: 0
     description: "The Scholastic Lore skill grants you knowledge of a particular
       scholarly subject. A successful Test enables you to recall pertinent facts
       and\u2014if you have access to the proper facilities or resources\u2014to do
@@ -769,38 +1088,390 @@ MonoBehaviour:
       to do so, takes far longer. You may make one Academic Lore Test every 1d10
       hours. See Chapter VII: Playing the Game for details.\n\n<u>Archaic</u>\nAn
       understanding of the murky past of the Imperium and how the long millennia
-      have changed the face of mankind.\n\n<u>Astromancy</u>\nA knowledge of stars,
-      heavenly bodies and the nature of worlds, as well as theoretical understanding
-      of how to use telescopes, astrolabes and so on.\n\n<u>Beasts</u>\nAn understanding
-      of the classification of animals and familiarity with the properties of many
-      types of semi-sentient creatures.\n\n<u>Bureaucracy</u>\nAn understanding of
-      how to deal with governments, particularly the Administratum, and their many
-      and varied departments, forms and policies.\n\n<u>Chymistry</u>\nA knowledge
-      of chemicals, their alchemical applications and their use throughout the Imperium.\n\n<u>Cryptology</u>\nAn
+      have changed the face of mankind."
+  - name: 'Scholastic Lore: Astromancy'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "The Scholastic Lore skill grants you knowledge of a particular
+      scholarly subject. A successful Test enables you to recall pertinent facts
+      and\u2014if you have access to the proper facilities or resources\u2014to do
+      research. \n\nScholastic Lore represents a depth of learning far beyond Common
+      Lore and it requires extensive study. You make Scholastic Lore Tests to identify
+      an object, creature or place that falls under your particular area of expertise.
+      A successful Test about a subject related to your speciality reveals the basic
+      information. Each degree of success reveals more information as follows:\n\nStandard
+      success reveals basic information known to people of your training.\n\nOne
+      degree of success reveals uncommonly known information, even among your peers.
+      \n\nTwo degrees of success reveals obscure information about the subject. Such
+      information is known to but a few scholars. \n\nThree or more degrees of success
+      reveals extremely obscure information, known only to a handful of experts.\n\nIn
+      some areas, Scholastic Lore overlaps with Common Lore and Forbidden Lore, but
+      almost always represents a far greater\u2014and more academic\u2014level of
+      study. A character with Common Lore (Imperial Creed) might understand the day-to-day
+      rituals and prayers gained from living under the creed, whereas a character
+      with Scholastic Lore (Imperial Creed) might be able to explain why such rituals
+      exist and how they have changed over the millennia.\n\nTo recall a fact or
+      titbit about the subject, a Scholastic Lore Test takes no time at all. You
+      either know the fact or not. Researching, assuming you are in the proper environment
+      to do so, takes far longer. You may make one Academic Lore Test every 1d10
+      hours. See Chapter VII: Playing the Game for details.\n\n<u>Astromancy</u>\nA
+      knowledge of stars, heavenly bodies and the nature of worlds, as well as theoretical
+      understanding of how to use telescopes, astrolabes and so on."
+  - name: 'Scholastic Lore: Beasts'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "The Scholastic Lore skill grants you knowledge of a particular
+      scholarly subject. A successful Test enables you to recall pertinent facts
+      and\u2014if you have access to the proper facilities or resources\u2014to do
+      research. \n\nScholastic Lore represents a depth of learning far beyond Common
+      Lore and it requires extensive study. You make Scholastic Lore Tests to identify
+      an object, creature or place that falls under your particular area of expertise.
+      A successful Test about a subject related to your speciality reveals the basic
+      information. Each degree of success reveals more information as follows:\n\nStandard
+      success reveals basic information known to people of your training.\n\nOne
+      degree of success reveals uncommonly known information, even among your peers.
+      \n\nTwo degrees of success reveals obscure information about the subject. Such
+      information is known to but a few scholars. \n\nThree or more degrees of success
+      reveals extremely obscure information, known only to a handful of experts.\n\nIn
+      some areas, Scholastic Lore overlaps with Common Lore and Forbidden Lore, but
+      almost always represents a far greater\u2014and more academic\u2014level of
+      study. A character with Common Lore (Imperial Creed) might understand the day-to-day
+      rituals and prayers gained from living under the creed, whereas a character
+      with Scholastic Lore (Imperial Creed) might be able to explain why such rituals
+      exist and how they have changed over the millennia.\n\nTo recall a fact or
+      titbit about the subject, a Scholastic Lore Test takes no time at all. You
+      either know the fact or not. Researching, assuming you are in the proper environment
+      to do so, takes far longer. You may make one Academic Lore Test every 1d10
+      hours. See Chapter VII: Playing the Game for details.\n\n<u>Beasts</u>\nAn
+      understanding of the classification of animals and familiarity with the properties
+      of many types of semi-sentient creatures."
+  - name: 'Scholastic Lore: Bureaucracy'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "The Scholastic Lore skill grants you knowledge of a particular
+      scholarly subject. A successful Test enables you to recall pertinent facts
+      and\u2014if you have access to the proper facilities or resources\u2014to do
+      research. \n\nScholastic Lore represents a depth of learning far beyond Common
+      Lore and it requires extensive study. You make Scholastic Lore Tests to identify
+      an object, creature or place that falls under your particular area of expertise.
+      A successful Test about a subject related to your speciality reveals the basic
+      information. Each degree of success reveals more information as follows:\n\nStandard
+      success reveals basic information known to people of your training.\n\nOne
+      degree of success reveals uncommonly known information, even among your peers.
+      \n\nTwo degrees of success reveals obscure information about the subject. Such
+      information is known to but a few scholars. \n\nThree or more degrees of success
+      reveals extremely obscure information, known only to a handful of experts.\n\nIn
+      some areas, Scholastic Lore overlaps with Common Lore and Forbidden Lore, but
+      almost always represents a far greater\u2014and more academic\u2014level of
+      study. A character with Common Lore (Imperial Creed) might understand the day-to-day
+      rituals and prayers gained from living under the creed, whereas a character
+      with Scholastic Lore (Imperial Creed) might be able to explain why such rituals
+      exist and how they have changed over the millennia.\n\nTo recall a fact or
+      titbit about the subject, a Scholastic Lore Test takes no time at all. You
+      either know the fact or not. Researching, assuming you are in the proper environment
+      to do so, takes far longer. You may make one Academic Lore Test every 1d10
+      hours. See Chapter VII: Playing the Game for details.\n\n<u>Bureaucracy</u>\nAn
+      understanding of how to deal with governments, particularly the Administratum,
+      and their many and varied departments, forms and policies."
+  - name: 'Scholastic Lore: Chymistry'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "The Scholastic Lore skill grants you knowledge of a particular
+      scholarly subject. A successful Test enables you to recall pertinent facts
+      and\u2014if you have access to the proper facilities or resources\u2014to do
+      research. \n\nScholastic Lore represents a depth of learning far beyond Common
+      Lore and it requires extensive study. You make Scholastic Lore Tests to identify
+      an object, creature or place that falls under your particular area of expertise.
+      A successful Test about a subject related to your speciality reveals the basic
+      information. Each degree of success reveals more information as follows:\n\nStandard
+      success reveals basic information known to people of your training.\n\nOne
+      degree of success reveals uncommonly known information, even among your peers.
+      \n\nTwo degrees of success reveals obscure information about the subject. Such
+      information is known to but a few scholars. \n\nThree or more degrees of success
+      reveals extremely obscure information, known only to a handful of experts.\n\nIn
+      some areas, Scholastic Lore overlaps with Common Lore and Forbidden Lore, but
+      almost always represents a far greater\u2014and more academic\u2014level of
+      study. A character with Common Lore (Imperial Creed) might understand the day-to-day
+      rituals and prayers gained from living under the creed, whereas a character
+      with Scholastic Lore (Imperial Creed) might be able to explain why such rituals
+      exist and how they have changed over the millennia.\n\nTo recall a fact or
+      titbit about the subject, a Scholastic Lore Test takes no time at all. You
+      either know the fact or not. Researching, assuming you are in the proper environment
+      to do so, takes far longer. You may make one Academic Lore Test every 1d10
+      hours. See Chapter VII: Playing the Game for details.\n\n<u>Chymistry</u>\nA
+      knowledge of chemicals, their alchemical applications and their use throughout
+      the Imperium."
+  - name: 'Scholastic Lore: Cryptology'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "The Scholastic Lore skill grants you knowledge of a particular
+      scholarly subject. A successful Test enables you to recall pertinent facts
+      and\u2014if you have access to the proper facilities or resources\u2014to do
+      research. \n\nScholastic Lore represents a depth of learning far beyond Common
+      Lore and it requires extensive study. You make Scholastic Lore Tests to identify
+      an object, creature or place that falls under your particular area of expertise.
+      A successful Test about a subject related to your speciality reveals the basic
+      information. Each degree of success reveals more information as follows:\n\nStandard
+      success reveals basic information known to people of your training.\n\nOne
+      degree of success reveals uncommonly known information, even among your peers.
+      \n\nTwo degrees of success reveals obscure information about the subject. Such
+      information is known to but a few scholars. \n\nThree or more degrees of success
+      reveals extremely obscure information, known only to a handful of experts.\n\nIn
+      some areas, Scholastic Lore overlaps with Common Lore and Forbidden Lore, but
+      almost always represents a far greater\u2014and more academic\u2014level of
+      study. A character with Common Lore (Imperial Creed) might understand the day-to-day
+      rituals and prayers gained from living under the creed, whereas a character
+      with Scholastic Lore (Imperial Creed) might be able to explain why such rituals
+      exist and how they have changed over the millennia.\n\nTo recall a fact or
+      titbit about the subject, a Scholastic Lore Test takes no time at all. You
+      either know the fact or not. Researching, assuming you are in the proper environment
+      to do so, takes far longer. You may make one Academic Lore Test every 1d10
+      hours. See Chapter VII: Playing the Game for details.\n\n<u>Cryptology</u>\nAn
       understanding of codes, ciphers, secret languages and numerical keys. This
-      may be used to either crack a code, or create one.\n\n<u>Heraldry</u>\nA grasp
-      of the principles of heraldry, as well as a knowledge of the most common liveries,
-      seals and heraldic devices used in the Imperium.\n\n<u>Imperial Creed</u>\nAn
+      may be used to either crack a code, or create one."
+  - name: 'Scholastic Lore: Heraldry'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "The Scholastic Lore skill grants you knowledge of a particular
+      scholarly subject. A successful Test enables you to recall pertinent facts
+      and\u2014if you have access to the proper facilities or resources\u2014to do
+      research. \n\nScholastic Lore represents a depth of learning far beyond Common
+      Lore and it requires extensive study. You make Scholastic Lore Tests to identify
+      an object, creature or place that falls under your particular area of expertise.
+      A successful Test about a subject related to your speciality reveals the basic
+      information. Each degree of success reveals more information as follows:\n\nStandard
+      success reveals basic information known to people of your training.\n\nOne
+      degree of success reveals uncommonly known information, even among your peers.
+      \n\nTwo degrees of success reveals obscure information about the subject. Such
+      information is known to but a few scholars. \n\nThree or more degrees of success
+      reveals extremely obscure information, known only to a handful of experts.\n\nIn
+      some areas, Scholastic Lore overlaps with Common Lore and Forbidden Lore, but
+      almost always represents a far greater\u2014and more academic\u2014level of
+      study. A character with Common Lore (Imperial Creed) might understand the day-to-day
+      rituals and prayers gained from living under the creed, whereas a character
+      with Scholastic Lore (Imperial Creed) might be able to explain why such rituals
+      exist and how they have changed over the millennia.\n\nTo recall a fact or
+      titbit about the subject, a Scholastic Lore Test takes no time at all. You
+      either know the fact or not. Researching, assuming you are in the proper environment
+      to do so, takes far longer. You may make one Academic Lore Test every 1d10
+      hours. See Chapter VII: Playing the Game for details.\n\n<u>Heraldry</u>\nA
+      grasp of the principles of heraldry, as well as a knowledge of the most common
+      liveries, seals and heraldic devices used in the Imperium."
+  - name: 'Scholastic Lore: Imperial Creed'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "The Scholastic Lore skill grants you knowledge of a particular
+      scholarly subject. A successful Test enables you to recall pertinent facts
+      and\u2014if you have access to the proper facilities or resources\u2014to do
+      research. \n\nScholastic Lore represents a depth of learning far beyond Common
+      Lore and it requires extensive study. You make Scholastic Lore Tests to identify
+      an object, creature or place that falls under your particular area of expertise.
+      A successful Test about a subject related to your speciality reveals the basic
+      information. Each degree of success reveals more information as follows:\n\nStandard
+      success reveals basic information known to people of your training.\n\nOne
+      degree of success reveals uncommonly known information, even among your peers.
+      \n\nTwo degrees of success reveals obscure information about the subject. Such
+      information is known to but a few scholars. \n\nThree or more degrees of success
+      reveals extremely obscure information, known only to a handful of experts.\n\nIn
+      some areas, Scholastic Lore overlaps with Common Lore and Forbidden Lore, but
+      almost always represents a far greater\u2014and more academic\u2014level of
+      study. A character with Common Lore (Imperial Creed) might understand the day-to-day
+      rituals and prayers gained from living under the creed, whereas a character
+      with Scholastic Lore (Imperial Creed) might be able to explain why such rituals
+      exist and how they have changed over the millennia.\n\nTo recall a fact or
+      titbit about the subject, a Scholastic Lore Test takes no time at all. You
+      either know the fact or not. Researching, assuming you are in the proper environment
+      to do so, takes far longer. You may make one Academic Lore Test every 1d10
+      hours. See Chapter VII: Playing the Game for details.\n\n<u>Imperial Creed</u>\nAn
       understanding of the rituals of the Ecclesiarchy, the construction of their
       temples and the finer points of liturgy. May be used to conduct rituals for
-      others.\n\n<u>Judgement</u>\nKnowledge of the proper punishments for the myriad
-      of crimes and heresies punishable by Imperial law.\n\n<u>Legend</u>\nA knowledge
+      others."
+  - name: 'Scholastic Lore: Judgement'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "The Scholastic Lore skill grants you knowledge of a particular
+      scholarly subject. A successful Test enables you to recall pertinent facts
+      and\u2014if you have access to the proper facilities or resources\u2014to do
+      research. \n\nScholastic Lore represents a depth of learning far beyond Common
+      Lore and it requires extensive study. You make Scholastic Lore Tests to identify
+      an object, creature or place that falls under your particular area of expertise.
+      A successful Test about a subject related to your speciality reveals the basic
+      information. Each degree of success reveals more information as follows:\n\nStandard
+      success reveals basic information known to people of your training.\n\nOne
+      degree of success reveals uncommonly known information, even among your peers.
+      \n\nTwo degrees of success reveals obscure information about the subject. Such
+      information is known to but a few scholars. \n\nThree or more degrees of success
+      reveals extremely obscure information, known only to a handful of experts.\n\nIn
+      some areas, Scholastic Lore overlaps with Common Lore and Forbidden Lore, but
+      almost always represents a far greater\u2014and more academic\u2014level of
+      study. A character with Common Lore (Imperial Creed) might understand the day-to-day
+      rituals and prayers gained from living under the creed, whereas a character
+      with Scholastic Lore (Imperial Creed) might be able to explain why such rituals
+      exist and how they have changed over the millennia.\n\nTo recall a fact or
+      titbit about the subject, a Scholastic Lore Test takes no time at all. You
+      either know the fact or not. Researching, assuming you are in the proper environment
+      to do so, takes far longer. You may make one Academic Lore Test every 1d10
+      hours. See Chapter VII: Playing the Game for details.\n\n<u>Judgement</u>\nKnowledge
+      of the proper punishments for the myriad of crimes and heresies punishable
+      by Imperial law."
+  - name: 'Scholastic Lore: Legend'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "The Scholastic Lore skill grants you knowledge of a particular
+      scholarly subject. A successful Test enables you to recall pertinent facts
+      and\u2014if you have access to the proper facilities or resources\u2014to do
+      research. \n\nScholastic Lore represents a depth of learning far beyond Common
+      Lore and it requires extensive study. You make Scholastic Lore Tests to identify
+      an object, creature or place that falls under your particular area of expertise.
+      A successful Test about a subject related to your speciality reveals the basic
+      information. Each degree of success reveals more information as follows:\n\nStandard
+      success reveals basic information known to people of your training.\n\nOne
+      degree of success reveals uncommonly known information, even among your peers.
+      \n\nTwo degrees of success reveals obscure information about the subject. Such
+      information is known to but a few scholars. \n\nThree or more degrees of success
+      reveals extremely obscure information, known only to a handful of experts.\n\nIn
+      some areas, Scholastic Lore overlaps with Common Lore and Forbidden Lore, but
+      almost always represents a far greater\u2014and more academic\u2014level of
+      study. A character with Common Lore (Imperial Creed) might understand the day-to-day
+      rituals and prayers gained from living under the creed, whereas a character
+      with Scholastic Lore (Imperial Creed) might be able to explain why such rituals
+      exist and how they have changed over the millennia.\n\nTo recall a fact or
+      titbit about the subject, a Scholastic Lore Test takes no time at all. You
+      either know the fact or not. Researching, assuming you are in the proper environment
+      to do so, takes far longer. You may make one Academic Lore Test every 1d10
+      hours. See Chapter VII: Playing the Game for details.\n\n<u>Legend</u>\nA knowledge
       of the great histories of old, such as the terrible Horus Heresy and the Dark
-      Age of Technology.\n\n<u>Numerology</u>\nAn understanding of the mysterious
-      properties of numbers, from Catastrophe theory to the Sadleirian litany.\n\n<u>Occult</u>\nAn
+      Age of Technology."
+  - name: 'Scholastic Lore: Numerology'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "The Scholastic Lore skill grants you knowledge of a particular
+      scholarly subject. A successful Test enables you to recall pertinent facts
+      and\u2014if you have access to the proper facilities or resources\u2014to do
+      research. \n\nScholastic Lore represents a depth of learning far beyond Common
+      Lore and it requires extensive study. You make Scholastic Lore Tests to identify
+      an object, creature or place that falls under your particular area of expertise.
+      A successful Test about a subject related to your speciality reveals the basic
+      information. Each degree of success reveals more information as follows:\n\nStandard
+      success reveals basic information known to people of your training.\n\nOne
+      degree of success reveals uncommonly known information, even among your peers.
+      \n\nTwo degrees of success reveals obscure information about the subject. Such
+      information is known to but a few scholars. \n\nThree or more degrees of success
+      reveals extremely obscure information, known only to a handful of experts.\n\nIn
+      some areas, Scholastic Lore overlaps with Common Lore and Forbidden Lore, but
+      almost always represents a far greater\u2014and more academic\u2014level of
+      study. A character with Common Lore (Imperial Creed) might understand the day-to-day
+      rituals and prayers gained from living under the creed, whereas a character
+      with Scholastic Lore (Imperial Creed) might be able to explain why such rituals
+      exist and how they have changed over the millennia.\n\nTo recall a fact or
+      titbit about the subject, a Scholastic Lore Test takes no time at all. You
+      either know the fact or not. Researching, assuming you are in the proper environment
+      to do so, takes far longer. You may make one Academic Lore Test every 1d10
+      hours. See Chapter VII: Playing the Game for details.\n\n<u>Numerology</u>\nAn
+      understanding of the mysterious properties of numbers, from Catastrophe theory
+      to the Sadleirian litany."
+  - name: 'Scholastic Lore: Occult'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "The Scholastic Lore skill grants you knowledge of a particular
+      scholarly subject. A successful Test enables you to recall pertinent facts
+      and\u2014if you have access to the proper facilities or resources\u2014to do
+      research. \n\nScholastic Lore represents a depth of learning far beyond Common
+      Lore and it requires extensive study. You make Scholastic Lore Tests to identify
+      an object, creature or place that falls under your particular area of expertise.
+      A successful Test about a subject related to your speciality reveals the basic
+      information. Each degree of success reveals more information as follows:\n\nStandard
+      success reveals basic information known to people of your training.\n\nOne
+      degree of success reveals uncommonly known information, even among your peers.
+      \n\nTwo degrees of success reveals obscure information about the subject. Such
+      information is known to but a few scholars. \n\nThree or more degrees of success
+      reveals extremely obscure information, known only to a handful of experts.\n\nIn
+      some areas, Scholastic Lore overlaps with Common Lore and Forbidden Lore, but
+      almost always represents a far greater\u2014and more academic\u2014level of
+      study. A character with Common Lore (Imperial Creed) might understand the day-to-day
+      rituals and prayers gained from living under the creed, whereas a character
+      with Scholastic Lore (Imperial Creed) might be able to explain why such rituals
+      exist and how they have changed over the millennia.\n\nTo recall a fact or
+      titbit about the subject, a Scholastic Lore Test takes no time at all. You
+      either know the fact or not. Researching, assuming you are in the proper environment
+      to do so, takes far longer. You may make one Academic Lore Test every 1d10
+      hours. See Chapter VII: Playing the Game for details.\n\n<u>Occult</u>\nAn
       understanding of occult ritual, theories and superstitions, as well as the
-      better known mystical uses of occult items.\n\n<u>Philosophy</u>\nA knowledge
-      of the theories of thought, belief and criticism. May be used for debate and
-      for creating philosophical works.\n\n<u>Tactica Imperialis</u>\nA grounding
-      in the Tactica Imperialis, as well as other theories of war, troop deployment
-      and battle techniques. May be used to plan a battle or deduce the likely flow
-      of war."
-    miscBonus: 0
+      better known mystical uses of occult items."
+  - name: 'Scholastic Lore: Philosophy'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "The Scholastic Lore skill grants you knowledge of a particular
+      scholarly subject. A successful Test enables you to recall pertinent facts
+      and\u2014if you have access to the proper facilities or resources\u2014to do
+      research. \n\nScholastic Lore represents a depth of learning far beyond Common
+      Lore and it requires extensive study. You make Scholastic Lore Tests to identify
+      an object, creature or place that falls under your particular area of expertise.
+      A successful Test about a subject related to your speciality reveals the basic
+      information. Each degree of success reveals more information as follows:\n\nStandard
+      success reveals basic information known to people of your training.\n\nOne
+      degree of success reveals uncommonly known information, even among your peers.
+      \n\nTwo degrees of success reveals obscure information about the subject. Such
+      information is known to but a few scholars. \n\nThree or more degrees of success
+      reveals extremely obscure information, known only to a handful of experts.\n\nIn
+      some areas, Scholastic Lore overlaps with Common Lore and Forbidden Lore, but
+      almost always represents a far greater\u2014and more academic\u2014level of
+      study. A character with Common Lore (Imperial Creed) might understand the day-to-day
+      rituals and prayers gained from living under the creed, whereas a character
+      with Scholastic Lore (Imperial Creed) might be able to explain why such rituals
+      exist and how they have changed over the millennia.\n\nTo recall a fact or
+      titbit about the subject, a Scholastic Lore Test takes no time at all. You
+      either know the fact or not. Researching, assuming you are in the proper environment
+      to do so, takes far longer. You may make one Academic Lore Test every 1d10
+      hours. See Chapter VII: Playing the Game for details.\n\n<u>Philosophy</u>\nA
+      knowledge of the theories of thought, belief and criticism. May be used for
+      debate and for creating philosophical works."
+  - name: 'Scholastic Lore: Tactica Imperialis'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "The Scholastic Lore skill grants you knowledge of a particular
+      scholarly subject. A successful Test enables you to recall pertinent facts
+      and\u2014if you have access to the proper facilities or resources\u2014to do
+      research. \n\nScholastic Lore represents a depth of learning far beyond Common
+      Lore and it requires extensive study. You make Scholastic Lore Tests to identify
+      an object, creature or place that falls under your particular area of expertise.
+      A successful Test about a subject related to your speciality reveals the basic
+      information. Each degree of success reveals more information as follows:\n\nStandard
+      success reveals basic information known to people of your training.\n\nOne
+      degree of success reveals uncommonly known information, even among your peers.
+      \n\nTwo degrees of success reveals obscure information about the subject. Such
+      information is known to but a few scholars. \n\nThree or more degrees of success
+      reveals extremely obscure information, known only to a handful of experts.\n\nIn
+      some areas, Scholastic Lore overlaps with Common Lore and Forbidden Lore, but
+      almost always represents a far greater\u2014and more academic\u2014level of
+      study. A character with Common Lore (Imperial Creed) might understand the day-to-day
+      rituals and prayers gained from living under the creed, whereas a character
+      with Scholastic Lore (Imperial Creed) might be able to explain why such rituals
+      exist and how they have changed over the millennia.\n\nTo recall a fact or
+      titbit about the subject, a Scholastic Lore Test takes no time at all. You
+      either know the fact or not. Researching, assuming you are in the proper environment
+      to do so, takes far longer. You may make one Academic Lore Test every 1d10
+      hours. See Chapter VII: Playing the Game for details.\n\n<u>Tactica Imperialis</u>\nA
+      grounding in the Tactica Imperialis, as well as other theories of war, troop
+      deployment and battle techniques. May be used to plan a battle or deduce the
+      likely flow of war."
   - name: Scrutiny
     type: 1
-    _characteristic: 6
-    _descriptor: 0
-    group: []
+    characteristic: 6
+    descriptor: 0
     description: "Use the Scrutiny skill to make assessments about people you encounter,
       to determine if someone is lying to you, to sense ulterior motives, and generally
       appraise the worth of another being. \n\nWhen trying to perceive a falsehood,
@@ -810,12 +1481,10 @@ MonoBehaviour:
       Scrutiny does not confer telepathy and cannot be used to reveal all the secrets
       about a target. Rather, this Skill serves to counteract attempts to manipulate
       you through Interaction skills such as Charm, Deceive and Intimidate."
-    miscBonus: 0
   - name: Search
     type: 1
-    _characteristic: 6
-    _descriptor: 0
-    group: []
+    characteristic: 6
+    descriptor: 0
     description: "Use the Search skill whenever you want to examine an area for concealed
       objects, clues, and anything else that might be hidden.\n\nSearch differs from
       Awareness in that you Test Awareness passively, Testing whenever some hidden
@@ -825,57 +1494,164 @@ MonoBehaviour:
       individual is deliberately hidden, a Search Test is resolved as an Opposed
       Test, pitting your Search Test against your target\u2019s Concealment Test.\n\nA
       Search Test takes a minimum of five minutes, dependent on the area being examined."
-    miscBonus: 0
-  - name: Secret Tongue
+  - name: 'Secret Tongue: Acolyte'
     type: 0
-    _characteristic: 5
-    _descriptor: 0
-    group:
-    - Acolyte
-    - Administratum
-    - Ecclesiarchy
-    - Gutter
-    - Military
-    - Tech
-    description: "Secret Tongue is used to speak and comprehend a particularly obscure
+    characteristic: 5
+    descriptor: 0
+    description: 'Secret Tongue is used to speak and comprehend a particularly obscure
       and arcane language known to only those of a specific profession, organisation,
       or class. Secret tongues are more like codes than real languages. By the use
       of signifiers, body language, and code words, users can speak in one tongue
       but use a secret language to impart deeper meaning or to relay a lot of information
-      quickly.\n\nUnder normal circumstances, Skill Tests are unnecessary if all
-      speakers know the secret language. They may be required in adverse conditions
+      quickly.
+
+
+      Under normal circumstances, Skill Tests are unnecessary if
+      all speakers know the secret language. They may be required in adverse conditions
       such as communicating in a noisy venue or during the chaos of battle. Groups
       of Acolytes may develop their own coded language, unique to their cell. This
-      is represented by the Secret Tongue (Acolyte) skill.\n\n<u>Acolyte</u>\nA pre-arranged
-      series of code phrases and inflections intelligible only to a fellow cell member.
-      Note that each cell of Acolytes has a unique version of this language.\n\n<u>Administratum</u>\nA
+      is represented by the Secret Tongue (Acolyte) skill.
+
+
+      <u>Acolyte</u>
+
+      A
+      pre-arranged series of code phrases and inflections intelligible only to a
+      fellow cell member. Note that each cell of Acolytes has a unique version of
+      this language.'
+  - name: 'Secret Tongue: Administratum'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: 'Secret Tongue is used to speak and comprehend a particularly obscure
+      and arcane language known to only those of a specific profession, organisation,
+      or class. Secret tongues are more like codes than real languages. By the use
+      of signifiers, body language, and code words, users can speak in one tongue
+      but use a secret language to impart deeper meaning or to relay a lot of information
+      quickly.
+
+
+      Under normal circumstances, Skill Tests are unnecessary if
+      all speakers know the secret language. They may be required in adverse conditions
+      such as communicating in a noisy venue or during the chaos of battle. Groups
+      of Acolytes may develop their own coded language, unique to their cell. This
+      is represented by the Secret Tongue (Acolyte) skill.
+
+
+      <u>Administratum</u>
+
+      A
       collection of acronyms, jargon, and procedural formalities used by the Administratum.
-      Note that this is an exceedingly long-winded language.\n\n<u>Ecclesiarchy</u>\nAn
+      Note that this is an exceedingly long-winded language.'
+  - name: 'Secret Tongue: Ecclesiarchy'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: 'Secret Tongue is used to speak and comprehend a particularly obscure
+      and arcane language known to only those of a specific profession, organisation,
+      or class. Secret tongues are more like codes than real languages. By the use
+      of signifiers, body language, and code words, users can speak in one tongue
+      but use a secret language to impart deeper meaning or to relay a lot of information
+      quickly.
+
+
+      Under normal circumstances, Skill Tests are unnecessary if
+      all speakers know the secret language. They may be required in adverse conditions
+      such as communicating in a noisy venue or during the chaos of battle. Groups
+      of Acolytes may develop their own coded language, unique to their cell. This
+      is represented by the Secret Tongue (Acolyte) skill.
+
+
+      <u>Ecclesiarchy</u>
+
+      An
       allegorical language of devotion and politics, full of strange metaphors and
-      specialised High Gothic.\n\n<u>Gutter</u> \nA pidgin version of Low Gothic
-      spoken by the lowest levels of Imperial society, incorporating a mishmash of
-      colourful slang terms.\n\n<u>Military</u> \nA selection of coded phrases, jargon,
-      references to ancient battles, and a surprising number of terms for death.\n\n<u>Tech</u>\nThe
+      specialised High Gothic.'
+  - name: 'Secret Tongue: Gutter'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: 'Secret Tongue is used to speak and comprehend a particularly obscure
+      and arcane language known to only those of a specific profession, organisation,
+      or class. Secret tongues are more like codes than real languages. By the use
+      of signifiers, body language, and code words, users can speak in one tongue
+      but use a secret language to impart deeper meaning or to relay a lot of information
+      quickly.
+
+
+      Under normal circumstances, Skill Tests are unnecessary if
+      all speakers know the secret language. They may be required in adverse conditions
+      such as communicating in a noisy venue or during the chaos of battle. Groups
+      of Acolytes may develop their own coded language, unique to their cell. This
+      is represented by the Secret Tongue (Acolyte) skill.
+
+
+      <u>Gutter</u>
+
+      A
+      pidgin version of Low Gothic spoken by the lowest levels of Imperial society,
+      incorporating a mishmash of colourful slang terms.'
+  - name: 'Secret Tongue: Military'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: 'Secret Tongue is used to speak and comprehend a particularly obscure
+      and arcane language known to only those of a specific profession, organisation,
+      or class. Secret tongues are more like codes than real languages. By the use
+      of signifiers, body language, and code words, users can speak in one tongue
+      but use a secret language to impart deeper meaning or to relay a lot of information
+      quickly.
+
+
+      Under normal circumstances, Skill Tests are unnecessary if
+      all speakers know the secret language. They may be required in adverse conditions
+      such as communicating in a noisy venue or during the chaos of battle. Groups
+      of Acolytes may develop their own coded language, unique to their cell. This
+      is represented by the Secret Tongue (Acolyte) skill.
+
+
+      <u>Military</u>
+
+      A
+      selection of coded phrases, jargon, references to ancient battles, and a surprising
+      number of terms for death.'
+  - name: 'Secret Tongue: Tech'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: 'Secret Tongue is used to speak and comprehend a particularly obscure
+      and arcane language known to only those of a specific profession, organisation,
+      or class. Secret tongues are more like codes than real languages. By the use
+      of signifiers, body language, and code words, users can speak in one tongue
+      but use a secret language to impart deeper meaning or to relay a lot of information
+      quickly.
+
+
+      Under normal circumstances, Skill Tests are unnecessary if
+      all speakers know the secret language. They may be required in adverse conditions
+      such as communicating in a noisy venue or during the chaos of battle. Groups
+      of Acolytes may develop their own coded language, unique to their cell. This
+      is represented by the Secret Tongue (Acolyte) skill.
+
+
+      <u>Tech</u>
+
+      The
       Lingua Technis of the Adeptus Mechanicus, comprising of jargon, binary, and
-      in some cases low or high-frequency sound waves.\n\nA Secret Tongue Test is
-      usually a Free Action."
-    miscBonus: 0
+      in some cases low or high-frequency sound waves.'
   - name: Security
     type: 0
-    _characteristic: 4
-    _descriptor: 0
-    group: []
+    characteristic: 4
+    descriptor: 0
     description: "You can use the Security skill to bypass locks and other security
       systems. \n\nThe Difficulty of the Test depends on the quality of the defence.
       Generally, one Test is sufficient, but more complicated systems may require
       additional Tests or degrees of success. \n\nA Security Test takes one minute,
       with each degree of success reducing this time by ten seconds."
-    miscBonus: 0
   - name: Shadowing
     type: 0
-    _characteristic: 4
-    _descriptor: 0
-    group: []
+    characteristic: 4
+    descriptor: 0
     description: "The Shadowing skill allows you to follow another creature or vehicle
       without being seen. \n\nShadowing differs from Concealment in that you are
       moving while masking your presence, often slipping from one place of cover
@@ -886,12 +1662,10 @@ MonoBehaviour:
       Awareness skill (or half their Perception if they do not have the Awareness
       skill). \n\nA single Shadowing Test is sufficient to follow your opponent unseen
       for one minute."
-    miscBonus: 0
   - name: Silent Move
     type: 1
-    _characteristic: 4
-    _descriptor: 0
-    group: []
+    characteristic: 4
+    descriptor: 0
     description: "Use the Silent Move skill whenever you want to creep about without
       making a noise. \n\nThe Difficulty depends on the surface on which you walk\u2014broken
       glass, twigs, gravel, and so on, can all make extra noise. \n\nA Silent Move
@@ -899,12 +1673,10 @@ MonoBehaviour:
       Awareness skill (or half their Perception if they do not have the Awareness
       skill). \n\nA Silent Move Test is usually a Free Action made as part of a Move
       Action."
-    miscBonus: 0
   - name: Sleight of Hand
     type: 0
-    _characteristic: 4
-    _descriptor: 0
-    group: []
+    characteristic: 4
+    descriptor: 0
     description: "The Sleight of Hand skill is used to palm objects, pick pockets,
       or perform tricks with small items like coins and cards. \n\nThe smaller the
       object, the easier it is to pick up, which is reflected in the task\u2019s
@@ -915,34 +1687,66 @@ MonoBehaviour:
       palm dice. See the Gamble skill for more information. Sleight of Hand is usually
       a Half Action. \n\nYou may make a Sleight of Hand Test as a Free Action, but
       you worsen the Difficulty by \u201310."
-    miscBonus: 0
-  - name: Speak Language
+  - name: 'Speak Language: High Gothic'
     type: 0
-    _characteristic: 5
-    _descriptor: 0
-    group:
-    - High Gothic
-    - Hive Dialect
-    - Low Gothic
-    - Ship Dialect
-    - Tribal Dialect
+    characteristic: 5
+    descriptor: 0
     description: "The Speak Language skill is used to communicate with others using
       a common tongue. \n\nAlthough the people of the Imperium are widely scattered,
       they are united by an official tongue\u2014that of Low Gothic. However, every
       world has its own local dialects and peculiarities, and sometimes even its
       own language. Under normal circumstances, Tests are unnecessary if all speakers
-      know the language.\n\n<u>High Gothic</u>\nThe language of nobility, law, and
-      Ecclesiarchy liturgy.\n\n<u>Hive Dialect</u>\nA debased form of Low Gothic
-      unique to a given hive.\n\n<u>Low Gothic</u>\nThe common tongue of the Imperium.\n\n<u>Ship
-      Dialect</u>\nCode, slang, and idiom unique to a given vessel.\n\n<u>Tribal
+      know the language.\n\nA Speak Language Test is usually a Free Action.\n\n<u>High
+      Gothic</u>\nThe language of nobility, law, and Ecclesiarchy liturgy."
+  - name: 'Speak Language: Hive Dialect'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "The Speak Language skill is used to communicate with others using
+      a common tongue. \n\nAlthough the people of the Imperium are widely scattered,
+      they are united by an official tongue\u2014that of Low Gothic. However, every
+      world has its own local dialects and peculiarities, and sometimes even its
+      own language. Under normal circumstances, Tests are unnecessary if all speakers
+      know the language.\n\nA Speak Language Test is usually a Free Action.\n\n<u>Hive
+      Dialect</u>\nA debased form of Low Gothic unique to a given hive."
+  - name: 'Speak Language: Low Gothic'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "The Speak Language skill is used to communicate with others using
+      a common tongue. \n\nAlthough the people of the Imperium are widely scattered,
+      they are united by an official tongue\u2014that of Low Gothic. However, every
+      world has its own local dialects and peculiarities, and sometimes even its
+      own language. Under normal circumstances, Tests are unnecessary if all speakers
+      know the language.\n\nA Speak Language Test is usually a Free Action.\n\n<u>Low
+      Gothic</u>\nThe common tongue of the Imperium."
+  - name: 'Speak Language: Ship Dialect'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "The Speak Language skill is used to communicate with others using
+      a common tongue. \n\nAlthough the people of the Imperium are widely scattered,
+      they are united by an official tongue\u2014that of Low Gothic. However, every
+      world has its own local dialects and peculiarities, and sometimes even its
+      own language. Under normal circumstances, Tests are unnecessary if all speakers
+      know the language.\n\nA Speak Language Test is usually a Free Action.\n\n<u>Ship
+      Dialect</u>\nCode, slang, and idiom unique to a given vessel."
+  - name: 'Speak Language: Tribal Dialect'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "The Speak Language skill is used to communicate with others using
+      a common tongue. \n\nAlthough the people of the Imperium are widely scattered,
+      they are united by an official tongue\u2014that of Low Gothic. However, every
+      world has its own local dialects and peculiarities, and sometimes even its
+      own language. Under normal circumstances, Tests are unnecessary if all speakers
+      know the language.\n\nA Speak Language Test is usually a Free Action.\n\n<u>Tribal
       Dialect</u>\nThe rough and primitive tongue spoken by the natives of a particular
-      planet.\n\nA Speak Language Test is usually a Free Action."
-    miscBonus: 0
+      planet."
   - name: Survival
     type: 0
-    _characteristic: 5
-    _descriptor: 0
-    group: []
+    characteristic: 5
+    descriptor: 0
     description: "You use the Survival skill to subsist in the wild. This Skill encompasses
       such activities as fishing, game hunting, making fires, finding edible food,
       constructing improvised shelters, finding safe resting places, and so on. \n\nThe
@@ -957,12 +1761,10 @@ MonoBehaviour:
       by ten minutes. Under certain circumstances, like trying to find a crude shelter
       from a meteor storm, the Difficulty can be increased and the time taken reduced
       to one minute."
-    miscBonus: 0
   - name: Swim
     type: 1
-    _characteristic: 2
-    _descriptor: 8
-    group: []
+    characteristic: 2
+    descriptor: 0
     description: 'The Swim skill is used to swim and dive. Swimming under normal
       conditions does not require a Test. However, Tests may be called for when waters
       are rough or when swimming for an extended period is required. For more information
@@ -979,12 +1781,10 @@ MonoBehaviour:
 
 
       A Swim test is a Free Action made as part of a Move Action.'
-    miscBonus: 0
   - name: Tech-Use
     type: 0
-    _characteristic: 5
-    _descriptor: 0
-    group: []
+    characteristic: 5
+    descriptor: 0
     description: "A character may use Tech-Use to repair mechanical items and to
       work out how unusual technical artefacts work. \n\nWhen using a basic, simple
       piece of mechanical equipment under normal circumstances, such as a vox or
@@ -999,183 +1799,284 @@ MonoBehaviour:
       minute, but might take less or more time depending on the complexity. A Test
       made to repair an item can take much longer, usually one hour but reduced by
       ten minutes for every degree of success."
-    miscBonus: 0
   - name: Tracking
     type: 0
-    _characteristic: 5
-    _descriptor: 0
-    group: []
-    description: "The Tracking skill is used to follow prey,\r\nbe it animal or otherwise.
-      Following\r\nobvious tracks requires no Test and\r\ncan be done without slowing
-      down.\r\nHowever, any instance when climate,\r\nlighting or terrain conditions
-      would\r\ninterfere always require a Tracking Test.\r\nThe Difficulty depends
-      on the quality\r\nof the prints and the circumstances. For\r\nexample, a recent
-      snowfall would make\r\ntracking prints Difficult (\u201310) or even\r\nHard
-      (\u201320). When following obscure\r\ntracks, the tracker\u2019s Movement rate\r\ndrops
-      to half.\r\nSometimes you will be following\r\nquarry that has attempted to
-      cover its\r\ntracks, in which case this becomes an\r\nOpposed Test made against
-      the quarry\u2019s\r\nConcealment Test result.\r\nYou may also make Tests to
-      deduce\r\nyour distance from the quarry, their\r\nnumbers and their racial
-      type.\r\nA Tracking Test is a Free Action made\r\nas part of a Move Action."
-    miscBonus: 0
-  - name: Trade
+    characteristic: 5
+    descriptor: 0
+    description: "The Tracking skill is used to follow prey, be it animal or otherwise.
+      \n\nFollowing obvious tracks requires no Test and can be done without slowing
+      down. However, any instance when climate, lighting or terrain conditions would
+      interfere always require a Tracking Test. \n\nThe Difficulty depends on the
+      quality of the prints and the circumstances. For example, a recent snowfall
+      would make tracking prints Difficult (\u201310) or even Hard (\u201320). When
+      following obscure tracks, the tracker\u2019s Movement rate drops to half. \n\nSometimes
+      you will be following quarry that has attempted to cover its tracks, in which
+      case this becomes an Opposed Test made against the quarry\u2019s Concealment
+      Test result. You may also make Tests to deduce your distance from the quarry,
+      their numbers and their racial type. \n\nA Tracking Test is a Free Action made
+      as part of a Move Action."
+  - name: 'Trade: Agri'
     type: 0
-    _characteristic: 5
-    _descriptor: 1
-    group:
-    - Agri (S)
-    - Apothcary (Int)
-    - Armourer (S)
-    - Artist (Ag)
-    - Cartographer (Ag)
-    - Cook (Int)
-    - Copyist (Int)
-    - Embalmer (Int)
-    - Mason (Ag)
-    - Merchant (Fel)
-    - Miner (S)
-    - Prospector (S)
-    - Scrimshawer (Ag)
-    - Smith (S)
-    - Soothsayer (Fel)
-    - Tanner (S)
-    - Technomat (Int)
-    - Valet (Fel)
-    - Wright (Int)
-    description: "Having a Trade skill indicates that you\r\nknow how to practice
-      a trade or craft.\r\nWith this Skill, you can make a living\r\nor create items
-      suited to your trade. You\r\ncan also make a Trade Test to identify the\r\nhandiwork
-      of a particular craftsman, or to\r\nknow something about a particular item.\r\nSee
-      page 96 for rules on Crafting.\r\nA Trade Test normally represents a\r\nday\u2019s
-      hard work. A Trade Test made to\r\nidentify an item or craftsman is usually\r\na
-      Full Action, during which time the\r\ntradesman sucks his teeth and sighs\r\nbefore
-      making his prognosis.\r\nAgri: Used to grow, care and harvest\r\ncrops and
-      animals.\r\nApothecary: Used to blend and\r\nprepare herbal remedies.\r\nArmourer:
-      Used to create and\r\nmaintain armour and weapons.\r\nArtist: Used to create
-      works of art.\r\nCartographer: Used to take accurate\r\nmeasurements and turn
-      them into\r\nmaps.\r\nCook: Used to create and identify\r\nfood.\r\nCopyist:
-      Used to swiftly copy\r\ntext, illuminate manuscripts and forge\r\nwritten material.\r\nEmbalmer:
-      Used to prepare and\r\npreserve corpses.\r\nMason: Used to assess and construct\r\nstone
-      buildings.\r\nMerchant: Used to find, bargain and\r\nsell trade goods.\r\nMiner:
-      Used to extract minerals,\r\nmaintain mines and identify common\r\nhazards.\r\nProspector:
-      Used to find and\r\nidentify valuable materials.\r\nScrimshawer: Used to inscribe\r\npatterns,
-      text and imagery onto materials.\r\nSmith: Used to forge metals into\r\nshape.\r\nSoothsayer:
-      Used to give the\r\nappearance of telling the future.\r\nTanner: Used to prepare
-      and tan\r\nhides.\r\nTechnomat: Used to maintain\r\nmechanical and tech items,
-      often\r\nwithout any understanding of a\r\nmachine\u2019s true purpose.\r\nValet:
-      Used to refine the appearance,\r\ngive droll asides and tend to the needs\r\nof
-      superiors in a gentlemanly fashion.\r\nWright: Used to assess, design and\r\nconstruct
+    characteristic: 2
+    descriptor: 0
+    description: "Having a Trade skill indicates that you know how to practice a
+      trade or craft. With this Skill, you can make a living or create items suited
+      to your trade. You can also make a Trade Test to identify the handiwork of
+      a particular craftsman, or to know something about a particular item. See page
+      96 for rules on Crafting. \n\nA Trade Test normally represents a day\u2019s
+      hard work. A Trade Test made to identify an item or craftsman is usually a
+      Full Action, during which time the tradesman sucks his teeth and sighs before
+      making his prognosis. \n\n<u>Agri</u>\nUsed to grow, care and harvest crops
+      and animals. "
+  - name: 'Trade: Apothecary'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "Having a Trade skill indicates that you know how to practice a
+      trade or craft. With this Skill, you can make a living or create items suited
+      to your trade. You can also make a Trade Test to identify the handiwork of
+      a particular craftsman, or to know something about a particular item. See page
+      96 for rules on Crafting. \n\nA Trade Test normally represents a day\u2019s
+      hard work. A Trade Test made to identify an item or craftsman is usually a
+      Full Action, during which time the tradesman sucks his teeth and sighs before
+      making his prognosis. \n\n<u>Apothecary</u>\nUsed to blend and prepare herbal
+      remedies. "
+  - name: 'Trade: Armourer'
+    type: 0
+    characteristic: 2
+    descriptor: 0
+    description: "Having a Trade skill indicates that you know how to practice a
+      trade or craft. With this Skill, you can make a living or create items suited
+      to your trade. You can also make a Trade Test to identify the handiwork of
+      a particular craftsman, or to know something about a particular item. See page
+      96 for rules on Crafting. \n\nA Trade Test normally represents a day\u2019s
+      hard work. A Trade Test made to identify an item or craftsman is usually a
+      Full Action, during which time the tradesman sucks his teeth and sighs before
+      making his prognosis. \n\n<u>Armourer</u>\nUsed to create and maintain armour
+      and weapons. "
+  - name: 'Trade: Artist'
+    type: 0
+    characteristic: 4
+    descriptor: 0
+    description: "Having a Trade skill indicates that you know how to practice a
+      trade or craft. With this Skill, you can make a living or create items suited
+      to your trade. You can also make a Trade Test to identify the handiwork of
+      a particular craftsman, or to know something about a particular item. See page
+      96 for rules on Crafting. \n\nA Trade Test normally represents a day\u2019s
+      hard work. A Trade Test made to identify an item or craftsman is usually a
+      Full Action, during which time the tradesman sucks his teeth and sighs before
+      making his prognosis. \n\n<u>Artist</u>\nUsed to create works of art. "
+  - name: 'Trade: Cartographer'
+    type: 0
+    characteristic: 4
+    descriptor: 0
+    description: "Having a Trade skill indicates that you know how to practice a
+      trade or craft. With this Skill, you can make a living or create items suited
+      to your trade. You can also make a Trade Test to identify the handiwork of
+      a particular craftsman, or to know something about a particular item. See page
+      96 for rules on Crafting. \n\nA Trade Test normally represents a day\u2019s
+      hard work. A Trade Test made to identify an item or craftsman is usually a
+      Full Action, during which time the tradesman sucks his teeth and sighs before
+      making his prognosis. \n\n<u>Cartographer</u>\nUsed to take accurate measurements
+      and turn them into maps. "
+  - name: 'Trade: Cook'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "Having a Trade skill indicates that you know how to practice a
+      trade or craft. With this Skill, you can make a living or create items suited
+      to your trade. You can also make a Trade Test to identify the handiwork of
+      a particular craftsman, or to know something about a particular item. See page
+      96 for rules on Crafting. \n\nA Trade Test normally represents a day\u2019s
+      hard work. A Trade Test made to identify an item or craftsman is usually a
+      Full Action, during which time the tradesman sucks his teeth and sighs before
+      making his prognosis. \n\n<u>Cook</u>\nUsed to create and identify food. "
+  - name: 'Trade: Copyist'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "Having a Trade skill indicates that you know how to practice a
+      trade or craft. With this Skill, you can make a living or create items suited
+      to your trade. You can also make a Trade Test to identify the handiwork of
+      a particular craftsman, or to know something about a particular item. See page
+      96 for rules on Crafting. \n\nA Trade Test normally represents a day\u2019s
+      hard work. A Trade Test made to identify an item or craftsman is usually a
+      Full Action, during which time the tradesman sucks his teeth and sighs before
+      making his prognosis. \n\n<u>Copyist</u>\nUsed to swiftly copy text, illuminate
+      manuscripts and forge written material. "
+  - name: 'Trade: Embalmer'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "Having a Trade skill indicates that you know how to practice a
+      trade or craft. With this Skill, you can make a living or create items suited
+      to your trade. You can also make a Trade Test to identify the handiwork of
+      a particular craftsman, or to know something about a particular item. See page
+      96 for rules on Crafting. \n\nA Trade Test normally represents a day\u2019s
+      hard work. A Trade Test made to identify an item or craftsman is usually a
+      Full Action, during which time the tradesman sucks his teeth and sighs before
+      making his prognosis. \n\n<u>Embalmer</u>\nUsed to prepare and preserve corpses. "
+  - name: 'Trade: Mason'
+    type: 0
+    characteristic: 4
+    descriptor: 0
+    description: "Having a Trade skill indicates that you know how to practice a
+      trade or craft. With this Skill, you can make a living or create items suited
+      to your trade. You can also make a Trade Test to identify the handiwork of
+      a particular craftsman, or to know something about a particular item. See page
+      96 for rules on Crafting. \n\nA Trade Test normally represents a day\u2019s
+      hard work. A Trade Test made to identify an item or craftsman is usually a
+      Full Action, during which time the tradesman sucks his teeth and sighs before
+      making his prognosis. \n\n<u>Mason</u>\nUsed to assess and construct stone
+      buildings. "
+  - name: 'Trade: Merchant'
+    type: 0
+    characteristic: 8
+    descriptor: 0
+    description: "Having a Trade skill indicates that you know how to practice a
+      trade or craft. With this Skill, you can make a living or create items suited
+      to your trade. You can also make a Trade Test to identify the handiwork of
+      a particular craftsman, or to know something about a particular item. See page
+      96 for rules on Crafting. \n\nA Trade Test normally represents a day\u2019s
+      hard work. A Trade Test made to identify an item or craftsman is usually a
+      Full Action, during which time the tradesman sucks his teeth and sighs before
+      making his prognosis. \n\n<u>Merchant</u>\nUsed to find, bargain and sell trade
+      goods. "
+  - name: 'Trade: Miner'
+    type: 0
+    characteristic: 2
+    descriptor: 0
+    description: "Having a Trade skill indicates that you know how to practice a
+      trade or craft. With this Skill, you can make a living or create items suited
+      to your trade. You can also make a Trade Test to identify the handiwork of
+      a particular craftsman, or to know something about a particular item. See page
+      96 for rules on Crafting. \n\nA Trade Test normally represents a day\u2019s
+      hard work. A Trade Test made to identify an item or craftsman is usually a
+      Full Action, during which time the tradesman sucks his teeth and sighs before
+      making his prognosis. \n\n<u>Miner</u>\nUsed to extract minerals, maintain
+      mines and identify common hazards. "
+  - name: 'Trade: Prospector'
+    type: 0
+    characteristic: 2
+    descriptor: 0
+    description: "Having a Trade skill indicates that you know how to practice a
+      trade or craft. With this Skill, you can make a living or create items suited
+      to your trade. You can also make a Trade Test to identify the handiwork of
+      a particular craftsman, or to know something about a particular item. See page
+      96 for rules on Crafting. \n\nA Trade Test normally represents a day\u2019s
+      hard work. A Trade Test made to identify an item or craftsman is usually a
+      Full Action, during which time the tradesman sucks his teeth and sighs before
+      making his prognosis. \n\n<u>Prospector</u>\nUsed to find and identify valuable
+      materials. "
+  - name: 'Trade: Scrimshawer'
+    type: 0
+    characteristic: 4
+    descriptor: 0
+    description: "Having a Trade skill indicates that you know how to practice a
+      trade or craft. With this Skill, you can make a living or create items suited
+      to your trade. You can also make a Trade Test to identify the handiwork of
+      a particular craftsman, or to know something about a particular item. See page
+      96 for rules on Crafting. \n\nA Trade Test normally represents a day\u2019s
+      hard work. A Trade Test made to identify an item or craftsman is usually a
+      Full Action, during which time the tradesman sucks his teeth and sighs before
+      making his prognosis. \n\n<u>Scrimshawer</u>\nUsed to inscribe patterns, text
+      and imagery onto materials. "
+  - name: 'Trade: Smith'
+    type: 0
+    characteristic: 2
+    descriptor: 0
+    description: "Having a Trade skill indicates that you know how to practice a
+      trade or craft. With this Skill, you can make a living or create items suited
+      to your trade. You can also make a Trade Test to identify the handiwork of
+      a particular craftsman, or to know something about a particular item. See page
+      96 for rules on Crafting. \n\nA Trade Test normally represents a day\u2019s
+      hard work. A Trade Test made to identify an item or craftsman is usually a
+      Full Action, during which time the tradesman sucks his teeth and sighs before
+      making his prognosis. \n\n<u>Smith</u>\nUsed to forge metals into shape. "
+  - name: 'Trade: Soothsayer'
+    type: 0
+    characteristic: 8
+    descriptor: 0
+    description: "Having a Trade skill indicates that you know how to practice a
+      trade or craft. With this Skill, you can make a living or create items suited
+      to your trade. You can also make a Trade Test to identify the handiwork of
+      a particular craftsman, or to know something about a particular item. See page
+      96 for rules on Crafting. \n\nA Trade Test normally represents a day\u2019s
+      hard work. A Trade Test made to identify an item or craftsman is usually a
+      Full Action, during which time the tradesman sucks his teeth and sighs before
+      making his prognosis. \n\n<u>Soothsayer</u>\nUsed to give the appearance of
+      telling the future. "
+  - name: 'Trade: Tanner'
+    type: 0
+    characteristic: 2
+    descriptor: 0
+    description: "Having a Trade skill indicates that you know how to practice a
+      trade or craft. With this Skill, you can make a living or create items suited
+      to your trade. You can also make a Trade Test to identify the handiwork of
+      a particular craftsman, or to know something about a particular item. See page
+      96 for rules on Crafting. \n\nA Trade Test normally represents a day\u2019s
+      hard work. A Trade Test made to identify an item or craftsman is usually a
+      Full Action, during which time the tradesman sucks his teeth and sighs before
+      making his prognosis. \n\n<u>Tanner</u>\nUsed to prepare and tan hides. "
+  - name: 'Trade: Technomat'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "Having a Trade skill indicates that you know how to practice a
+      trade or craft. With this Skill, you can make a living or create items suited
+      to your trade. You can also make a Trade Test to identify the handiwork of
+      a particular craftsman, or to know something about a particular item. See page
+      96 for rules on Crafting. \n\nA Trade Test normally represents a day\u2019s
+      hard work. A Trade Test made to identify an item or craftsman is usually a
+      Full Action, during which time the tradesman sucks his teeth and sighs before
+      making his prognosis. \n\n<u>Technomat</u>\nUsed to maintain mechanical and
+      tech items, often without any understanding of a machine\u2019s true purpose. "
+  - name: 'Trade: Valet'
+    type: 0
+    characteristic: 8
+    descriptor: 0
+    description: "Having a Trade skill indicates that you know how to practice a
+      trade or craft. With this Skill, you can make a living or create items suited
+      to your trade. You can also make a Trade Test to identify the handiwork of
+      a particular craftsman, or to know something about a particular item. See page
+      96 for rules on Crafting. \n\nA Trade Test normally represents a day\u2019s
+      hard work. A Trade Test made to identify an item or craftsman is usually a
+      Full Action, during which time the tradesman sucks his teeth and sighs before
+      making his prognosis. \n\n<u>Valet</u>\nUsed to refine the appearance, give
+      droll asides and tend to the needs of superiors in a gentlemanly fashion. "
+  - name: 'Trade: Wright'
+    type: 0
+    characteristic: 5
+    descriptor: 0
+    description: "Having a Trade skill indicates that you know how to practice a
+      trade or craft. With this Skill, you can make a living or create items suited
+      to your trade. You can also make a Trade Test to identify the handiwork of
+      a particular craftsman, or to know something about a particular item. See page
+      96 for rules on Crafting. \n\nA Trade Test normally represents a day\u2019s
+      hard work. A Trade Test made to identify an item or craftsman is usually a
+      Full Action, during which time the tradesman sucks his teeth and sighs before
+      making his prognosis. \n\n<u>Wright</u>\nUsed to assess, design and construct
       buildings, vehicles and the like."
-    miscBonus: 0
   - name: Wrangling
     type: 0
-    _characteristic: 5
-    _descriptor: 0
-    group: []
-    description: 'This Skill may be used in order
-
-      to ride domesticated animals
-      of
-
-      appropriate size.
-
-      The Wrangling skill also allows you
-
-      to
-      care for and control domesticated
-
-      animals, like bloodhounds, Spike Pigs,
-
-      horses,
-      Grox and the like. Routine
-
-      care and feeding requires no Test.
-
-      Tests
-      are most commonly made to
-
-      spot developing illnesses or signs of
-
-      discomfort,
-      or for special grooming
-
-      (preparing a mount for a parade, for
-
-      instance).
-
-      Wrangling
-      can also be used to
-
-      train animals to perform tricks and
-
-      obey
-      simple commands. Properly
-
-      training an animal takes some time.
-
-      Tests
-      should be made once a week
-
-      during training. A simple trick can
-
-      be
-      learned with one successful Test,
-
-      a moderately difficult trick can be
-
-      learned
-      with three successful Tests
-
-      and a difficult trick can be learned
-
-      with
-      ten successful Tests. Common
-
-      tricks include guarding, fetching,
-
-      attacking,
-      and so on.
-
-      You may also use this Skill to
-
-      befriend animals. Domestic
-      animals
-
-      are always friendly to you. Wild
-
-      animals or those trained
-      to be hostile
-
-      (like attack dogs) can be calmed with
-
-      a successful
-      Test. GMs may impose
-
-      penalties for particularly loyal or
-
-      ornery
-      animals.
-
-      Wrangling is of no use against cyberanimals such as familiars,
-      even if they
-
-      are built to resemble an animal.
-
-      A Wrangling Test
-      takes a variable
-
-      amount of time, depending on
-
-      what the character
-      is attempting
-
-      to accomplish. Training an animal
-
-      takes at least
-      a week of hard work,
-
-      whereas attempting to befriend an
-
-      animal
-      is a Full Action.'
-    miscBonus: 0
+    characteristic: 5
+    descriptor: 0
+    description: "This Skill may be used in order to ride domesticated animals of
+      appropriate size. \n\nThe Wrangling skill also allows you to care for and control
+      domesticated animals, like bloodhounds, Spike Pigs, horses, Grox and the like.
+      Routine care and feeding requires no Test. Tests are most commonly made to
+      spot developing illnesses or signs of discomfort, or for special grooming (preparing
+      a mount for a parade, for instance). \n\nWrangling can also be used to train
+      animals to perform tricks and obey simple commands. Properly training an animal
+      takes some time. Tests should be made once a week during training. A simple
+      trick can be learned with one successful Test, a moderately difficult trick
+      can be learned with three successful Tests and a difficult trick can be learned
+      with ten successful Tests. \n\nCommon tricks include guarding, fetching, attacking,
+      and so on. You may also use this Skill to befriend animals. Domestic animals
+      are always friendly to you. Wild animals or those trained to be hostile (like
+      attack dogs) can be calmed with a successful Test. GMs may impose penalties
+      for particularly loyal or ornery animals. \n\nWrangling is of no use against
+      cyber-animals such as familiars, even if they are built to resemble an animal.
+      A Wrangling Test takes a variable amount of time, depending on what the character
+      is attempting to accomplish. Training an animal takes at least a week of hard
+      work, whereas attempting to befriend an animal is a Full Action."

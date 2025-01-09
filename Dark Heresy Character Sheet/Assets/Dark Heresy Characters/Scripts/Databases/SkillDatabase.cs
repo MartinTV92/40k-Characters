@@ -8,7 +8,9 @@ namespace SunJack.DarkHeresy
     [CreateAssetMenu(menuName = "Database Object / Skills")]
     public class SkillDatabase : ScriptableObject
     {
-        private static SkillDatabase _instance;
+		#region----- VARIABLES -----
+
+		private static SkillDatabase _instance;
         public static SkillDatabase Instance
         {
             get
@@ -21,17 +23,44 @@ namespace SunJack.DarkHeresy
             private set => _instance = value;
         }
 
+		[OnValueChanged("Alphabetize")]
+		public List<Skill.Info> skillInfo;
 
-        [OnValueChanged("Alphabetize")]
-        public List<Skill> skills;
-
-
-        [Button("Alphabetize")]
-        private void Alphabetize() => skills.Sort((A,B) => string.Compare(A.name, B.name) );
+		#endregion
 
 
-        public static List<Skill> GetSkillsByType(Skill.Type skillType) => Instance.skills.Where(x => x.type == skillType).ToList();
+		#region----- METHODS -----
 
-        public static Skill GetSkill(string name) => Instance.skills.Where(x => x.name == name).FirstOrDefault();
-    }
+        // SEARCH FUNCTIONS
+
+		public static List<Skill.Info> GetAllSkillInfo() => Instance.skillInfo;
+
+        public static List<Skill> GetAllSkills() => GetSkillsFromInfo(Instance.skillInfo);
+
+        public static List<Skill.Info> GetSkillInfoByType(Skill.Type skillType) => Instance.skillInfo.Where(x => x.type == skillType).ToList();
+
+        public static List<Skill> GetSkillsByType(Skill.Type skillType) => GetSkillsFromInfo(GetSkillInfoByType(skillType));
+
+        public static Skill.Info GetSkillInfo(string name) => Instance.skillInfo.Where(x => x.name == name).FirstOrDefault();
+
+        public static Skill GetSkill(string name) => new Skill(Instance.skillInfo.Where(x => x.name == name).FirstOrDefault());
+
+        private static List<Skill> GetSkillsFromInfo(List<Skill.Info> info) => GetSkillsFromInfo(info.ToArray());
+
+        private static List<Skill> GetSkillsFromInfo(params Skill.Info[] info)
+        {
+			var result = new List<Skill>();
+			foreach (var i in info)
+				result.Add(new Skill(i));
+
+			return result;
+		}
+
+        // SORT FUNCTIONS
+
+		[Button("Alphabetize")]
+		public void Alphabetize() => skillInfo.Sort((A, B) => string.Compare(A.name, B.name));
+
+		#endregion
+	}
 }

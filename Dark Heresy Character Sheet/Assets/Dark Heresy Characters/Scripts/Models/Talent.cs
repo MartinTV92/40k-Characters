@@ -9,7 +9,7 @@ namespace SunJack.DarkHeresy
     /// and other miscellaneous things that can't be respresented by a numerical value.
     /// </summary>
     [System.Serializable]
-    public struct Talent
+    public class Talent
     {
 
 		[FoldoutGroup("$name")] public string name;

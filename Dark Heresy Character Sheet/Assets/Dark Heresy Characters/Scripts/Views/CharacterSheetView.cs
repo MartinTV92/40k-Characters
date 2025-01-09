@@ -126,10 +126,10 @@ namespace SunJack.DarkHeresy
                 skillPool.Release(ui);
 
 			foreach(var skill in skillList)
-                AddSkill(skill, skillType);
+                Add(skill, skillType);
         }
 
-        public void AddSkill(Skill skill, Skill.Type skillType)
+        public void Add(Skill skill, Skill.Type skillType)
         {
             var page = skillType == Skill.Type.Basic ? Page.BasicSkills : Page.AdvancedSkills;
             var skillList = skillType == Skill.Type.Basic ? basicSkills : advancedSkills;
@@ -142,7 +142,7 @@ namespace SunJack.DarkHeresy
 			skillList.Add(view);
 		}
 
-        public void RemoveSkill(Skill skill)
+        public void Remove(Skill skill)
         {
             var list2Search = skill.type == Skill.Type.Basic ? basicSkills : advancedSkills;
             var skillUI = list2Search.Where(x => x.name == skill.name).FirstOrDefault();
@@ -157,10 +157,10 @@ namespace SunJack.DarkHeresy
                 talentPool.Release(talentUI);
 
             foreach(var talent in target.talents)
-                AddTalent(talent);
+                Add(talent);
         }
 
-        public void AddTalent(Talent talent)
+        public void Add(Talent talent)
         {
             var view = talentPool.Get();
             view.transform.SetParent(pageDict[Page.TalentsTraits].content);
@@ -169,7 +169,7 @@ namespace SunJack.DarkHeresy
             view.SetTalent(talent);
         }
 
-		public void RemoveSkill(Talent skill)
+		public void Remove(Talent skill)
 		{
 			var view = talents.Where(x => x.name == skill.name).FirstOrDefault();
 			talentPool.Release(view);
@@ -177,5 +177,6 @@ namespace SunJack.DarkHeresy
 
 
 		#endregion
+
 	}
 }

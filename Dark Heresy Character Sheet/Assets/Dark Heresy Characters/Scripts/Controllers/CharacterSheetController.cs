@@ -9,8 +9,8 @@ namespace SunJack.DarkHeresy
 
 		public static CharacterSheetController Instance { get; private set; }
 
-
 		#endregion
+
 
 		#region----- MONOBEHAVIOUR -----
 
@@ -20,6 +20,7 @@ namespace SunJack.DarkHeresy
 		}
 
 		#endregion
+
 
 		#region----- CUSTOM BEHAVIOURS -----
 

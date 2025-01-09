@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
+using Sirenix.OdinInspector;
 
 namespace SunJack.DarkHeresy
 { 
@@ -43,7 +45,7 @@ namespace SunJack.DarkHeresy
 
 		#endregion
 
-		#region----- METHODS -----
+		#region----- CUSTOM BEHAVIOURS -----
 
         public Character () 
         {
@@ -91,6 +93,41 @@ namespace SunJack.DarkHeresy
         /// <summary> Change the character's name. </summary>
         /// <param name="newName"> The name to set. </param>
         public void ChangeName(string newName) => Name = newName;
+
+		/// <summary>
+		/// Adds a skill to the character sheet. If the skill is already present,
+		/// Increases the training level of the current one.
+		/// </summary>
+		/// <param name="skill"> The skill to add. </param>
+		/// <param name="skillType"> The list ot add it too. </param>
+		public void Add(Skill skill, Skill.Type skillType)
+		{
+			var list = skillType == Skill.Type.Basic ? basicSkills : advancedSkills;
+			var existingSkill = list.Where(x => x.name == skill.name).First();
+
+			if(existingSkill.IsNull())
+				list.Add(skill);
+			else
+				existingSkill.Train(skill);
+		}
+
+		#endregion
+
+
+
+		#region----- EDITOR -----
+
+		/*
+
+		[ValueDropdown("SkillDropdown")]
+		public Skill testSkill;
+
+		[Button("Add 'Test Skill'")]
+		public void Add() => Add(testSkill, testSkill.type);
+
+		IEnumerable SkillDropdown() => SkillDatabase.GetAllSkillInfo().Select(x => new ValueDropdownItem(x.name, x));
+
+		// */
 
 		#endregion
 

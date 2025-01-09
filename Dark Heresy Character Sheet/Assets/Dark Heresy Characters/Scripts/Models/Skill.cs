@@ -1,5 +1,9 @@
 using UnityEngine;
 using Sirenix.OdinInspector;
+using System;
+using System.Text.RegularExpressions;
+using UnityEngine.Windows;
+using System.Collections.Generic;
 
 namespace SunJack.DarkHeresy
 {
@@ -7,10 +11,84 @@ namespace SunJack.DarkHeresy
     /// Defines an apptitude for a given area of expertise such as driving, knowledge or tech-use.
     /// Furthermore, defines the mastery and other bonuses applied to skill.
     /// </summary>
-    [System.Serializable]
-    public struct Skill
+    [System.Serializable, HideReferenceObjectPicker]
+    public class Skill
     {
-        [System.Flags]
+		#region----- NESTED -----
+
+		/// <summary>
+		/// Static info for SkillInfo i.e Names, Description, Type and characteristic.
+		/// This information is what is stored in the SkillDatabase.
+		/// </summary>
+		[System.Serializable, HideLabel, InlineProperty]
+		public struct Info
+		{
+			[FoldoutGroup("$name")]
+
+			[HorizontalGroup("$name/R0", Width = 0.7f), LabelWidth(40), PropertyOrder(-1)]
+			public string name;
+
+			[HorizontalGroup("$name/R0", Width = 0.3f), HideLabel, SerializeField, PropertyOrder(1)]
+			public Type type;
+
+			[HorizontalGroup("$name/R1"), HideLabel, SerializeField]
+			public Characteristic.Type characteristic;
+
+			[HorizontalGroup("$name/R1"), HideLabel, SerializeField]
+			public Descriptor descriptor;
+
+			[FoldoutGroup("$name/Description"), TextArea(3, 15), HideLabel]
+			public string description;
+
+			public Info(Skill skill)
+            {
+                name = skill.name;
+                type = skill.type;
+                characteristic = skill.characteristic;
+                descriptor = skill.descriptor;
+                description = skill.description;
+            }
+
+            /*
+            [Button("Split Groups")]
+            public void SplitGroups()
+            {
+				string patternB4 = @"^(.*?)(?=<u>)";
+				Match matchB4 = Regex.Match(description, patternB4, RegexOptions.Singleline);
+
+				// Updated regex pattern to match the <u> tag and its associated paragraph
+				string pattern = @"<u>([^<]+)</u>\s*(.+?)(?=(\r?\n\r?\n|$))";
+
+				// Find matches
+				MatchCollection matches = Regex.Matches(description, pattern, RegexOptions.Singleline);
+
+				foreach (Match match in matches)
+				{
+					string title = match.Groups[1].Value; // Title between <u> tags
+					string paragraph = match.Groups[2].Value; // Paragraph text associated with the title
+
+                    var info = new Info()
+                    {
+                        name = $"{this.name}: {title}",
+                        type = type,
+                        characteristic = characteristic,
+                        descriptor = descriptor,
+                        description = $"{matchB4.Groups[1].Value}<u>{title}</u>\n{paragraph}"
+                    };
+
+                    SkillDatabase.Instance.skillInfo.Add(info);
+
+				}
+
+                SkillDatabase.Instance.skillInfo.Remove(this);
+                SkillDatabase.Instance.Alphabetize();
+			}
+
+            // */
+		}
+
+        /// <summary> The basic flag(s) that can be used to describe the uses a skill has </summary>
+		[System.Flags]
         public enum Descriptor
         {
             None = 0,
@@ -21,43 +99,97 @@ namespace SunJack.DarkHeresy
             Operator = 1 << 4
         }
 
+        /// <summary> 
+        /// The category that a skll falls into denoting if it must be trained to be used,
+        /// or if the character can 'take a stab at it' with a penalty.
+        /// </summary>
         public enum Type
         {
             Advanced,
             Basic
         }
 
-        private const int MAX_MASTERY = 2;
+		#endregion
+
+
+		#region----- VARIABLES -----
+
+        // CONSTANTS
+		private const int MAX_MASTERY = 2;
         private const int MAX_BONUS = 60;
         private const int MIN_BONUS = -60;
+        private const int MASTERY_BONUS = 10;
 
-        [FoldoutGroup("$name")]
+        // EVENTS
+        public event Action OnValueChanged;
 
-        [HorizontalGroup("$name/R0", Width = 0.7f), LabelWidth(40)] 
-        public string name;
+        // VARIABLES
+        [InlineProperty]
+		public Info info;
+		public string name => info.name;
+        public Type type => info.type;
+        public Characteristic.Type characteristic => info.characteristic;
+        public Descriptor descriptor => info.descriptor;
+        public string description => info.description;
 
-		[HorizontalGroup("$name/R0", Width = 0.3f), HideLabel, SerializeField]
-        public Type type;
-
-		[HorizontalGroup("$name/R1"), HideLabel, SerializeField] 
-        private Characteristic.Type _characteristic;
-
-        [HorizontalGroup("$name/R1"), HideLabel, SerializeField]
-        private Descriptor _descriptor;
-
-		[FoldoutGroup("$name")]
-		public string[] group;
-
-		[FoldoutGroup("$name/Description"), TextArea(3, 15), HideLabel]
-        public string description;
+		[HorizontalGroup("R0"), ShowInInspector, LabelWidth(50)]
+		private int _mastery = -1;
+        private int masteryBonus => mastery < 0 ? 0 : mastery * MASTERY_BONUS;
+		public int mastery 
+        { 
+            get => _mastery; 
+            set
+            {
+                _mastery = Mathf.Clamp(value, -1, MAX_MASTERY);
+                OnValueChanged?.Invoke();
+            }
+        }
 
 		[HideInInspector] 
-        public int miscBonus;
+        private int _miscBonus;
+        [HorizontalGroup("R0"), ShowInInspector, LabelWidth(70)]
+		public int miscBonus
+        {
+            get => _miscBonus;
+            set
+            {
+                _miscBonus = value;
+                OnValueChanged?.Invoke();
+            }
+        }
 
-		private int _mastery;
-        public int mastery { get => _mastery; private set => _mastery = Mathf.Clamp(value, 0, MAX_MASTERY); }
-        public int bonus => Mathf.Clamp((mastery * 10) + miscBonus, MIN_BONUS, MAX_BONUS);
-        public Characteristic.Type characteristic { get => _characteristic; }
-        public Descriptor descriptor { get => _descriptor; }
-    }
+		[HorizontalGroup("R0"), ShowInInspector, LabelWidth(40)]
+		public int bonus => Mathf.Clamp(masteryBonus + miscBonus, MIN_BONUS, MAX_BONUS);
+
+		public string[] group;
+
+		#endregion
+
+
+		#region----- CUSTOM BEHAVIOURS -----
+
+		public Skill() { }
+
+        public Skill(Info info)
+        {
+            this.info = info;
+        }
+
+        /// <summary>
+        /// Trains the skill, increasing its mastery if possible.
+        /// </summary>
+        /// <param name="skill">The skill to check for training. </param>
+        /// <param name="enforceProgression"> Enforces training through progression in order. </param>
+		public void Train(Skill skill, bool enforceProgression = true)
+        {
+            if(skill.name != name || (enforceProgression && skill.mastery <= mastery))
+                return;
+
+            mastery++;
+        }
+
+        public bool IsNull() => string.IsNullOrEmpty(name);
+
+		#endregion
+	}
 }
