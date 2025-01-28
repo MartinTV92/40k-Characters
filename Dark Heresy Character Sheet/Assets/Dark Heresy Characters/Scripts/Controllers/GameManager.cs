@@ -4,6 +4,7 @@ using UnityEngine;
 using JollyRoger.FinateStateMachine;
 using JollyRoger.DarkHeresy;
 using System;
+using Sirenix.OdinInspector;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
 	#region----- CONSTANT/STATIC -----
 
 	public static GameManager Instance { get; private set; }
+	public static Character Current => CharacterSheetView.target;
 
 	#endregion
 
@@ -35,6 +37,9 @@ public class GameManager : MonoBehaviour
 	#region----- VARIABLES -----
 
 	public PopupManager popupManager;
+
+	public JollyRoger.DarkHeresy.CharacterController characterController;
+	public CharacterSheetPageView characterView;
 
 	// State Machine
 	public StateMachine<State>	stateMachine {get; private set;} = new();

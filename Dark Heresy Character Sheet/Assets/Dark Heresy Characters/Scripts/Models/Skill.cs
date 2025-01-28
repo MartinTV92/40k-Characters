@@ -82,7 +82,8 @@ namespace JollyRoger.DarkHeresy
 		public Info info;
 		public string name => info.name;
         public Type type => info.type;
-        public Characteristic.Type characteristic => info.characteristic;
+        public Characteristic characteristic;
+        public Characteristic.Type characteristicType => info.characteristic;
         public Descriptor descriptor => info.descriptor;
         public string description => info.description;
 
@@ -117,6 +118,7 @@ namespace JollyRoger.DarkHeresy
 
 		public string[] group;
 
+
 		#endregion
 
 
@@ -128,6 +130,13 @@ namespace JollyRoger.DarkHeresy
         {
             this.info = info;
         }
+
+        public int GetBonus(Characteristic characteristic)
+        {
+            var trainingBonus = mastery == -1 ? -Mathf.FloorToInt(characteristic.Value / (float)2) : mastery * MASTERY_BONUS;
+			return Mathf.Clamp(trainingBonus + miscBonus, MIN_BONUS, MAX_BONUS);
+		}
+
 
         /// <summary>
         /// Trains the skill, increasing its mastery if possible.

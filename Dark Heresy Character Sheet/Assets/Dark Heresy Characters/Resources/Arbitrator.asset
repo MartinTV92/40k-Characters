@@ -26,26 +26,43 @@ MonoBehaviour:
     - advances: fa000000f4010000ee020000e8030000
   ranks:
   - xp: 499
-    path:
+    paths:
     - {fileID: 11400000, guid: a4a31211e7ec33340ad341a49acbfda4, type: 2}
   - xp: 999
-    path:
-    - {fileID: 0}
+    paths: []
   - xp: 1999
-    path:
-    - {fileID: 0}
+    paths: []
   - xp: 2999
-    path:
-    - {fileID: 0}
+    paths: []
   - xp: 5999
-    path:
-    - {fileID: 0}
+    paths: []
   - xp: 7999
-    path:
-    - {fileID: 0}
+    paths: []
   - xp: 9999
-    path:
-    - {fileID: 0}
+    paths: []
   - xp: 14999
-    path:
-    - {fileID: 0}
+    paths: []
+  startingChoices:
+  - choice:
+    - option:
+      - name: 'Speak Language: Low Gothic'
+        type: 0
+      - name: Literacy
+        type: 0
+      - name: 'Common Lore: Adeptus Arbites'
+        type: 0
+      - name: 'Common Lore: Imperium'
+        type: 0
+      - name: Inquiry
+        type: 0
+      - name: Basic Weapon Training
+        type: 1
+      - name: Melee Weapon Training
+        type: 1
+  - choice:
+    - option:
+      - name: Quick Draw
+        type: 1
+    - option:
+      - name: Rapid Reload
+        type: 1

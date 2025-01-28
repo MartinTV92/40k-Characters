@@ -14,6 +14,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathName: Trooper
   advances:
-  - name: Armour of Contempt
-    xpCost: 100
+  - name: Awareness
+    xp: 100
+    type: 0
+  - name: 'Common Lore: Adeptus Arbites'
+    xp: 100
+    type: 0
+  - name: 'Drive: Ground Vehicle'
+    xp: 100
+    type: 0
+  - name: 'Drive: Hover Vehicle'
+    xp: 100
+    type: 0
+  - name: Inquiry
+    xp: 100
+    type: 0
+  - name: Scrutiny
+    xp: 100
+    type: 0
+  - name: Swim
+    xp: 100
+    type: 0
+  - name: Basic Weapon Training
+    xp: 100
     type: 1

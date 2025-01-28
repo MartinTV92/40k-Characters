@@ -1176,6 +1176,14 @@ PrefabInstance:
       propertyPath: m_PreferredHeight
       value: 973.0495
       objectReference: {fileID: 0}
+    - target: {fileID: 4171068747844338328, guid: 334ddd6ac79eb524dbff5767a18eaff6, type: 3}
+      propertyPath: propegateMethod
+      value: 5960923339535155200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4171068747844338328, guid: 334ddd6ac79eb524dbff5767a18eaff6, type: 3}
+      propertyPath: managedReferences[5960923339535155200]
+      value: Assembly-CSharp JollyRoger.UI.Utilities.PropegateUp
+      objectReference: {fileID: 0}
     - target: {fileID: 4920937769896308921, guid: 334ddd6ac79eb524dbff5767a18eaff6, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2841,6 +2849,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupManager: {fileID: 161369206}
+  characterController: {fileID: 0}
+  characterView: {fileID: 0}
   bootState:
     OnEnter:
       m_PersistentCalls:
@@ -6038,6 +6048,14 @@ PrefabInstance:
       propertyPath: m_PreferredHeight
       value: 973.0495
       objectReference: {fileID: 0}
+    - target: {fileID: 4171068747844338328, guid: 334ddd6ac79eb524dbff5767a18eaff6, type: 3}
+      propertyPath: propegateMethod
+      value: 5960923339535155202
+      objectReference: {fileID: 0}
+    - target: {fileID: 4171068747844338328, guid: 334ddd6ac79eb524dbff5767a18eaff6, type: 3}
+      propertyPath: managedReferences[5960923339535155202]
+      value: Assembly-CSharp JollyRoger.UI.Utilities.PropegateUp
+      objectReference: {fileID: 0}
     - target: {fileID: 4920937769896308921, guid: 334ddd6ac79eb524dbff5767a18eaff6, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -6608,6 +6626,14 @@ PrefabInstance:
     - target: {fileID: 3770599749450969832, guid: 334ddd6ac79eb524dbff5767a18eaff6, type: 3}
       propertyPath: m_PreferredHeight
       value: 973.0495
+      objectReference: {fileID: 0}
+    - target: {fileID: 4171068747844338328, guid: 334ddd6ac79eb524dbff5767a18eaff6, type: 3}
+      propertyPath: propegateMethod
+      value: 5960923339535155201
+      objectReference: {fileID: 0}
+    - target: {fileID: 4171068747844338328, guid: 334ddd6ac79eb524dbff5767a18eaff6, type: 3}
+      propertyPath: managedReferences[5960923339535155201]
+      value: Assembly-CSharp JollyRoger.UI.Utilities.PropegateUp
       objectReference: {fileID: 0}
     - target: {fileID: 4920937769896308921, guid: 334ddd6ac79eb524dbff5767a18eaff6, type: 3}
       propertyPath: m_AnchorMax.x
@@ -7366,7 +7392,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2659312608179163700, guid: faee3b8fffd5809479150a76b64ca6b3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 99.875
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2659312608179163700, guid: faee3b8fffd5809479150a76b64ca6b3, type: 3}
       propertyPath: m_AnchoredPosition.y

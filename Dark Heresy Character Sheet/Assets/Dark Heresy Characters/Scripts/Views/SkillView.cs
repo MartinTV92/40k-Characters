@@ -37,8 +37,8 @@ namespace JollyRoger.DarkHeresy
 		public void Redraw()
 		{
 			nameTxt.text = skill.name;
-			characteristicTxt.text = $"({CharacteristicView.GetShortName(skill.characteristic)})";
-			bonusTxt.text = $"(+{skill.bonus})";
+			characteristicTxt.text = $"({CharacteristicView.GetShortName(skill.characteristicType)})";
+			bonusTxt.text = $"{skill.GetBonus(GameManager.Current.characteristics[skill.characteristicType]):+#;-#;+0}";
 			for(int i = 0; i < trainingLevels.Length; i++)
 				trainingLevels[i].isOn = skill.mastery >= i;
 		}
@@ -46,11 +46,13 @@ namespace JollyRoger.DarkHeresy
 		void Subscribe()
 		{
 			skill.OnValueChanged += Redraw;
+			GameManager.Current.characteristics[skill.characteristicType].OnValueChanged += Redraw;
 		}
 
 		void UnSubscribe()
 		{
 			skill.OnValueChanged -= Redraw;
+			GameManager.Current.characteristics[skill.characteristicType].OnValueChanged -= Redraw;
 		}
 
 		#endregion

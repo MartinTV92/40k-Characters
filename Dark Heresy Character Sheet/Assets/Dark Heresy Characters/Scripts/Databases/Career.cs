@@ -83,6 +83,9 @@ namespace JollyRoger.DarkHeresy
 			new Rank(14999),
 		};
 
+		//[FoldoutGroup("Starting Skills, Talents, Equipment")]
+		public Choice[] startingChoices;
+
 		#endregion
 
 
