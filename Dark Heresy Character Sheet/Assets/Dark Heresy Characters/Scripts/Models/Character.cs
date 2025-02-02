@@ -207,7 +207,6 @@ namespace JollyRoger.DarkHeresy
 				talents.Add(talent);
 		}
 
-
 		public void Purchase(Advancement purchase)
 		{
 			if(purchase.CanBuy(this) == false)
@@ -216,6 +215,7 @@ namespace JollyRoger.DarkHeresy
 			advancements.Add(purchase);
 			Add(purchase.Value);
 		}
+
 
 		#endregion
 

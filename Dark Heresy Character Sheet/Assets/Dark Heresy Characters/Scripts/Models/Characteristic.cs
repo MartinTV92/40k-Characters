@@ -70,6 +70,8 @@ namespace JollyRoger.DarkHeresy
 		[SerializeField, PropertyOrder(0), SuffixLabel("->"), HorizontalGroup("R1", Width = 0.5f), LabelText("Value")] 
         private int _base = 0;
 
+		public int Base => _base;
+
 		[ShowInInspector, PropertyOrder(0), ReadOnly, HorizontalGroup("R1", Width = 0.2f), HideLabel] 
         public int Value 
 		{ 
