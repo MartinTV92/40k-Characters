@@ -113,6 +113,7 @@ namespace JollyRoger.DarkHeresy
         {
             // Set Characteristic
             characteristic = charType;
+			Value = value;
 
 			// Set advancements with cost
 			advances = new[]

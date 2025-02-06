@@ -4,18 +4,15 @@ using UnityEngine;
 using JollyRoger.DarkHeresy;
 
 namespace JollyRoger.DarkHeresy.Data
-{ 
-
+{
+    [System.Serializable]
     public class CharacterData
     {
         public string name;
         public Character.Career career;
         public int xp;
-        public int[] characteristics = new int[9]; 
-        public SkillData[] basicSkills = new SkillData[0];
-        public SkillData[] advancedSkillsa = new SkillData[0];
-        public TalentData[] talents = new TalentData[0];
-
+        public int[] characteristics = new int[9];
+        public List<AdvancementData> advancements = new ();
 
         public CharacterData()
         {
@@ -30,6 +27,9 @@ namespace JollyRoger.DarkHeresy.Data
 
             for (int i = 0; i < characteristics.Length; i++)
                 characteristics[i] = character.characteristics[(Characteristic.Type)i].Base;
+
+            foreach(var a in character.advancements)
+                advancements.Add(new AdvancementData(a));
         }
     }
 }

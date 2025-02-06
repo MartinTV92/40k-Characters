@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Linq;
 using Sirenix.OdinInspector;
 using System;
+using JollyRoger.DarkHeresy.Data;
 
 namespace JollyRoger.DarkHeresy
 { 
@@ -121,18 +122,16 @@ namespace JollyRoger.DarkHeresy
 			this.Name = "TestCharacter";
 			CareerPath = Career.Arbitrator;
 
-			characteristics = new()
+			characteristics = new();
+			for (int i = 0; i < Enum.GetValues(typeof(Characteristic.Type)).Length; i++)
 			{
-				{Characteristic.Type.WeaponSkill, new (Characteristic.Type.WeaponSkill, 0, CareerPath)},
-				{Characteristic.Type.BallisticSkill, new (Characteristic.Type.BallisticSkill, 0, CareerPath)},
-				{Characteristic.Type.Strength, new (Characteristic.Type.Strength, 0, CareerPath)},
-				{Characteristic.Type.Toughness, new (Characteristic.Type.Toughness, 0, CareerPath)},
-				{Characteristic.Type.Agility, new (Characteristic.Type.Agility, 0, CareerPath)},
-				{Characteristic.Type.Intelligence, new (Characteristic.Type.Intelligence, 0, CareerPath)},
-				{Characteristic.Type.Perception, new (Characteristic.Type.Perception, 0, CareerPath)},
-				{Characteristic.Type.WillPower, new (Characteristic.Type.WillPower, 0, CareerPath)},
-				{Characteristic.Type.Fellowship, new (Characteristic.Type.Fellowship, 0, CareerPath)},
-			};
+				var charType = (Characteristic.Type)i;
+				characteristics.Add(charType, new(charType, 0, CareerPath));
+			}
+
+			basicSkills = SkillDatabase.GetSkillsByType(Skill.Type.Basic);
+			advancedSkills = new();
+			talents = new();
 		}
 
         public Character (string name, Career career)
@@ -140,23 +139,33 @@ namespace JollyRoger.DarkHeresy
             this.Name = name;
             CareerPath = career;
 
-			characteristics = new()
-		    {
-			    {Characteristic.Type.WeaponSkill, new (Characteristic.Type.WeaponSkill, 0, CareerPath)},
-			    {Characteristic.Type.BallisticSkill, new (Characteristic.Type.BallisticSkill, 0, CareerPath)},
-			    {Characteristic.Type.Strength, new (Characteristic.Type.Strength, 0, CareerPath)},
-			    {Characteristic.Type.Toughness, new (Characteristic.Type.Toughness, 0, CareerPath)},
-			    {Characteristic.Type.Agility, new (Characteristic.Type.Agility, 0, CareerPath)},
-			    {Characteristic.Type.Intelligence, new (Characteristic.Type.Intelligence, 0, CareerPath)},
-			    {Characteristic.Type.Perception, new (Characteristic.Type.Perception, 0, CareerPath)},
-			    {Characteristic.Type.WillPower, new (Characteristic.Type.WillPower, 0, CareerPath)},
-			    {Characteristic.Type.Fellowship, new (Characteristic.Type.Fellowship, 0, CareerPath)},
-		    };
+			characteristics = new();
+			for (int i = 0; i < Enum.GetValues(typeof(Characteristic.Type)).Length; i++)
+			{
+				var charType = (Characteristic.Type)i;
+				characteristics.Add(charType, new(charType, 0, CareerPath));
+			}
 
 			basicSkills = SkillDatabase.GetSkillsByType(Skill.Type.Basic);
-			//advancedSkills = new();
-			advancedSkills = SkillDatabase.GetSkillsByType(Skill.Type.Advanced);
-			talents = TalentDatabase.GetAllTalents();
+			advancedSkills = new();
+			talents = new();
+		}
+
+		public Character(CharacterData data)
+		{
+			Name = data.name;
+			CareerPath = data.career;
+
+			characteristics = new();
+			for(int i = 0; i < Enum.GetValues(typeof(Characteristic.Type)).Length; i++)
+			{
+				var charType = (Characteristic.Type) i;
+				characteristics.Add(charType, new (charType, data.characteristics[i], CareerPath));
+			}
+
+			basicSkills = SkillDatabase.GetSkillsByType(Skill.Type.Basic);
+			advancedSkills = new();
+			talents = new();
 		}
 
         /// <summary> Change the character's name. </summary>

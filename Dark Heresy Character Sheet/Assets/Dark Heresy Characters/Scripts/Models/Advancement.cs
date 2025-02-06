@@ -13,7 +13,8 @@ namespace JollyRoger.DarkHeresy
         public enum Type
         {
             Skill,
-            Talent
+            Talent,
+            Characteristic
         }
 
         #endregion

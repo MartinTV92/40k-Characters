@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class AdvancementData : MonoBehaviour
+namespace JollyRoger.DarkHeresy.Data
 {
-    // Start is called before the first frame update
-    void Start()
+    [System.Serializable]
+	public class AdvancementData
     {
-        
-    }
+        public string name = "";
+        public int xp = 0;
+        public int lvl = -1;
+        public Skill.Type type;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public AdvancementData(Advancement advancement)
+        {
+            name = advancement.name;
+            xp = advancement.xp;
+            if(advancement.type != Advancement.Type.Talent)
+                lvl = advancement.mastery;
+        }
     }
 }

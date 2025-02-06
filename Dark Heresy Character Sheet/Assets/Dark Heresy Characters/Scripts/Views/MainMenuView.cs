@@ -56,7 +56,6 @@ namespace JollyRoger.DarkHeresy
 		#endregion
 
 
-
 		#region----- MONOBEHAVIOURS -----
 
 		private void Awake()

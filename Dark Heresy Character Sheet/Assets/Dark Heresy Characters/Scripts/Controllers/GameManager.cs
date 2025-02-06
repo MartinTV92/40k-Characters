@@ -1,10 +1,13 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using JollyRoger.FinateStateMachine;
 using JollyRoger.DarkHeresy;
 using System;
 using Sirenix.OdinInspector;
+using JollyRoger.DarkHeresy.Data;
+using JollyRoger.Data;
+using static UnityEngine.Rendering.DebugUI;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,6 +24,7 @@ public class GameManager : MonoBehaviour
 		MainMenu,
 		CharacterCreation,
 		CharacterSheet,
+		LoadCharacter,
 	}
 
 	#endregion
@@ -41,6 +45,8 @@ public class GameManager : MonoBehaviour
 	public JollyRoger.DarkHeresy.CharacterController characterController;
 	public CharacterSheetPageView characterView;
 
+	public ReadWriteType readWriteType;
+
 	// State Machine
 	public StateMachine<State>	stateMachine {get; private set;} = new();
 	public GameStateBoot bootState = new();
@@ -48,6 +54,7 @@ public class GameManager : MonoBehaviour
 	public GameStateMenu menuState = new();
 	public GameStateCharacterCreation characterCreationState = new();
 	public GameStateCharacterSheet characterSheetState = new();
+	public GameStateLoadCharacter loadCharacterState = new();
 
 	#endregion
 
@@ -59,6 +66,7 @@ public class GameManager : MonoBehaviour
 		if (Instance == null)
 			Instance = this;
 
+		SaveManager.Init();
 		popupManager.Setup();
 		RegisterStates();
     }
@@ -88,6 +96,7 @@ public class GameManager : MonoBehaviour
 		stateMachine.RegisterState(State.MainMenu, menuState);
 		stateMachine.RegisterState(State.CharacterCreation, characterCreationState);
 		stateMachine.RegisterState(State.CharacterSheet, characterSheetState);
+		stateMachine.RegisterState(State.LoadCharacter, loadCharacterState);
 	}
 
 	/// <summary> 
@@ -165,12 +174,43 @@ public class GameManager : MonoBehaviour
 		stateMachine.ChangeState(State.CharacterSheet);
 	}
 
+	public void GoToLoadScreen() => stateMachine.ChangeState(State.LoadCharacter);
+
+	/// <summary>
+	/// Loads a character from the given path.
+	/// </summary>
+	/// <param name="file">Complete filepath including extension. Not just the character's name </param>
+	public void LoadCharacter(string file)
+	{
+		var data = SaveManager.LoadCharacter(file);
+		if(data == null)
+			return;
+
+		stateMachine.ChangeState(State.CharacterSheet);
+		CharacterSheetView.target = new Character(data);
+	}
+
 	/// <summary>
 	/// Quits the application enforcing save (not implemented yet)
 	/// </summary>
 	public void Quit()
 	{
 		Application.Quit();
+	}
+
+	[Button("Save")]
+	public void Save()
+	{
+		SaveManager.readWriteType = readWriteType;
+		if (Application.isPlaying)
+			SaveManager.SaveCharacter(Current);
+	}
+
+	[Button("Delete")]
+	public void Delete()
+	{
+		//SaveManager.Delete(0);
+		SaveManager.Delete("cumblastahthemastah​");
 	}
 
 	#endregion
