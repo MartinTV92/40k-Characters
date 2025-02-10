@@ -1,8 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using Sirenix.OdinInspector;
 using System;
 using JollyRoger.DarkHeresy.Data;
 
@@ -107,7 +105,7 @@ namespace JollyRoger.DarkHeresy
 		}
 
 		// Events
-		public event Action OnCharacterChanged;
+		public event Action OnCharacterChanged = delegate {};
 		public event Action<Skill.Type> OnSkillChanged;
 		public event Action OnTalentsChanged;
 		public event Action OnAdvancesChanged;
@@ -132,6 +130,7 @@ namespace JollyRoger.DarkHeresy
 			basicSkills = SkillDatabase.GetSkillsByType(Skill.Type.Basic);
 			advancedSkills = new();
 			talents = new();
+			SetupUpdateEvents();
 		}
 
         public Character (string name, Career career)
@@ -149,6 +148,7 @@ namespace JollyRoger.DarkHeresy
 			basicSkills = SkillDatabase.GetSkillsByType(Skill.Type.Basic);
 			advancedSkills = new();
 			talents = new();
+			SetupUpdateEvents();
 		}
 
 		public Character(CharacterData data)
@@ -166,7 +166,9 @@ namespace JollyRoger.DarkHeresy
 			basicSkills = SkillDatabase.GetSkillsByType(Skill.Type.Basic);
 			advancedSkills = new();
 			talents = new();
+			SetupUpdateEvents();
 		}
+
 
         /// <summary> Change the character's name. </summary>
         /// <param name="newName"> The name to set. </param>
@@ -205,7 +207,10 @@ namespace JollyRoger.DarkHeresy
 			var existingSkill = list.Where(x => x.name == skill.name).First();
 
 			if(existingSkill != null)
+			{ 
 				list.Add(skill);
+				SubscribeToUpdates(skill);
+			}
 			else
 				existingSkill.Train(skill);
 		}
@@ -213,7 +218,10 @@ namespace JollyRoger.DarkHeresy
 		public void Add(Talent talent)
 		{
 			if(talents.Contains(talent) == false)
+			{
 				talents.Add(talent);
+				SubscribeToUpdates(talent);
+			}
 		}
 
 		public void Purchase(Advancement purchase)
@@ -225,6 +233,42 @@ namespace JollyRoger.DarkHeresy
 			Add(purchase.Value);
 		}
 
+		/// <summary>
+		/// Subscribes character sheet to all update events from within to allow other objects to know, in an easy way
+		/// when the character sheet has been modified in some way.
+		/// </summary>
+		private void SetupUpdateEvents()
+		{
+			SubscribeToUpdates(characteristics.Values.ToArray());
+			SubscribeToUpdates(basicSkills.ToArray());
+			SubscribeToUpdates(advancedSkills.ToArray());
+			SubscribeToUpdates(talents.ToArray());
+		}
+
+		private void ClearUpdateEvents()
+		{
+			UnsubscribeFromUpdate(characteristics.Values.ToArray());
+			UnsubscribeFromUpdate(basicSkills.ToArray());
+			UnsubscribeFromUpdate(advancedSkills.ToArray());
+			UnsubscribeFromUpdate(talents.ToArray());
+		}
+
+		private void SubscribeToUpdates(params IUpdateable[] updateables)
+		{
+			foreach(var u in updateables)
+				u.OnUpdate += InvokeUpdate;
+		}
+
+		private void UnsubscribeFromUpdate(params IUpdateable[] updateables)
+		{
+			foreach (var u in updateables)
+				u.OnUpdate -= InvokeUpdate;
+		}
+
+		private void InvokeUpdate()
+		{
+			OnCharacterChanged?.Invoke();
+		}
 
 		#endregion
 

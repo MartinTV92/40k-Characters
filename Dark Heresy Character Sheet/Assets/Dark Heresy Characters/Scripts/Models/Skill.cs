@@ -1,9 +1,6 @@
 using UnityEngine;
 using Sirenix.OdinInspector;
 using System;
-using System.Text.RegularExpressions;
-using UnityEngine.Windows;
-using System.Collections.Generic;
 
 namespace JollyRoger.DarkHeresy
 {
@@ -12,7 +9,7 @@ namespace JollyRoger.DarkHeresy
     /// Furthermore, defines the mastery and other bonuses applied to skill.
     /// </summary>
     [System.Serializable, HideReferenceObjectPicker]
-    public class Skill
+    public class Skill : IUpdateable
     {
 		#region----- NESTED -----
 
@@ -75,7 +72,7 @@ namespace JollyRoger.DarkHeresy
         public const int MASTERY_BONUS = 10;
 
         // EVENTS
-        public event Action OnValueChanged;
+        public event Action OnUpdate = delegate { };
 
         // VARIABLES
         [InlineProperty]
@@ -96,7 +93,7 @@ namespace JollyRoger.DarkHeresy
             set
             {
                 _mastery = Mathf.Clamp(value, -1, MAX_MASTERY);
-                OnValueChanged?.Invoke();
+                OnUpdate?.Invoke();
             }
         }
 
@@ -109,7 +106,7 @@ namespace JollyRoger.DarkHeresy
             set
             {
                 _miscBonus = value;
-                OnValueChanged?.Invoke();
+                OnUpdate?.Invoke();
             }
         }
 

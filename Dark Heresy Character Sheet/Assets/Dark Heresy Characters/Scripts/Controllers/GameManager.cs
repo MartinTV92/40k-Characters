@@ -1,11 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using JollyRoger.FinateStateMachine;
 using JollyRoger.DarkHeresy;
 using System;
 using Sirenix.OdinInspector;
-using JollyRoger.DarkHeresy.Data;
 using JollyRoger.Data;
 using static UnityEngine.Rendering.DebugUI;
 
@@ -45,8 +42,6 @@ public class GameManager : MonoBehaviour
 	public JollyRoger.DarkHeresy.CharacterController characterController;
 	public CharacterSheetPageView characterView;
 
-	public ReadWriteType readWriteType;
-
 	// State Machine
 	public StateMachine<State>	stateMachine {get; private set;} = new();
 	public GameStateBoot bootState = new();
@@ -81,8 +76,13 @@ public class GameManager : MonoBehaviour
         stateMachine.Run();
     }
 
+	private void OnApplicationQuit()
+	{
+		//SaveManager.SaveCharacter(Current);
+	}
+
 	#endregion
-	 
+
 
 	#region----- CUSTOM BEHAVIOURS -----
 
@@ -170,8 +170,14 @@ public class GameManager : MonoBehaviour
 	{
 		var charName = MainMenuView.Instance.GetEnteredName();
 		var charClass = MainMenuView.Instance.GetCareerSelection();
+
+		if(Current != null)
+			Current.OnCharacterChanged -= OnCharacterChanged;
+
 		CharacterSheetView.target = new Character(charName, charClass);
+		Current.OnCharacterChanged += OnCharacterChanged;
 		stateMachine.ChangeState(State.CharacterSheet);
+		SaveManager.SaveCharacter(Current);
 	}
 
 	public void GoToLoadScreen() => stateMachine.ChangeState(State.LoadCharacter);
@@ -187,7 +193,12 @@ public class GameManager : MonoBehaviour
 			return;
 
 		stateMachine.ChangeState(State.CharacterSheet);
+
+		if (Current != null)
+			Current.OnCharacterChanged -= Save;
+
 		CharacterSheetView.target = new Character(data);
+		Current.OnCharacterChanged += Save;
 	}
 
 	/// <summary>
@@ -201,10 +212,13 @@ public class GameManager : MonoBehaviour
 	[Button("Save")]
 	public void Save()
 	{
-		SaveManager.readWriteType = readWriteType;
 		if (Application.isPlaying)
 			SaveManager.SaveCharacter(Current);
+
+		Debug.Log($"Saving Character: {Current.Name}");
 	}
+
+	void OnCharacterChanged() => Save();
 
 	[Button("Delete")]
 	public void Delete()
@@ -212,6 +226,8 @@ public class GameManager : MonoBehaviour
 		//SaveManager.Delete(0);
 		SaveManager.Delete("cumblastahthemastah​");
 	}
+
+
 
 	#endregion
 }

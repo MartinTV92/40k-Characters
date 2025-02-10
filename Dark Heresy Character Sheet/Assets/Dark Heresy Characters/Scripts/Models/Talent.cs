@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
@@ -9,7 +10,7 @@ namespace JollyRoger.DarkHeresy
     /// and other miscellaneous things.
     /// </summary>
     [System.Serializable]
-    public class Talent
+    public class Talent : IUpdateable
     {
 
 		[FoldoutGroup("$name")] public string name;
@@ -20,5 +21,7 @@ namespace JollyRoger.DarkHeresy
         /// <summary> Regular, detailed description of the talent that encompasses all rules. </summary>
         [TextArea(3, 15)]
 		[FoldoutGroup("$name")] public string description;
+
+        public event Action OnUpdate = delegate { };
     }
 }

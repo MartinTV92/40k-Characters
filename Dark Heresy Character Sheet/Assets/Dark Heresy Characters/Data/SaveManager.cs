@@ -19,10 +19,7 @@ namespace JollyRoger.Data
 		#region----- CONSTANT/STATIC -----
 
 		public static string SAVE_PATH => Application.persistentDataPath;
-        public const string EXTENSION_CUSTOM = ".DH";
         public const string EXTENSION_JSON = ".json";
-
-        public static ReadWriteType readWriteType;
 
 		#endregion
 
@@ -75,54 +72,13 @@ namespace JollyRoger.Data
 
         public static void SaveCharacter(CharacterData data)
         {
-            if(readWriteType == ReadWriteType.BasicSerialization)
-                SerializeCharacter(data);
-			else if(readWriteType == ReadWriteType.Json)
-				CharacterToJSON(data);
+			CharacterToJSON(data);
         }
 
         public static CharacterData LoadCharacter(string fileName)
         {
-			if (readWriteType == ReadWriteType.BasicSerialization)
-				return DeserializeCharacter(fileName);
-			else if(readWriteType == ReadWriteType.Json)
-				return CharacterFromJson(fileName);
-
-			return null;
+			return CharacterFromJson(fileName);
 		}
-
-		#region Basic Serialization
-
-		private static void SerializeCharacter(CharacterData data)
-        {
-			var binForm = new BinaryFormatter();
-			var fileName = FormatName(data.name);
-			var path = $"{SAVE_PATH}/{fileName}";
-			var stream = new FileStream(path, FileMode.Create);
-			binForm.Serialize(stream, data);
-			stream.Close();
-		}
-
-        private static CharacterData DeserializeCharacter(string fileName)
-        {
-			//var path = $"{SAVE_PATH}/{fileName}{EXTENSION_CUSTOM}";
-
-			if (File.Exists(fileName))
-			{
-				var binForm = new BinaryFormatter();
-				var stream = new FileStream(fileName, FileMode.Create);
-				var data = binForm.Deserialize(stream) as CharacterData;
-				stream.Close();
-				return data;
-			}
-			else
-			{
-				Debug.LogError($"No file found for '{fileName}'");
-				return null;
-			}
-		}
-
-		#endregion
 
 		#region JSON
 
@@ -142,13 +98,23 @@ namespace JollyRoger.Data
 
 		#endregion
 
+		/// <summary>
+		/// Format the character's name to a standard for save files, 
+		/// i.e. no spaces or special characters and to lower case.
+		/// E.g. "Jason Phile-69" -> "jasonphile69.json"
+		/// </summary>
+		/// <param name="characterName"> The character's name to format.</param>
+		/// <returns>The formated string.</returns>
 		public static string FormatName(string characterName)
 		{
-			var fileName = Regex.Replace(characterName, @"\s+", "").ToLower();
-			fileName += readWriteType == ReadWriteType.Json ? EXTENSION_JSON : EXTENSION_CUSTOM;
+			var fileName = Regex.Replace(characterName, @"[^a-zA-Z0-9]", "").ToLower() + EXTENSION_JSON;
+			fileName.Normalize();
 			return fileName;
 		}
 
+		/// <summary>
+		/// Prints all save files. For debug purposes.
+		/// </summary>
 		private static void PrintSaveFiles()
 		{
 			foreach (var file in files)

@@ -89,13 +89,13 @@ namespace JollyRoger.DarkHeresy
 		void Subscribe()
 		{
 			if(targetModel != null)
-				targetModel.OnValueChanged += Redraw;
+				targetModel.OnUpdate += Redraw;
 		}
 
 		void UnSubscribe()
 		{
 			if (targetModel != null)
-				targetModel.OnValueChanged -= Redraw;
+				targetModel.OnUpdate -= Redraw;
 		}
 
 		[Button("Redraw")]

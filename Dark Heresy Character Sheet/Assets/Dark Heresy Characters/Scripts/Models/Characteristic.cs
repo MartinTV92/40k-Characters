@@ -9,7 +9,7 @@ namespace JollyRoger.DarkHeresy
     /// Strength, Toughness, Willpower etc.
     /// </summary>
 	[System.Serializable]
-    public class Characteristic
+    public class Characteristic : IUpdateable
     {
 		/* TODO
          
@@ -79,7 +79,8 @@ namespace JollyRoger.DarkHeresy
 			set
 			{ 
 				_base = Mathf.Clamp(value, 0, 100);
-				OnValueChanged?.Invoke();
+				Debug.Log($"UPDATE: {characteristic}");
+				OnUpdate?.Invoke();
 			}
 		}
         
@@ -102,7 +103,7 @@ namespace JollyRoger.DarkHeresy
         public Advancement[] advances;
 
 		// Events
-		public event Action OnValueChanged;
+		public event Action OnUpdate = delegate { };
 
 		#endregion
 

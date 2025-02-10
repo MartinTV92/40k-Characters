@@ -45,14 +45,14 @@ namespace JollyRoger.DarkHeresy
 
 		void Subscribe()
 		{
-			skill.OnValueChanged += Redraw;
-			GameManager.Current.characteristics[skill.characteristicType].OnValueChanged += Redraw;
+			skill.OnUpdate += Redraw;
+			GameManager.Current.characteristics[skill.characteristicType].OnUpdate += Redraw;
 		}
 
 		void UnSubscribe()
 		{
-			skill.OnValueChanged -= Redraw;
-			GameManager.Current.characteristics[skill.characteristicType].OnValueChanged -= Redraw;
+			skill.OnUpdate -= Redraw;
+			GameManager.Current.characteristics[skill.characteristicType].OnUpdate -= Redraw;
 		}
 
 		#endregion

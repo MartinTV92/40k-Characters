@@ -1,12 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
 namespace JollyRoger.DarkHeresy
 {
     [InlineProperty, System.Serializable]
-    public class Advancement
+    public class Advancement : IUpdateable
     {
 		#region----- NESTED -----
 
@@ -47,6 +47,8 @@ namespace JollyRoger.DarkHeresy
         public Prerequisite[] prerequisites;
 
         public int XP { get => xp; }
+
+        public event Action OnUpdate = delegate { };
 
         /// <summary>
         /// Tests if the character can purchase the advancement
