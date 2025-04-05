@@ -3,6 +3,8 @@ using UnityEngine;
 using System.Linq;
 using System;
 using JollyRoger.DarkHeresy.Data;
+using Sirenix.OdinInspector;
+using System.Collections;
 
 namespace JollyRoger.DarkHeresy
 { 
@@ -275,7 +277,7 @@ namespace JollyRoger.DarkHeresy
 
 		#region----- EDITOR -----
 
-		/*
+		//*
 
 		[ValueDropdown("SkillDropdown")]
 		public Skill testSkill;

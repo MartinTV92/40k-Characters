@@ -34,9 +34,9 @@ namespace JollyRoger.DarkHeresy
 		[Button("Alphabetize")]
 		private void Alphabetize() => talents.Sort((A, B) => string.Compare(A.name, B.name));
 
-		public static Talent GetTalent(string name) => Instance.talents.Where(x => x.name == name).FirstOrDefault();
+		public static Talent Get(string name) => Instance.talents.Where(x => x.name == name).FirstOrDefault();
 
-		public static List<Talent> GetAllTalents() => Instance.talents;
+		public static List<Talent> GetAll() => Instance.talents;
 
 		public static IEnumerable TalentDropdown() => Instance.talents.Select(x => x.name);
 

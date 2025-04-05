@@ -80,7 +80,7 @@ namespace JollyRoger.DarkHeresy
 			if (type == Type.Skill)
 				Value = SkillDatabase.GetSkillInfo(name);
 			else
-				Value = TalentDatabase.GetTalent(name);
+				Value = TalentDatabase.Get(name);
 		}
 
         public string ReadFriendlyName()

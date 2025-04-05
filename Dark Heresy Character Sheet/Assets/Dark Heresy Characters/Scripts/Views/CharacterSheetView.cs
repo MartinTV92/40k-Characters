@@ -140,6 +140,7 @@ namespace JollyRoger.DarkHeresy
 			view.transform.localScale = Vector3.one;
 			view.SetSkill(skill);
 			skillList.Add(view);
+			pageDict[page].SetAppendages();
 		}
 
         public void Remove(Skill skill)
@@ -167,7 +168,9 @@ namespace JollyRoger.DarkHeresy
             view.gameObject.name = $"Talent_{talent.name}";
             view.transform.localScale = Vector3.one;
             view.SetTalent(talent);
-        }
+			pageDict[Page.TalentsTraits].SetAppendages();
+
+		}
 
 		public void Remove(Talent skill)
 		{
