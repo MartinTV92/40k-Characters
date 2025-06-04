@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
 			Instance = this;
 
 		SaveManager.Init();
-		popupManager.Setup();
+		//popupManager.Setup();
 		RegisterStates();
     }
 
