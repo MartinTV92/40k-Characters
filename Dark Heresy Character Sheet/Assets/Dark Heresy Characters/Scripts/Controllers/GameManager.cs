@@ -30,7 +30,51 @@ public class GameManager : MonoBehaviour
 	#region----- CONSTANT/STATIC -----
 
 	public static GameManager Instance { get; private set; }
-	public static Character Current => CharacterSheetView.target;
+
+	private static Character _current;
+	//[ShowInInspector, PropertyOrder(-1), BoxGroup("Character/Class"), HideLabel]
+	public static Character Current 
+	{ 
+		get => _current;
+		private set
+		{
+			_current = value;
+			//CurrentReadout = value != null ? value.ToString() : "NULL";
+		}
+	}
+
+	
+	public Character _testChar;
+	[FoldoutGroup("Character")]
+	[ShowInInspector, PropertyOrder(-1), BoxGroup("Character/Class")] 
+	public Character TestChar
+	{
+		get => _testChar;
+		private set
+		{
+			if(_testChar != null)
+				_testChar.OnCharacterChanged -= UpdateReadout;
+			
+			_testChar = value;
+			
+			if(_testChar != null)
+				_testChar.OnCharacterChanged += UpdateReadout;
+
+			UpdateReadout();
+		}
+	}
+
+	[ShowInInspector, BoxGroup("Character/To String"), HideLabel, TextArea(3, 200)]
+	public string CurrentReadout;
+
+	void UpdateReadout()
+	{
+		Debug.Log("Updating Readout");
+		if(TestChar != null)
+			CurrentReadout = TestChar.ToString();
+		else
+			CurrentReadout = "NULL";
+	}
 
 	#endregion
 
@@ -38,7 +82,6 @@ public class GameManager : MonoBehaviour
 	#region----- VARIABLES -----
 
 	public PopupManager popupManager;
-
 	public JollyRoger.DarkHeresy.CharacterController characterController;
 	public CharacterSheetPageView characterView;
 
@@ -68,6 +111,9 @@ public class GameManager : MonoBehaviour
 
 	private void Start()
 	{
+		foreach(var state in stateMachine.states.Values)
+			state.Exit();
+
 		stateMachine.ChangeState(State.Boot);
 	}
 
@@ -168,13 +214,13 @@ public class GameManager : MonoBehaviour
 	/// </summary>
 	public void CreateCharacter()
 	{
-		var charName = MainMenuView.Instance.GetEnteredName();
-		var charClass = MainMenuView.Instance.GetCareerSelection();
+		var charName = characterCreationState.GetEnteredName();
+		var charClass = characterCreationState.GetCareerSelection();
 
 		if(Current != null)
 			Current.OnCharacterChanged -= OnCharacterChanged;
 
-		CharacterSheetView.target = new Character(charName, charClass);
+		Current = new Character(charName, charClass);
 		Current.OnCharacterChanged += OnCharacterChanged;
 		stateMachine.ChangeState(State.CharacterSheet);
 		SaveManager.SaveCharacter(Current);
@@ -226,8 +272,6 @@ public class GameManager : MonoBehaviour
 		//SaveManager.Delete(0);
 		SaveManager.Delete("cumblastahthemastah​");
 	}
-
-
 
 	#endregion
 }

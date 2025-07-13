@@ -91,5 +91,10 @@ namespace JollyRoger.DarkHeresy
             var suffix = mastery > 0 ? $" (+{mastery * Skill.MASTERY_BONUS})" : "";
             return name + suffix;
         }
-    }
+
+		public override string ToString()
+		{
+			return $"{ReadFriendlyName()} ({xp})";
+		}
+	}
 }

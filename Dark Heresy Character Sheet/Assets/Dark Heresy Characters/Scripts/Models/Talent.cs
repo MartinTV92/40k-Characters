@@ -23,5 +23,8 @@ namespace JollyRoger.DarkHeresy
 		[FoldoutGroup("$name")] public string description;
 
         public event Action OnUpdate = delegate { };
-    }
+
+
+		public override string ToString() => name;
+	}
 }

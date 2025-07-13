@@ -1,6 +1,7 @@
+using System;
 using UnityEngine;
 using Sirenix.OdinInspector;
-using System;
+using JollyRoger.Collections;
 
 namespace JollyRoger.DarkHeresy
 {
@@ -9,7 +10,7 @@ namespace JollyRoger.DarkHeresy
     /// Furthermore, defines the mastery and other bonuses applied to skill.
     /// </summary>
     [System.Serializable, HideReferenceObjectPicker]
-    public class Skill : IUpdateable
+    public class Skill : NotifyPropertyChangedWrapper, IUpdateable
     {
 		#region----- NESTED -----
 
@@ -92,7 +93,7 @@ namespace JollyRoger.DarkHeresy
             get => _mastery; 
             set
             {
-                _mastery = Mathf.Clamp(value, -1, MAX_MASTERY);
+                SetProperty(ref _mastery, Mathf.Clamp(value, -1, MAX_MASTERY));
                 OnUpdate?.Invoke();
             }
         }
@@ -105,8 +106,8 @@ namespace JollyRoger.DarkHeresy
             get => _miscBonus;
             set
             {
-                _miscBonus = value;
-                OnUpdate?.Invoke();
+				SetProperty(ref _miscBonus, value);
+				OnUpdate?.Invoke();
             }
         }
 
@@ -146,7 +147,16 @@ namespace JollyRoger.DarkHeresy
                 return;
 
             mastery++;
+            OnUpdate?.Invoke();
         }
+
+		public override string ToString()
+		{
+			return $"{GetNameWithSkill()}\t{GetBonusString()}";
+		}
+
+        public string GetNameWithSkill() => $"{name}...({Characteristic.GetShortName(characteristicType)})";
+        public string GetBonusString() => $"{bonus::+#;-#;+0}";
 
 		#endregion
 	}

@@ -79,7 +79,6 @@ namespace JollyRoger.DarkHeresy
 			set
 			{ 
 				_base = Mathf.Clamp(value, 0, 100);
-				Debug.Log($"UPDATE: {characteristic}");
 				OnUpdate?.Invoke();
 			}
 		}
@@ -110,7 +109,38 @@ namespace JollyRoger.DarkHeresy
 
 		#region----- CUSTOM BEHAVIOURS -----
 
-        public Characteristic(Type charType, int value, Character.Career career)
+		#region Statics/Helpers
+
+		public static string GetShortName(Type charType)
+		{
+			switch (charType)
+			{
+				case Type.WeaponSkill:
+					return "WS";
+				case Type.BallisticSkill:
+					return "BS";
+				case Type.Strength:
+					return "S";
+				case Type.Toughness:
+					return "T";
+				case Type.Agility:
+					return "Ag";
+				case Type.Intelligence:
+					return "Int";
+				case Type.Perception:
+					return "Per";
+				case Type.WillPower:
+					return "WP";
+				case Type.Fellowship:
+					return "Fel";
+			}
+
+			return default;
+		}
+
+		#endregion
+
+		public Characteristic(Type charType, int value, Character.Career career)
         {
             // Set Characteristic
             characteristic = charType;
@@ -126,7 +156,7 @@ namespace JollyRoger.DarkHeresy
 		    };
 		}
 
-		public override string ToString() => $"{characteristic}: {Value}({advancesTaken}/4)";
+		public override string ToString() => $"{GetShortName(characteristic)}: {Value}({advancesTaken}/4)";
 
 		#endregion
 	}

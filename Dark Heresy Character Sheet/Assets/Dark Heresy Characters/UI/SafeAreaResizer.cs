@@ -41,7 +41,7 @@ namespace JollyRoger.UI.Utilities
 
 		#region----- CUSTOM BEHAVIOURS -----
 
-		private void FitToSafeArea()
+		public void FitToSafeArea()
 		{
 			Rect safeArea = Screen.safeArea;
 			Vector2 anchorMin = safeArea.position;

@@ -111,6 +111,5 @@ namespace JollyRoger.DarkHeresy
 		public Character.Career GetCareerSelection() => (Character.Career)careerSelect.value;
 
 		#endregion
-
 	}
 }
