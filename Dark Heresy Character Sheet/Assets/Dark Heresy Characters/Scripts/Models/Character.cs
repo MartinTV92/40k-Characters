@@ -252,12 +252,9 @@ namespace JollyRoger.DarkHeresy
 			var existingSkill = list.Where(x => x.name == skill.name).FirstOrDefault();
 
 			if(existingSkill != null)
-			{ 
-				list.Add(skill);
-				//SubscribeToUpdates(skill);
-			}
-			else
 				existingSkill.Train(skill);
+			else
+				list.Add(skill);
 		}
 
 		public void Add(Talent talent)
@@ -285,7 +282,11 @@ namespace JollyRoger.DarkHeresy
 		private void SetupUpdateEvents()
 		{
 			// New
+			Debug.Log("Character is listening to basic and advanced skills");
+			basicSkills.ListChanged += UpdateCharacter;
 			basicSkills.PropertyChanged += UpdateCharacter;
+
+			advancedSkills.ListChanged += UpdateCharacter;
 			advancedSkills.PropertyChanged += UpdateCharacter;
 
 
@@ -321,6 +322,12 @@ namespace JollyRoger.DarkHeresy
 			OnCharacterChanged?.Invoke();
 		}
 
+		private void UpdateCharacter()
+		{
+			Debug.Log($"Character Update");
+			OnCharacterChanged?.Invoke();
+		}
+
 		private void UpdateCharacter(object sender, PropertyChangedEventArgs e)
 		{
 			Debug.Log($"Character Update: {e.PropertyName}");
@@ -344,7 +351,7 @@ namespace JollyRoger.DarkHeresy
 			s.AppendLine(sectionBreak);
 
 
-			s.AppendLine("Basic Skills \t\t\t|\t\tAdvanced Skills");
+			s.AppendLine("\t[Basic Skills] \t\t[Advanced Skills]");
 			var longestEntry = basicSkills.OrderByDescending(o => o.ToString().Length).FirstOrDefault().GetNameWithSkill().Length;
 			var columnWidth = longestEntry + 6; 
 			for(int i = 0; i < Math.Max(basicSkills.Count, advancedSkills.Count); i++)
@@ -352,8 +359,8 @@ namespace JollyRoger.DarkHeresy
 				var rightColumn = i < basicSkills.Count ? basicSkills[i].GetNameWithSkill().PadRight(columnWidth) + "\t" + basicSkills[i].GetBonusString() : 
 					"".PadRight(columnWidth + 3);
 
-				var leftColumn = ((i < advancedSkills.Count) ? advancedSkills[i].ToString().PadRight(columnWidth) + "\t" + advancedSkills[i].ToString() : "");
-				s.AppendLine($"{rightColumn}\t| {leftColumn}");
+				var leftColumn = ((i < advancedSkills.Count) ? advancedSkills[i].GetNameWithSkill().PadRight(columnWidth) + "\t" + advancedSkills[i].GetBonusString() : "");
+				s.AppendLine($"{rightColumn}| {leftColumn}");
 			}
 			s.AppendLine(sectionBreak);
 

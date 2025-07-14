@@ -20,7 +20,11 @@ namespace JollyRoger.Collections
 
 		#region----- CUSTOM BEHAVIOURS-----
 
-		protected void Notify() => ListChanged?.Invoke();
+		protected void Notify()
+		{
+			UnityEngine.Debug.Log("Observable List Notify");
+			ListChanged?.Invoke();
+		}
 
 		public ObservableList() { }
 
@@ -50,6 +54,7 @@ namespace JollyRoger.Collections
 
 		public virtual void Add(T item)
 		{
+			UnityEngine.Debug.Log($"Adding item: {item.ToString()}");
 			_list.Add(item);
 			Notify();
 		}

@@ -58,7 +58,10 @@ public class GameManager : MonoBehaviour
 			_testChar = value;
 			
 			if(_testChar != null)
+			{
+				Debug.Log("Game manager is listening for updates in _testChar");
 				_testChar.OnCharacterChanged += UpdateReadout;
+			}
 
 			UpdateReadout();
 		}

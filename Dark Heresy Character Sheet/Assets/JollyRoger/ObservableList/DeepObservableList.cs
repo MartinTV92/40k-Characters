@@ -32,8 +32,8 @@ namespace JollyRoger.Collections
 
 		public override void Add(T item)
 		{
-			base.Add(item);
 			SubscribeToItem(item);
+			base.Add(item);
 		}
 
 		public override bool Remove(T item)
@@ -69,11 +69,16 @@ namespace JollyRoger.Collections
 
 		#region----- CUSTOM METHODS -----
 
-		public DeepObservableList() => ListChanged += ResubscribeAll;
+		public DeepObservableList()
+		{
+			//ListChanged += ResubscribeAll;
+			ResubscribeAll();
+		}
 
 		public DeepObservableList(List<T> list) : base(list)
 		{
-			ListChanged += ResubscribeAll;
+			//ListChanged += ResubscribeAll;
+			ResubscribeAll();
 		}
 
 		private void ResubscribeAll()
@@ -95,6 +100,7 @@ namespace JollyRoger.Collections
 
 		protected void OnPropertyChanged(string propertyName)
 		{
+			UnityEngine.Debug.Log("OnPropertyChanged");
 			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 		}
 

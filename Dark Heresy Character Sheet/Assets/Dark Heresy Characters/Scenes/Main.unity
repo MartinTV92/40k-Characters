@@ -1293,16 +1293,17 @@ MonoBehaviour:
   CurrentReadout: "Name: TestCharacter\r\nCareer Path: Arbitrator - 0 (Some Rank)
     | 0xp/499xp\r\n_______________________\r\nCharacteristics\r\nWS: 0(0/4) | BS:
     0(0/4) | S: 0(0/4) | T: 0(0/4) | Ag: 0(0/4) | Int: 0(0/4) | Per: 0(0/4) | WP:
-    0(0/4) | Fel: 0(0/4)\r\n_______________________\r\nBasic Skills \t\t\t|\t\tAdvanced
-    Skills\r\nAwareness...(Per)         \t+0\t| \r\nBarter...(Fel)            \t+0\t|
-    \r\nCarouse...(T)             \t+0\t| \r\nCharm...(Fel)             \t+0\t| \r\nClimb...(S)              
-    \t+0\t| \r\nCommand...(Fel)           \t+0\t| \r\nConcealment...(Ag)        \t+0\t|
-    \r\nContortionist...(Ag)      \t+0\t| \r\nDecieve...(Fel)           \t+0\t| \r\nDisguise...(Fel)         
-    \t+0\t| \r\nDodge...(Ag)              \t+0\t| \r\nEvaluate...(Int)          \t+0\t|
-    \r\nGamble...(Int)            \t+0\t| \r\nInquiry...(Fel)           \t+0\t| \r\nIntimidate...(S)         
-    \t+0\t| \r\nLogic...(Int)             \t+0\t| \r\nScrutiny...(Per)          \t+0\t|
-    \r\nSearch...(Per)            \t+0\t| \r\nSilent Move...(Ag)        \t+0\t| \r\nSwim...(S)               
-    \t+0\t| \r\n_______________________\r\nTalents & Traits\r\n_______________________\r\nAdvancements\r\n_______________________\r\n"
+    0(0/4) | Fel: 0(0/4)\r\n_______________________\r\n\t[Basic Skills] \t\t[Advanced
+    Skills]\r\nAwareness...(Per)         \t+0| Blather...(Fel)           \t:+10\r\nBarter...(Fel)           
+    \t+0| \r\nCarouse...(T)             \t+0| \r\nCharm...(Fel)             \t+0|
+    \r\nClimb...(S)               \t:+10| \r\nCommand...(Fel)           \t+0| \r\nConcealment...(Ag)       
+    \t+0| \r\nContortionist...(Ag)      \t+0| \r\nDecieve...(Fel)           \t+0|
+    \r\nDisguise...(Fel)          \t+0| \r\nDodge...(Ag)              \t+0| \r\nEvaluate...(Int)         
+    \t+0| \r\nGamble...(Int)            \t+0| \r\nInquiry...(Fel)           \t+0|
+    \r\nIntimidate...(S)          \t+0| \r\nLogic...(Int)             \t+0| \r\nScrutiny...(Per)         
+    \t+0| \r\nSearch...(Per)            \t+0| \r\nSilent Move...(Ag)        \t+0|
+    \r\nSwim...(S)                \t+0| \r\n_______________________\r\nTalents &
+    Traits\r\n_______________________\r\nAdvancements\r\n_______________________\r\n"
   popupManager: {fileID: 0}
   characterController: {fileID: 0}
   characterView: {fileID: 0}

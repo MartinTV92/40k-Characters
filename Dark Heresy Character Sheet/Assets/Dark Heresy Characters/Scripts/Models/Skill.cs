@@ -91,11 +91,7 @@ namespace JollyRoger.DarkHeresy
 		public int mastery 
         { 
             get => _mastery; 
-            set
-            {
-                SetProperty(ref _mastery, Mathf.Clamp(value, -1, MAX_MASTERY));
-                OnUpdate?.Invoke();
-            }
+            set => SetProperty(ref _mastery, Mathf.Clamp(value, -1, MAX_MASTERY));
         }
 
 		[HideInInspector] 
@@ -143,11 +139,10 @@ namespace JollyRoger.DarkHeresy
         /// <param name="enforceProgression"> Enforces training through progression in order. </param>
 		public void Train(Skill skill)
         {
-            if(skill.name != name || skill.mastery <= mastery)
+            if(skill.name != name || mastery >= 2)
                 return;
 
             mastery++;
-            OnUpdate?.Invoke();
         }
 
 		public override string ToString()
