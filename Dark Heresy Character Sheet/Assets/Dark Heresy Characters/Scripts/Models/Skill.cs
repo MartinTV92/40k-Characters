@@ -10,7 +10,7 @@ namespace JollyRoger.DarkHeresy
     /// Furthermore, defines the mastery and other bonuses applied to skill.
     /// </summary>
     [System.Serializable, HideReferenceObjectPicker]
-    public class Skill : NotifyPropertyChangedWrapper, IUpdateable
+    public class Skill : NotifyPropertyChangedWrapper
     {
 		#region----- NESTED -----
 
@@ -72,9 +72,6 @@ namespace JollyRoger.DarkHeresy
         private const int MIN_BONUS = -60;
         public const int MASTERY_BONUS = 10;
 
-        // EVENTS
-        public event Action OnUpdate = delegate { };
-
         // VARIABLES
         [InlineProperty]
 		public Info info;
@@ -100,11 +97,7 @@ namespace JollyRoger.DarkHeresy
 		public int miscBonus
         {
             get => _miscBonus;
-            set
-            {
-				SetProperty(ref _miscBonus, value);
-				OnUpdate?.Invoke();
-            }
+            set => SetProperty(ref _miscBonus, value);
         }
 
 		[HorizontalGroup("R0"), ShowInInspector, LabelWidth(40)]
@@ -123,11 +116,13 @@ namespace JollyRoger.DarkHeresy
         public Skill(Info info)
         {
             this.info = info;
+            if(info.type == Type.Advanced)
+                mastery = 0;
         }
 
         public int GetBonus(Characteristic characteristic)
         {
-            var trainingBonus = mastery == -1 ? -Mathf.FloorToInt(characteristic.Value / (float)2) : mastery * MASTERY_BONUS;
+            var trainingBonus = mastery == -1 ? -Mathf.FloorToInt(characteristic.FinalValue / (float)2) : mastery * MASTERY_BONUS;
 			return Mathf.Clamp(trainingBonus + miscBonus, MIN_BONUS, MAX_BONUS);
 		}
 
@@ -151,7 +146,7 @@ namespace JollyRoger.DarkHeresy
 		}
 
         public string GetNameWithSkill() => $"{name}...({Characteristic.GetShortName(characteristicType)})";
-        public string GetBonusString() => $"{bonus::+#;-#;+0}";
+        public string GetBonusString() => mastery >= 0 ? $"{bonus:+#;-#;+0}" : "-½";
 
 		#endregion
 	}

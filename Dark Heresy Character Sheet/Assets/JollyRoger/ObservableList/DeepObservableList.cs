@@ -71,13 +71,11 @@ namespace JollyRoger.Collections
 
 		public DeepObservableList()
 		{
-			//ListChanged += ResubscribeAll;
 			ResubscribeAll();
 		}
 
 		public DeepObservableList(List<T> list) : base(list)
 		{
-			//ListChanged += ResubscribeAll;
 			ResubscribeAll();
 		}
 
@@ -89,7 +87,6 @@ namespace JollyRoger.Collections
 
 		private void SubscribeToItem(T item)
 		{
-			UnityEngine.Debug.Log($"Subscribing {item.ToString()}");
 			item.PropertyChanged -= OnItemChanged;
 			item.PropertyChanged += OnItemChanged;
 		}
@@ -100,7 +97,6 @@ namespace JollyRoger.Collections
 
 		protected void OnPropertyChanged(string propertyName)
 		{
-			UnityEngine.Debug.Log("OnPropertyChanged");
 			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 		}
 

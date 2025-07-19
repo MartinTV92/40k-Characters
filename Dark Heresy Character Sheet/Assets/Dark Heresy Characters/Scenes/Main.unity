@@ -1290,22 +1290,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be059ce359db90243957e87bd8e3d0e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentReadout: "Name: TestCharacter\r\nCareer Path: Arbitrator - 0 (Some Rank)
-    | 0xp/499xp\r\n_______________________\r\nCharacteristics\r\nWS: 0(0/4) | BS:
-    0(0/4) | S: 0(0/4) | T: 0(0/4) | Ag: 0(0/4) | Int: 0(0/4) | Per: 0(0/4) | WP:
-    0(0/4) | Fel: 0(0/4)\r\n_______________________\r\n\t[Basic Skills] \t\t[Advanced
-    Skills]\r\nAwareness...(Per)         \t+0| Blather...(Fel)           \t:+10\r\nBarter...(Fel)           
-    \t+0| \r\nCarouse...(T)             \t+0| \r\nCharm...(Fel)             \t+0|
-    \r\nClimb...(S)               \t:+10| \r\nCommand...(Fel)           \t+0| \r\nConcealment...(Ag)       
-    \t+0| \r\nContortionist...(Ag)      \t+0| \r\nDecieve...(Fel)           \t+0|
-    \r\nDisguise...(Fel)          \t+0| \r\nDodge...(Ag)              \t+0| \r\nEvaluate...(Int)         
-    \t+0| \r\nGamble...(Int)            \t+0| \r\nInquiry...(Fel)           \t+0|
-    \r\nIntimidate...(S)          \t+0| \r\nLogic...(Int)             \t+0| \r\nScrutiny...(Per)         
-    \t+0| \r\nSearch...(Per)            \t+0| \r\nSilent Move...(Ag)        \t+0|
-    \r\nSwim...(S)                \t+0| \r\n_______________________\r\nTalents &
-    Traits\r\n_______________________\r\nAdvancements\r\n_______________________\r\n"
+  CurrentReadout: "Name: TestCharacter\r\nHomeworld:  - FeralWorld\r\nCareer Path:
+    Arbitrator - 0 (Some Rank | 499xp)\r\nXP (current | spent): 0xp  | 0xp\r\nFate
+    Points: 0 / 0\r\n____________________________________________________________________________________________\r\nCharacteristics\r\nWS:
+    0(\u2070\u2044\u2084) | BS: 0(\u2070\u2044\u2084) | S: 0(\u2070\u2044\u2084)
+    | T: 0(\u2070\u2044\u2084) | Ag: 0(\u2070\u2044\u2084) | Int: 0(\u2070\u2044\u2084)
+    | Per: 0(\u2070\u2044\u2084) | WP: 0(\u2070\u2044\u2084) | Fel: 0(\u2070\u2044\u2084)\r\n____________________________________________________________________________________________\r\n\t[Basic
+    Skills] \t\t\t[Advanced Skills]\r\nAwareness...(Per)         \t+0\t| \r\nBarter...(Fel)           
+    \t+0\t| \r\nCarouse...(T)             \t+0\t| \r\nCharm...(Fel)             \t+0\t|
+    \r\nClimb...(S)               \t+0\t| \r\nCommand...(Fel)           \t+0\t| \r\nConcealment...(Ag)       
+    \t+0\t| \r\nContortionist...(Ag)      \t+0\t| \r\nDecieve...(Fel)           \t+0\t|
+    \r\nDisguise...(Fel)          \t+0\t| \r\nDodge...(Ag)              \t+0\t| \r\nEvaluate...(Int)         
+    \t+0\t| \r\nGamble...(Int)            \t+0\t| \r\nInquiry...(Fel)           \t+0\t|
+    \r\nIntimidate...(S)          \t+0\t| \r\nLogic...(Int)             \t+0\t| \r\nScrutiny...(Per)         
+    \t+0\t| \r\nSearch...(Per)            \t+0\t| \r\nSilent Move...(Ag)        \t+0\t|
+    \r\nSwim...(S)                \t+0\t| \r\n____________________________________________________________________________________________\r\nTalents
+    & Traits\r\n\r\n____________________________________________________________________________________________\r\nAdvancements\r\n____________________________________________________________________________________________\r\n"
   popupManager: {fileID: 0}
-  characterController: {fileID: 0}
   characterView: {fileID: 0}
   bootState:
     OnEnter:
@@ -2415,7 +2416,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentReadout: 
   popupManager: {fileID: 161369206}
-  characterController: {fileID: 0}
   characterView: {fileID: 0}
   bootState:
     OnEnter:
@@ -3921,11 +3921,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ac3fea007edf44ab0e8959afdb50df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetModel:
-    _base: 0
-    characteristic: 0
-    advances: []
-  editView: {fileID: 2092039303}
 --- !u!1001 &1321380624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5209,17 +5204,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2627547829859240141, guid: f7cbd44465edd704cab062df95fd6152, type: 3}
   m_PrefabInstance: {fileID: 2048742224}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2092039303 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5704535032119594631, guid: faee3b8fffd5809479150a76b64ca6b3, type: 3}
-  m_PrefabInstance: {fileID: 104165892045856920}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12bde04b0a0610d4bb7b9c49defdbf0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2118960089
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6313,11 +6297,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2977064727246329591, guid: 5d008a434e903a54aa7dcd897def3570, type: 3}
       propertyPath: m_PreferredWidth
-      value: 644.3397
+      value: -56.2008
       objectReference: {fileID: 0}
     - target: {fileID: 2977064727246329591, guid: 5d008a434e903a54aa7dcd897def3570, type: 3}
       propertyPath: m_PreferredHeight
-      value: 973.0495
+      value: -466.9505
       objectReference: {fileID: 0}
     - target: {fileID: 3155233134434366827, guid: 5d008a434e903a54aa7dcd897def3570, type: 3}
       propertyPath: m_AnchorMax.y
@@ -6337,11 +6321,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3159500550572743516, guid: 5d008a434e903a54aa7dcd897def3570, type: 3}
       propertyPath: m_PreferredWidth
-      value: 644.3397
+      value: -56.2008
       objectReference: {fileID: 0}
     - target: {fileID: 3159500550572743516, guid: 5d008a434e903a54aa7dcd897def3570, type: 3}
       propertyPath: m_PreferredHeight
-      value: 973.0495
+      value: -466.9505
       objectReference: {fileID: 0}
     - target: {fileID: 3176807971678278031, guid: 5d008a434e903a54aa7dcd897def3570, type: 3}
       propertyPath: m_AnchorMax.y
@@ -6393,11 +6377,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3381752162596090746, guid: 5d008a434e903a54aa7dcd897def3570, type: 3}
       propertyPath: m_PreferredWidth
-      value: 644.3397
+      value: -56.2008
       objectReference: {fileID: 0}
     - target: {fileID: 3381752162596090746, guid: 5d008a434e903a54aa7dcd897def3570, type: 3}
       propertyPath: m_PreferredHeight
-      value: 973.0495
+      value: -466.9505
       objectReference: {fileID: 0}
     - target: {fileID: 3730091689071830644, guid: 5d008a434e903a54aa7dcd897def3570, type: 3}
       propertyPath: m_Padding.m_Left

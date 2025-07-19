@@ -8,7 +8,6 @@ namespace JollyRoger.DarkHeresy
 		#region----- VARIABLES -----
 
 		public Characteristic targetModel;
-		public CharacteristicView editView;
 
 		#endregion
 
@@ -34,12 +33,11 @@ namespace JollyRoger.DarkHeresy
 		void Redraw(Characteristic characteristic)
 		{
 			targetModel = characteristic;
-			editView.Setup(characteristic);
 		}
 
 		public void Apply()
 		{
-			targetModel.Value = int.Parse(editView.valueTextInputField.text);
+			//targetModel.Base = int.Parse(editView.valueTextInputField.text);
 		}
 
 		#endregion

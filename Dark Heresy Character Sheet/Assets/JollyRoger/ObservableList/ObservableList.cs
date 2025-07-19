@@ -22,7 +22,6 @@ namespace JollyRoger.Collections
 
 		protected void Notify()
 		{
-			UnityEngine.Debug.Log("Observable List Notify");
 			ListChanged?.Invoke();
 		}
 
@@ -54,7 +53,6 @@ namespace JollyRoger.Collections
 
 		public virtual void Add(T item)
 		{
-			UnityEngine.Debug.Log($"Adding item: {item.ToString()}");
 			_list.Add(item);
 			Notify();
 		}

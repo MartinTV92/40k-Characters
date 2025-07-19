@@ -13,8 +13,8 @@ namespace JollyRoger.DarkHeresy
 		public Characteristic.Type stat = default;
 		public int requirement = default;
 
-		public override string Name { get => $"{CharacteristicView.GetShortName(stat)} {requirement}"; }
+		public override string Name { get => $""; }
 
-		public override bool IsMet(Character character) => character.characteristics[stat].Value > requirement;
+		public override bool IsMet(Character character) => character.characteristics[stat].FinalValue > requirement;
 	}
 }

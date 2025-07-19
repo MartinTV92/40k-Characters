@@ -43,8 +43,7 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	
-	public Character _testChar;
+	public Character _testChar; 
 	[FoldoutGroup("Character")]
 	[ShowInInspector, PropertyOrder(-1), BoxGroup("Character/Class")] 
 	public Character TestChar
@@ -58,10 +57,7 @@ public class GameManager : MonoBehaviour
 			_testChar = value;
 			
 			if(_testChar != null)
-			{
-				Debug.Log("Game manager is listening for updates in _testChar");
 				_testChar.OnCharacterChanged += UpdateReadout;
-			}
 
 			UpdateReadout();
 		}
@@ -70,9 +66,9 @@ public class GameManager : MonoBehaviour
 	[ShowInInspector, BoxGroup("Character/To String"), HideLabel, TextArea(3, 200)]
 	public string CurrentReadout;
 
+	[Button("Manual Update"), PropertyOrder(-1)]
 	void UpdateReadout()
 	{
-		Debug.Log("Updating Readout");
 		if(TestChar != null)
 			CurrentReadout = TestChar.ToString();
 		else
@@ -85,7 +81,6 @@ public class GameManager : MonoBehaviour
 	#region----- VARIABLES -----
 
 	public PopupManager popupManager;
-	public JollyRoger.DarkHeresy.CharacterController characterController;
 	public CharacterSheetPageView characterView;
 
 	// State Machine
@@ -246,7 +241,6 @@ public class GameManager : MonoBehaviour
 		if (Current != null)
 			Current.OnCharacterChanged -= Save;
 
-		CharacterSheetView.target = new Character(data);
 		Current.OnCharacterChanged += Save;
 	}
 

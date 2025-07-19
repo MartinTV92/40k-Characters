@@ -19,8 +19,8 @@ namespace JollyRoger.DarkHeresy
 
         void Redraw()
         {
-            talentName.text = talent.name;
-            shortDescription.text = talent.shortDescription;
+            talentName.text = talent.Name;
+            shortDescription.text = talent.ShortDescription;
         }
     }
 }

@@ -27,8 +27,6 @@ namespace JollyRoger.DarkHeresy
 
 			[HideInInspector] public int[] advances = new int[4];
 
-			public int GetAdvance(int lvl) => advances[lvl];
-			public int GetAdvance(Characteristic.Advancement advancement) => GetAdvance((int) advancement.level);
 		}
 
 		/// <summary>

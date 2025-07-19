@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using JollyRoger.Collections;
 
 namespace JollyRoger.DarkHeresy
 { 
@@ -10,21 +11,44 @@ namespace JollyRoger.DarkHeresy
     /// and other miscellaneous things.
     /// </summary>
     [System.Serializable]
-    public class Talent : IUpdateable
+    public class Talent : NotifyPropertyChangedWrapper
     {
+        /* TODO
+         * Remove this class entirely.
+         * In truth, this would simply be a list of strings that 
+         * would act as keys in a database.
+         * All the information would be gotten and applied from there
+         * Unless I want the effect to be referenced in this class for some reason
+         */
 
-		[FoldoutGroup("$name")] public string name;
 
+        string _name;
+		[FoldoutGroup("$Name"), ShowInInspector] 
+        public string Name
+        {
+            get => _name;
+            set => SetProperty(ref _name, value);
+        }
+
+        string _shortDescription;
 		/// <summary> Shorter description of the talent for use in smaller UI. </summary>
-		[FoldoutGroup("$name")] public string shortDescription;
+		[FoldoutGroup("$Name")] 
+        public string ShortDescription
+        { 
+            get => _shortDescription;
+            set => SetProperty(ref _shortDescription, value);
+        }
 
+
+        string _description;
         /// <summary> Regular, detailed description of the talent that encompasses all rules. </summary>
-        [TextArea(3, 15)]
-		[FoldoutGroup("$name")] public string description;
+        [MultiLineProperty(15), ShowInInspector]
+		[FoldoutGroup("$Name")] public string Description
+        {
+            get => _description;
+            set => SetProperty(ref _description, value);
+        }
 
-        public event Action OnUpdate = delegate { };
-
-
-		public override string ToString() => name;
+		public override string ToString() => Name;
 	}
 }

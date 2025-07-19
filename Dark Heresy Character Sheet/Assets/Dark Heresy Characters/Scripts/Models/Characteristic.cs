@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using JollyRoger.Collections;
 
 namespace JollyRoger.DarkHeresy
 { 
@@ -8,17 +9,9 @@ namespace JollyRoger.DarkHeresy
     /// A number beteen 0-100 that represents the character's natural capacity in some regard.
     /// Strength, Toughness, Willpower etc.
     /// </summary>
-	[System.Serializable]
-    public class Characteristic : IUpdateable
+	[System.Serializable, HideReferenceObjectPicker]
+    public class Characteristic : NotifyPropertyChangedWrapper
     {
-		/* TODO
-         
-        - Make method 'GetCost(int)' to get the cost of the advancment
-        X Turn advancment into its own class? 
-        x Implement MVC for this and app in general going forward
-
-         */
-
 		#region----- NESTED -----
 
         public enum Type
@@ -34,30 +27,6 @@ namespace JollyRoger.DarkHeresy
             Fellowship
         }
 
-        [System.Serializable]
-        public struct Advancement
-        {
-            public enum Level
-            {
-                Simple = 1,
-                Intermidiate,
-                Trained,
-                Expert
-            }
-
-            [ReadOnly, HorizontalGroup("R1", Width = 0.5f), HideLabel] public Level level;
-            [ReadOnly, HorizontalGroup("R1", Width = 0.3f), HideLabel, SuffixLabel("XP")] public int cost;
-			[HorizontalGroup("R1", Width = 0.2f), HideLabel] public bool purchased;
-
-			public Advancement(Character.Career career, Level lvl)
-			{
-				level = lvl;
-				purchased = false;
-				cost = 0; // <-- Get cost from database
-			}
-
-		}
-
 		#endregion
 
 
@@ -66,43 +35,34 @@ namespace JollyRoger.DarkHeresy
 		// Constants/Statics
 		private const int MAX_ADVANCEMENTS = 4;
 
-		// Properties/PBFs
-		[SerializeField, PropertyOrder(0), SuffixLabel("->"), HorizontalGroup("R1", Width = 0.5f), LabelText("Value")] 
-        private int _base = 0;
+		private readonly Type characteristic = Type.WeaponSkill;
 
-		public int Base => _base;
-
-		[ShowInInspector, PropertyOrder(0), ReadOnly, HorizontalGroup("R1", Width = 0.2f), HideLabel] 
-        public int Value 
-		{ 
-			get => _base + (advancesTaken * 5); 
-			set
-			{ 
-				_base = Mathf.Clamp(value, 0, 100);
-				OnUpdate?.Invoke();
-			}
-		}
-        
-		public int advancesTaken
+		private int _unnatural = 0;
+		[SerializeField, PropertyOrder(0), HorizontalGroup("R1")]
+		public int Unnatural
 		{
-			get
-			{
-				var result = 0;
-				foreach (var advance in advances)
-					if (advance.purchased)
-						result++;
-
-				return result;
-			}
+			get => _unnatural;
+			set => SetProperty(ref _unnatural, Mathf.Clamp(value, 0, int.MaxValue));
 		}
 
-		// Fields
-		[ShowInInspector, PropertyOrder(-1), ReadOnly, HorizontalGroup("R1", Width = 0.3f), HideLabel]
-		public Type characteristic = Type.WeaponSkill;
-        public Advancement[] advances;
+		private int _base = 0;
+		[SerializeField, PropertyOrder(0), SuffixLabel("+"), HorizontalGroup("R1"), LabelText("Value")] 
+		public int Base
+		{ 
+			get => _base;
+			set => SetProperty(ref _base, Mathf.Clamp(value, 0, 100));
+		}
 
-		// Events
-		public event Action OnUpdate = delegate { };
+		private int _advancedTaken = 0;
+		[ShowInInspector, PropertyOrder(0), SuffixLabel("/4 ->"), HorizontalGroup("R1"), LabelText("Adv.")]
+		public int AdvancesTaken
+		{
+			get => _advancedTaken;
+			set => SetProperty(ref _advancedTaken, Mathf.Clamp(value, 0, 4));
+		}
+
+		[ShowInInspector, PropertyOrder(0), HideLabel, ReadOnly, HorizontalGroup("R1")] 
+        public int FinalValue  => _base + (AdvancesTaken * 5); 
 
 		#endregion
 
@@ -142,21 +102,17 @@ namespace JollyRoger.DarkHeresy
 
 		public Characteristic(Type charType, int value, Character.Career career)
         {
-            // Set Characteristic
             characteristic = charType;
-			Value = value;
-
-			// Set advancements with cost
-			advances = new[]
-		    {
-			    new Advancement(career, Advancement.Level.Simple),
-			    new Advancement(career, Advancement.Level.Intermidiate),
-			    new Advancement(career, Advancement.Level.Trained),
-			    new Advancement(career, Advancement.Level.Expert)
-		    };
+			Base = value;
 		}
 
-		public override string ToString() => $"{GetShortName(characteristic)}: {Value}({advancesTaken}/4)";
+		public override string ToString()
+		{
+			var advFrac = new string[] { "⁰⁄₄", "¼", "²⁄₄", "¾", "⁴⁄₄"}; 
+			var advString = advFrac[AdvancesTaken];
+			var unat = Unnatural > 0 ? $"({Unnatural})":"";
+			return $"{GetShortName(characteristic)}: {unat}{FinalValue}({advString})";
+		}
 
 		#endregion
 	}

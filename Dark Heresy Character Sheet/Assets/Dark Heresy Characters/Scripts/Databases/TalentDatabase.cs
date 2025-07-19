@@ -32,13 +32,13 @@ namespace JollyRoger.DarkHeresy
 		#region----- METHODS -----
 
 		[Button("Alphabetize")]
-		private void Alphabetize() => talents.Sort((A, B) => string.Compare(A.name, B.name));
+		private void Alphabetize() => talents.Sort((System.Comparison<Talent>)((A, B) => string.Compare((string)A.Name, (string)B.Name)));
 
-		public static Talent Get(string name) => Instance.talents.Where(x => x.name == name).FirstOrDefault();
+		public static Talent Get(string name) => Instance.talents.Where(x => x.Name == name).FirstOrDefault();
 
 		public static List<Talent> GetAll() => Instance.talents;
 
-		public static IEnumerable TalentDropdown() => Instance.talents.Select(x => x.name);
+		public static IEnumerable TalentDropdown() => Instance.talents.Select((System.Func<Talent, string>)(x => (string)x.Name));
 
 		#endregion
 	}

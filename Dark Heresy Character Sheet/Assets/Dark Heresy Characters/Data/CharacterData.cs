@@ -23,7 +23,7 @@ namespace JollyRoger.DarkHeresy.Data
         {
             name = character.Name;
             career = character.CareerPath;
-            xp = character.xp;
+            xp = character.XP;
 
             for (int i = 0; i < characteristics.Length; i++)
                 characteristics[i] = character.characteristics[(Characteristic.Type)i].Base;

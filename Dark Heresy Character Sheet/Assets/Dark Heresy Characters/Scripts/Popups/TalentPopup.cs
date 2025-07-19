@@ -36,8 +36,8 @@ namespace JollyRoger.DarkHeresy
 
 		public void Redraw(Talent talent)
 		{
-			title.text = talent.name;
-			description.text = talent.description;
+			title.text = talent.Name;
+			description.text = talent.Description;
 			scrollRect.verticalNormalizedPosition = 1;
 		}
 

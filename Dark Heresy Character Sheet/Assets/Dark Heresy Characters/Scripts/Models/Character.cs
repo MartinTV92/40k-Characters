@@ -10,10 +10,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace JollyRoger.DarkHeresy
-{ 
-
-    public class Character
-    {
+{
+	//[Serializable]
+    public class Character : NotifyPropertyChangedWrapper
+	{
 		#region----- NESTED -----
 
 		public enum Career
@@ -48,13 +48,19 @@ namespace JollyRoger.DarkHeresy
 
 		#region----- VARIABLES -----
 
-        /// <summary> The character's name. </summary>
-        public string Name { get => name; private set => name = value; }
-        private string name = default;
+        private string _name = default;
+		[ShowInInspector, PropertyOrder(-1)]
+        public string Name 
+		{ 
+			get => _name; 
+			private set => SetProperty(ref _name, value); 
+		}
 
-        /// <summary> The character's career path or class. </summary>
-        public Career CareerPath { get => careerPath; private set => careerPath = value; }
-        private Career careerPath = default;
+		[ShowInInspector, PropertyOrder(-1)]
+		public Homeworld HomeWorld { get; private set;} = new();
+
+        private Career _careerPath = default;
+        public Career CareerPath { get => _careerPath; private set => _careerPath = value; }
 
 		public int Rank
 		{
@@ -73,12 +79,14 @@ namespace JollyRoger.DarkHeresy
 		public RankInfo rankInfo = new RankInfo("Some Rank", 499);
 
 		int _xp = 0;
-		public int xp
+		[ShowInInspector, HorizontalGroup("XP"), SuffixLabel("/")]
+		public int XP
 		{
 			get => _xp; 
-			set => _xp = Mathf.Clamp(value, 0, int.MaxValue);
+			set => SetProperty(ref _xp, Mathf.Clamp(value, 0, int.MaxValue));
 		}
 
+		[ShowInInspector, HorizontalGroup("XP")]
 		public int xpSpent
 		{
 			get
@@ -86,45 +94,35 @@ namespace JollyRoger.DarkHeresy
 				int sum = 0;
 				foreach(var p in advancements)
 					sum += p.xp;
+
 				return sum;
 			}
 		}
 
-        public CharacteristicDict characteristics = new();
-
-		public DeepObservableList<Skill> basicSkills = new ();
-/*		public DeepObservableList<Skill> basicSkills
+		int _currentFatepoints = 0;
+		[ShowInInspector, HorizontalGroup("FatePoints"), SuffixLabel("/")]
+		public int CurrentFatePoints
 		{
-			get => _basicSkills;
-			set
-			{
-				_basicSkills = value;
-				OnSkillChanged?.Invoke(Skill.Type.Basic);
-			}
-		}*/
+			get => _currentFatepoints;
+			set => SetProperty(ref _currentFatepoints, Mathf.Clamp(value,0,TotalFatePoints));
+		}
 
-		public DeepObservableList<Skill> advancedSkills = new ();
-/*		public DeepObservableList<Skill> advancedSkills
+		int _totalFatePoints = 0;
+		[ShowInInspector, HorizontalGroup("FatePoints")]
+		public int TotalFatePoints
 		{
-			get => _advancedSkills;
-			set
+			get => _totalFatePoints;
+			set 
 			{
-				_advancedSkills = value;
-				OnSkillChanged?.Invoke(Skill.Type.Advanced);
-			}
-		}*/
-
-
-		public List<Talent> _talents = new ();
-		public List<Talent> talents
-		{
-			get => _talents;
-			set
-			{
-				_talents = value;
-				OnTalentsChanged?.Invoke();
+				SetProperty(ref _totalFatePoints, Mathf.Clamp(value, 0, int.MaxValue));
+				CurrentFatePoints = CurrentFatePoints;
 			}
 		}
+
+        public CharacteristicDict characteristics = new();
+		public DeepObservableList<Skill> basicSkills = new ();
+		public DeepObservableList<Skill> advancedSkills = new ();
+		public DeepObservableList<Talent> talents = new ();
 
 
 		public List<Advancement> _advancements = new();
@@ -140,7 +138,6 @@ namespace JollyRoger.DarkHeresy
 
 		// Events
 		public event Action OnCharacterChanged = delegate {};
-		public event Action<Skill.Type> OnSkillChanged;
 		public event Action OnTalentsChanged;
 		public event Action OnAdvancesChanged;
 
@@ -260,10 +257,7 @@ namespace JollyRoger.DarkHeresy
 		public void Add(Talent talent)
 		{
 			if(talents.Contains(talent) == false)
-			{
 				talents.Add(talent);
-				SubscribeToUpdates(talent);
-			}
 		}
 
 		public void Purchase(Advancement purchase)
@@ -282,39 +276,46 @@ namespace JollyRoger.DarkHeresy
 		private void SetupUpdateEvents()
 		{
 			// New
-			Debug.Log("Character is listening to basic and advanced skills");
-			basicSkills.ListChanged += UpdateCharacter;
-			basicSkills.PropertyChanged += UpdateCharacter;
-
-			advancedSkills.ListChanged += UpdateCharacter;
-			advancedSkills.PropertyChanged += UpdateCharacter;
-
-
-			// Phase Out
+			SubscribeToUpdates(this);
+			SubscribeToUpdates(HomeWorld);
 			SubscribeToUpdates(characteristics.Values.ToArray());
-			SubscribeToUpdates(basicSkills.ToArray());
-			SubscribeToUpdates(advancedSkills.ToArray());
-			SubscribeToUpdates(talents.ToArray());
+			SubscribeToUpdates(basicSkills);
+			SubscribeToUpdates(advancedSkills);
+			SubscribeToUpdates(talents);
 		}
 
 		private void ClearUpdateEvents()
 		{
+			UnsubscribeFromUpdate(this);
+			UnsubscribeFromUpdate(HomeWorld);
 			UnsubscribeFromUpdate(characteristics.Values.ToArray());
-			UnsubscribeFromUpdate(basicSkills.ToArray());
-			UnsubscribeFromUpdate(advancedSkills.ToArray());
-			UnsubscribeFromUpdate(talents.ToArray());
+			UnsubscribeFromUpdate(basicSkills);
+			UnsubscribeFromUpdate(advancedSkills);
+			UnsubscribeFromUpdate(talents);
 		}
 
-		private void SubscribeToUpdates(params IUpdateable[] updateables)
+		private void SubscribeToUpdates(params INotifyPropertyChanged[] updateables)
 		{
 			foreach(var u in updateables)
-				u.OnUpdate += InvokeUpdate;
+				u.PropertyChanged += UpdateCharacter;
 		}
 
-		private void UnsubscribeFromUpdate(params IUpdateable[] updateables)
+		private void SubscribeToUpdates<T>(DeepObservableList<T> list) where T : INotifyPropertyChanged
+		{
+			list.ListChanged += UpdateCharacter;
+			list.PropertyChanged += UpdateCharacter;
+		}
+
+		private void UnsubscribeFromUpdate(params INotifyPropertyChanged[] updateables)
 		{
 			foreach (var u in updateables)
-				u.OnUpdate -= InvokeUpdate;
+				u.PropertyChanged -= UpdateCharacter;
+		}
+
+		private void UnsubscribeFromUpdate<T>(DeepObservableList<T> list) where T: INotifyPropertyChanged
+		{
+			list.ListChanged -= UpdateCharacter;
+			list.PropertyChanged -= UpdateCharacter;
 		}
 
 		private void InvokeUpdate()
@@ -330,17 +331,20 @@ namespace JollyRoger.DarkHeresy
 
 		private void UpdateCharacter(object sender, PropertyChangedEventArgs e)
 		{
-			Debug.Log($"Character Update: {e.PropertyName}");
 			OnCharacterChanged?.Invoke();
 		}
 
 		public override string ToString()
 		{
 			var s = new StringBuilder();
-			var sectionBreak = "_______________________";
+			var sectionBreak = "____________________________________________________________________________________________";
 
 			s.AppendLine($"Name: {Name}");
-			s.AppendLine($"Career Path: {CareerPath} - {Rank} ({rankInfo.name}) | {xpSpent}xp/{rankInfo.xp}xp");
+			s.AppendLine($"Homeworld: {HomeWorld.Name} - {HomeWorld.World}");
+			s.AppendLine($"Career Path: {CareerPath} - {Rank} ({rankInfo.name} | {rankInfo.xp}xp)");
+			s.AppendLine($"XP (current | spent): {XP}xp  | {xpSpent}xp");
+			s.AppendLine($"Fate Points: {CurrentFatePoints} / {TotalFatePoints}");
+
 			s.AppendLine(sectionBreak);
 
 			s.AppendLine("Characteristics");
@@ -351,21 +355,22 @@ namespace JollyRoger.DarkHeresy
 			s.AppendLine(sectionBreak);
 
 
-			s.AppendLine("\t[Basic Skills] \t\t[Advanced Skills]");
-			var longestEntry = basicSkills.OrderByDescending(o => o.ToString().Length).FirstOrDefault().GetNameWithSkill().Length;
-			var columnWidth = longestEntry + 6; 
-			for(int i = 0; i < Math.Max(basicSkills.Count, advancedSkills.Count); i++)
+			s.AppendLine("\t[Basic Skills] \t\t\t[Advanced Skills]");
+			var LongestBasicLength = basicSkills.OrderByDescending(o => o.ToString().Length).FirstOrDefault().GetNameWithSkill().Length;
+			var longestAdvanced = advancedSkills.OrderByDescending(o => o.ToString().Length).FirstOrDefault(); 
+			var advancedLength = longestAdvanced != null ? longestAdvanced.GetNameWithSkill().Length : 0;
+			for (int i = 0; i < Math.Max(basicSkills.Count, advancedSkills.Count); i++)
 			{
-				var rightColumn = i < basicSkills.Count ? basicSkills[i].GetNameWithSkill().PadRight(columnWidth) + "\t" + basicSkills[i].GetBonusString() : 
-					"".PadRight(columnWidth + 3);
+				var rightColumn = i < basicSkills.Count ? basicSkills[i].GetNameWithSkill().PadRight(LongestBasicLength + 6) + "\t" + basicSkills[i].GetBonusString() : 
+					"".PadRight(LongestBasicLength + 9);
 
-				var leftColumn = ((i < advancedSkills.Count) ? advancedSkills[i].GetNameWithSkill().PadRight(columnWidth) + "\t" + advancedSkills[i].GetBonusString() : "");
-				s.AppendLine($"{rightColumn}| {leftColumn}");
+				var leftColumn = ((i < advancedSkills.Count) ? advancedSkills[i].GetNameWithSkill().PadRight(advancedLength + 6) + "\t" + advancedSkills[i].GetBonusString() : "");
+				s.AppendLine($"{rightColumn}\t| {leftColumn}");
 			}
 			s.AppendLine(sectionBreak);
 
 
-			s.AppendLine("Talents & Traits");
+			s.AppendLine("\t\t\t[Talents & Traits]");
 			foreach(var talent in talents)
 				s.AppendLine(talent.ToString());
 			s.AppendLine(sectionBreak);
@@ -388,10 +393,10 @@ namespace JollyRoger.DarkHeresy
 
 		//*
 
-		[ValueDropdown("SkillDropdown")]
+		[ValueDropdown("SkillDropdown"), PropertyOrder(100)]
 		public Skill.Info testSkill;
 
-		[Button("Add 'Test Skill'")]
+		[Button("Add 'Test Skill'"), PropertyOrder(100)]
 		public void Add() => Add(testSkill, testSkill.type);
 
 		IEnumerable SkillDropdown() => SkillDatabase.GetAllSkillInfo().Select(x => new ValueDropdownItem(x.name, x));

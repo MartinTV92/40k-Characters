@@ -2,11 +2,12 @@ using System.Collections;
 using System;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using JollyRoger.Collections;
 
 namespace JollyRoger.DarkHeresy
 {
     [InlineProperty, System.Serializable]
-    public class Advancement : IUpdateable
+    public class Advancement : NotifyPropertyChangedWrapper
     {
 		#region----- NESTED -----
 
@@ -48,8 +49,6 @@ namespace JollyRoger.DarkHeresy
 
         public int XP { get => xp; }
 
-        public event Action OnUpdate = delegate { };
-
         /// <summary>
         /// Tests if the character can purchase the advancement
         /// </summary>
@@ -57,7 +56,7 @@ namespace JollyRoger.DarkHeresy
         /// <returns>True if the character has XP and prerequisites. </returns>
         public bool CanBuy(Character character)
         {
-            if(character.xp < xp)
+            if(character.XP < xp)
                 return false;
 
             foreach(Prerequisite prereq in prerequisites)
