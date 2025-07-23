@@ -1290,22 +1290,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be059ce359db90243957e87bd8e3d0e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentReadout: "Name: TestCharacter\r\nHomeworld:  - FeralWorld\r\nCareer Path:
-    Arbitrator - 0 (Some Rank | 499xp)\r\nXP (current | spent): 0xp  | 0xp\r\nFate
-    Points: 0 / 0\r\n____________________________________________________________________________________________\r\nCharacteristics\r\nWS:
+  CurrentReadout: "\t\t\t[Basic Info]\r\nName: TestCharacter\r\nHomeworld:  - FeralWorld\r\nCareer
+    Path: Arbitrator - 0 (Some Rank | 499xp)\r\nXP (current | spent): 0xp  | 0xp\r\nFate
+    Points: 0 / 0\r\n____________________________________________________________________________________________\r\nWS:
     0(\u2070\u2044\u2084) | BS: 0(\u2070\u2044\u2084) | S: 0(\u2070\u2044\u2084)
     | T: 0(\u2070\u2044\u2084) | Ag: 0(\u2070\u2044\u2084) | Int: 0(\u2070\u2044\u2084)
     | Per: 0(\u2070\u2044\u2084) | WP: 0(\u2070\u2044\u2084) | Fel: 0(\u2070\u2044\u2084)\r\n____________________________________________________________________________________________\r\n\t[Basic
-    Skills] \t\t\t[Advanced Skills]\r\nAwareness...(Per)         \t+0\t| \r\nBarter...(Fel)           
-    \t+0\t| \r\nCarouse...(T)             \t+0\t| \r\nCharm...(Fel)             \t+0\t|
-    \r\nClimb...(S)               \t+0\t| \r\nCommand...(Fel)           \t+0\t| \r\nConcealment...(Ag)       
-    \t+0\t| \r\nContortionist...(Ag)      \t+0\t| \r\nDecieve...(Fel)           \t+0\t|
-    \r\nDisguise...(Fel)          \t+0\t| \r\nDodge...(Ag)              \t+0\t| \r\nEvaluate...(Int)         
-    \t+0\t| \r\nGamble...(Int)            \t+0\t| \r\nInquiry...(Fel)           \t+0\t|
-    \r\nIntimidate...(S)          \t+0\t| \r\nLogic...(Int)             \t+0\t| \r\nScrutiny...(Per)         
-    \t+0\t| \r\nSearch...(Per)            \t+0\t| \r\nSilent Move...(Ag)        \t+0\t|
-    \r\nSwim...(S)                \t+0\t| \r\n____________________________________________________________________________________________\r\nTalents
-    & Traits\r\n\r\n____________________________________________________________________________________________\r\nAdvancements\r\n____________________________________________________________________________________________\r\n"
+    Skills] \t\t\t[Advanced Skills]\r\nAwareness...(Per)            \t-\xBD\t| Blather...(Fel)\t\t\t\t\t+10\r\nBarter...(Fel)              
+    \t-\xBD\t| Acrobatics...(Ag)\t\t\t\t+0\r\nCarouse...(T)                \t-\xBD\t|
+    Chem-Use...(Int)\t\t\t\t+0\r\nCharm...(Fel)                \t-\xBD\t| Ciphers...(Int)\t\t\t\t\t+0\r\nClimb...(S)                 
+    \t-\xBD\t| Common Lore: Adeptus Arbites...(Int)\t\t+0\r\nCommand...(Fel)             
+    \t-\xBD\t| Common Lore: Administratum...(Int)\t\t+0\r\nConcealment...(Ag)          
+    \t-\xBD\t| Common Lore: Ecclesiarchy...(Int)\t\t+0\r\nContortionist...(Ag)        
+    \t-\xBD\t| Common Lore: Imperial Guard...(Int)\t\t+0\r\nDecieve...(Fel)             
+    \t-\xBD\t| Common Lore: Imperium...(Int)\t\t\t+0\r\nDisguise...(Fel)            
+    \t-\xBD\t| Common Lore: Machine Cult...(Int)\t\t+0\r\nDodge...(Ag)                
+    \t-\xBD\t| Common Lore: Tech...(Int)\t\t\t+0\r\nEvaluate...(Int)            
+    \t-\xBD\t| Common Lore: War...(Int)\t\t\t+0\r\nGamble...(Int)               \t-\xBD\t|
+    Demolition...(Int)\t\t\t\t+0\r\nInquiry...(Fel)              \t-\xBD\t| Drive:
+    Ground Vehicle...(Ag)\t\t\t+0\r\nIntimidate...(S)             \t-\xBD\t| Drive:
+    Hover Vehicle...(Ag)\t\t\t+0\r\nLogic...(Int)                \t-\xBD\t| Drive:
+    Walkers...(Ag)\t\t\t\t+0\r\nScrutiny...(Per)             \t-\xBD\t| Forebidden
+    Lore: Adeptus Mechanicus...(Int)\t+0\r\nSearch...(Per)               \t-\xBD\t|
+    Forebidden Lore: Archeotech...(Int)\t\t+0\r\nSilent Move...(Ag)           \t-\xBD\t|
+    Forebidden Lore: Cults...(Int)\t\t\t+0\r\nSwim...(S)                   \t-\xBD\t|
+    Forebidden Lore: Daemonology...(Int)\t\t+0\r\n\t\t\t\t| Forebidden Lore: Heresy...(Int)\t\t\t+0\r\n\t\t\t\t|
+    Forebidden Lore: Inquisition...(Int)\t\t+0\r\n\t\t\t\t| Forebidden Lore: Mutants...(Int)\t\t\t+0\r\n\t\t\t\t|
+    Forebidden Lore: Ordos...(Int)\t\t\t+0\r\n\t\t\t\t| Forebidden Lore: Psykers...(Int)\t\t\t+0\r\n\t\t\t\t|
+    Forebidden Lore: The Black Library...(Int)\t\t+0\r\n\t\t\t\t| Forebidden Lore:
+    Xenos...(Int)\t\t\t+0\r\n\t\t\t\t| Interrogation...(WP)\t\t\t\t+0\r\n\t\t\t\t|
+    Invocation...(WP)\t\t\t\t+0\r\n\t\t\t\t| Lip Reading...(Per)\t\t\t\t+0\r\n\t\t\t\t|
+    Literacy...(Int)\t\t\t\t\t+0\r\n\t\t\t\t| Medicae...(Int)\t\t\t\t\t+0\r\n\t\t\t\t|
+    Navigation: Stellar Navigation...(Int)\t\t+0\r\n\t\t\t\t| Navigation: Surface
+    Navigation...(Int)\t\t+0\r\n\t\t\t\t| Performer...(Fel)\t\t\t\t+0\r\n\t\t\t\t|
+    Pilot: Civilian Craft...(Ag)\t\t\t\t+0\r\n\t\t\t\t| Pilot: Military Craft...(Ag)\t\t\t\t+0\r\n\t\t\t\t|
+    Pilot: Space Craft...(Ag)\t\t\t\t+0\r\n\t\t\t\t| Psyniscience...(Per)\t\t\t\t+0\r\n\t\t\t\t|
+    Scholastic Lore: Archaic...(Int)\t\t\t+0\r\n\t\t\t\t| Scholastic Lore: Astromancy...(Int)\t\t+0\r\n\t\t\t\t|
+    Scholastic Lore: Beasts...(Int)\t\t\t+0\r\n\t\t\t\t| Scholastic Lore: Bureaucracy...(Int)\t\t+0\r\n\t\t\t\t|
+    Scholastic Lore: Chymistry...(Int)\t\t\t+0\r\n\t\t\t\t| Scholastic Lore: Cryptology...(Int)\t\t+0\r\n\t\t\t\t|
+    Scholastic Lore: Heraldry...(Int)\t\t\t+0\r\n\t\t\t\t| Scholastic Lore: Imperial
+    Creed...(Int)\t\t+0\r\n\t\t\t\t| Scholastic Lore: Judgement...(Int)\t\t+0\r\n\t\t\t\t|
+    Scholastic Lore: Legend...(Int)\t\t\t+0\r\n\t\t\t\t| Scholastic Lore: Numerology...(Int)\t\t+0\r\n\t\t\t\t|
+    Scholastic Lore: Occult...(Int)\t\t\t+0\r\n\t\t\t\t| Scholastic Lore: Philosophy...(Int)\t\t+0\r\n\t\t\t\t|
+    Scholastic Lore: Tactica Imperialis...(Int)\t\t+0\r\n\t\t\t\t| Secret Tongue:
+    Acolyte...(Int)\t\t\t+0\r\n\t\t\t\t| Secret Tongue: Administratum...(Int)\t\t+0\r\n\t\t\t\t|
+    Secret Tongue: Ecclesiarchy...(Int)\t\t+0\r\n\t\t\t\t| Secret Tongue: Gutter...(Int)\t\t\t+0\r\n\t\t\t\t|
+    Secret Tongue: Military...(Int)\t\t\t+0\r\n\t\t\t\t| Secret Tongue: Tech...(Int)\t\t\t+0\r\n\t\t\t\t|
+    Security...(Ag)\t\t\t\t\t+0\r\n\t\t\t\t| Shadowing...(Ag)\t\t\t\t+0\r\n\t\t\t\t|
+    Sleight of Hand...(Ag)\t\t\t\t+0\r\n\t\t\t\t| Speak Language: High Gothic...(Int)\t\t+0\r\n\t\t\t\t|
+    Speak Language: Hive Dialect...(Int)\t\t+0\r\n\t\t\t\t| Speak Language: Low Gothic...(Int)\t\t+0\r\n\t\t\t\t|
+    Speak Language: Ship Dialect...(Int)\t\t+0\r\n\t\t\t\t| Speak Language: Tribal
+    Dialect...(Int)\t\t+0\r\n\t\t\t\t| Survival...(Int)\t\t\t\t\t+0\r\n\t\t\t\t|
+    Tech-Use...(Int)\t\t\t\t\t+0\r\n\t\t\t\t| Tracking...(Int)\t\t\t\t\t+0\r\n\t\t\t\t|
+    Trade: Agri...(S)\t\t\t\t\t+0\r\n\t\t\t\t| Trade: Apothecary...(Int)\t\t\t\t+0\r\n\t\t\t\t|
+    Trade: Armourer...(S)\t\t\t\t+0\r\n\t\t\t\t| Trade: Artist...(Ag)\t\t\t\t+0\r\n\t\t\t\t|
+    Trade: Cartographer...(Ag)\t\t\t+0\r\n\t\t\t\t| Trade: Cook...(Int)\t\t\t\t+0\r\n\t\t\t\t|
+    Trade: Copyist...(Int)\t\t\t\t+0\r\n\t\t\t\t| Trade: Embalmer...(Int)\t\t\t\t+0\r\n\t\t\t\t|
+    Trade: Mason...(Ag)\t\t\t\t+0\r\n\t\t\t\t| Trade: Merchant...(Fel)\t\t\t\t+0\r\n\t\t\t\t|
+    Trade: Miner...(S)\t\t\t\t+0\r\n\t\t\t\t| Trade: Prospector...(S)\t\t\t\t+0\r\n\t\t\t\t|
+    Trade: Scrimshawer...(Ag)\t\t\t+0\r\n\t\t\t\t| Trade: Smith...(S)\t\t\t\t+0\r\n\t\t\t\t|
+    Trade: Soothsayer...(Fel)\t\t\t+0\r\n\t\t\t\t| Trade: Tanner...(S)\t\t\t\t+0\r\n\t\t\t\t|
+    Trade: Technomat...(Int)\t\t\t\t+0\r\n\t\t\t\t| Trade: Valet...(Fel)\t\t\t\t+0\r\n\t\t\t\t|
+    Trade: Wright...(Int)\t\t\t\t+0\r\n\t\t\t\t| Wrangling...(Int)\t\t\t\t\t+0\r\n____________________________________________________________________________________________\r\n\t\t\t[Talents
+    & Traits]\r\n____________________________________________________________________________________________\r\n\t\t\t[Advancements]\r\n____________________________________________________________________________________________\r\n"
   popupManager: {fileID: 0}
   characterView: {fileID: 0}
   bootState:

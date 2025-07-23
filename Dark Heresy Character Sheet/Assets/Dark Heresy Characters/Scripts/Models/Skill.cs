@@ -147,6 +147,7 @@ namespace JollyRoger.DarkHeresy
 
         public string GetNameWithSkill() => $"{name}...({Characteristic.GetShortName(characteristicType)})";
         public string GetBonusString() => mastery >= 0 ? $"{bonus:+#;-#;+0}" : "-½";
+        public string GetNameWithSkillAndBonus() => GetNameWithSkill() + GetBonusString();
 
 		#endregion
 	}

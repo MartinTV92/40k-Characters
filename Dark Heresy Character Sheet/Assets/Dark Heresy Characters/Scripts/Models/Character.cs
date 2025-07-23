@@ -8,6 +8,7 @@ using JollyRoger.Collections;
 using JollyRoger.DarkHeresy.Data;
 using System.Collections.Generic;
 using System.ComponentModel;
+using static UnityEngine.UIElements.UxmlAttributeDescription;
 
 namespace JollyRoger.DarkHeresy
 {
@@ -339,6 +340,9 @@ namespace JollyRoger.DarkHeresy
 			var s = new StringBuilder();
 			var sectionBreak = "____________________________________________________________________________________________";
 
+			#region Basic Info (name, career, stats, etc.)
+
+			s.AppendLine("\t\t\t[Basic Info]");
 			s.AppendLine($"Name: {Name}");
 			s.AppendLine($"Homeworld: {HomeWorld.Name} - {HomeWorld.World}");
 			s.AppendLine($"Career Path: {CareerPath} - {Rank} ({rankInfo.name} | {rankInfo.xp}xp)");
@@ -347,27 +351,39 @@ namespace JollyRoger.DarkHeresy
 
 			s.AppendLine(sectionBreak);
 
-			s.AppendLine("Characteristics");
 			var statBlock = "";
 			for(int i = 0; i < characteristics.Count; i++)
 				statBlock += characteristics[(Characteristic.Type) i].ToString() + (i < characteristics.Count - 1 ? " | ":"");
 			s.AppendLine(statBlock);
 			s.AppendLine(sectionBreak);
 
+			#endregion
 
-			s.AppendLine("\t[Basic Skills] \t\t\t[Advanced Skills]");
+
+			#region Skills (It is a great, big ol' mess-o-shit
+
 			var LongestBasicLength = basicSkills.OrderByDescending(o => o.ToString().Length).FirstOrDefault().GetNameWithSkill().Length;
-			var longestAdvanced = advancedSkills.OrderByDescending(o => o.ToString().Length).FirstOrDefault(); 
-			var advancedLength = longestAdvanced != null ? longestAdvanced.GetNameWithSkill().Length : 0;
+			var widestAdvancedLength = 54;
+			s.AppendLine($"\t[Basic Skills] \t\t\t[Advanced Skills]");
 			for (int i = 0; i < Math.Max(basicSkills.Count, advancedSkills.Count); i++)
 			{
-				var rightColumn = i < basicSkills.Count ? basicSkills[i].GetNameWithSkill().PadRight(LongestBasicLength + 6) + "\t" + basicSkills[i].GetBonusString() : 
-					"".PadRight(LongestBasicLength + 9);
+				var rightColumn = i < basicSkills.Count ? basicSkills[i].GetNameWithSkill().PadRight(LongestBasicLength + 9) + "\t" + basicSkills[i].GetBonusString() : 
+					"".PadRight(LongestBasicLength + 9); 
 
-				var leftColumn = ((i < advancedSkills.Count) ? advancedSkills[i].GetNameWithSkill().PadRight(advancedLength + 6) + "\t" + advancedSkills[i].GetBonusString() : "");
+				if(string.IsNullOrWhiteSpace(rightColumn))
+					rightColumn = "\t\t\t";
+
+				var diff = (advancedSkills.Count > 0 && i < advancedSkills.Count) ? widestAdvancedLength - (advancedSkills[i].GetNameWithSkill().Length) : 0;
+				int tabs = Mathf.Clamp(Mathf.FloorToInt(diff / TabMod), 0, 10);
+				if(i < advancedSkills.Count && NameRequiresExtraTab(advancedSkills[i].name))
+					tabs++;
+				var tabString = (tabs > 0 ? new string('\t', tabs) : "");
+				var leftColumn = (i < advancedSkills.Count) ? advancedSkills[i].GetNameWithSkill() + $"{tabString}" + advancedSkills[i].GetBonusString() : "";
 				s.AppendLine($"{rightColumn}\t| {leftColumn}");
 			}
 			s.AppendLine(sectionBreak);
+
+			#endregion
 
 
 			s.AppendLine("\t\t\t[Talents & Traits]");
@@ -376,7 +392,7 @@ namespace JollyRoger.DarkHeresy
 			s.AppendLine(sectionBreak);
 
 
-			s.AppendLine("Advancements");
+			s.AppendLine("\t\t\t[Advancements]");
 			foreach (var adv in advancements)
 				s.AppendLine(advancements.ToString());
 			s.AppendLine(sectionBreak);
@@ -386,12 +402,70 @@ namespace JollyRoger.DarkHeresy
 			return s.ToString();
 		}
 
+
+		string[] forceTabSkillNames = new string[]
+		{
+			"Blather",
+			"Ciphers",
+			"Forebidden Lore: Heresy",
+			"Forebidden Lore: Mutants",
+			"Forebidden Lore: Psykers",
+			"Forebidden Lore: The Black Library",
+			"Medicae",
+			"Literacy",
+			"Pilot: Civilian Craft",
+			"Pilot: Military Craft",
+			"Pilot: Space Craft",
+			"Scholastic Lore: Archaic",
+			"Scholastic Lore: Beasts",
+			"Scholastic Lore: Chymistry",
+			"Scholastic Lore: Heraldry",
+			"Scholastic Lore: Imperial Creed",
+			"Scholastic Lore: Legend",
+			"Scholastic Lore: Occult",
+			"Scholastic Lore: Tactica Imperialis",
+			"Secret Tongue: Military",
+			"Security",
+			"Survival",
+			"Tech-Use",
+			"Tracking",
+			"Tracking",
+			"Trade: Agri",
+			"Trade: Apothecary",
+			"Trade: Embalmer",
+			"Trade: Merchant",
+			"Trade: Merchant",
+			"Trade: Prospector",
+			"Trade: Technomat",
+			"Wrangling"
+		};
+
+		bool NameRequiresExtraTab(string skill)
+		{
+			foreach(var skillName in forceTabSkillNames)
+				if(skillName == skill)
+					return true;
+
+			return false;
+		}
+
 		#endregion
 
 
 		#region----- EDITOR -----
 
 		//*
+
+		int _tabMod = 8;
+		int _spaceMod = 8;
+		bool _addSpaces = false;
+
+		[ShowInInspector, PropertyOrder(101)]
+		public int TabMod { get => _tabMod; set => SetProperty(ref _tabMod, value); }
+		[ShowInInspector, PropertyOrder(101)]
+		public int SpaceMod { get => _spaceMod; set => SetProperty(ref _spaceMod, value); }
+		[ShowInInspector, PropertyOrder(101)]
+		public bool AddSpaces { get => _addSpaces; set => SetProperty(ref _addSpaces, value); }
 
 		[ValueDropdown("SkillDropdown"), PropertyOrder(100)]
 		public Skill.Info testSkill;
@@ -400,6 +474,13 @@ namespace JollyRoger.DarkHeresy
 		public void Add() => Add(testSkill, testSkill.type);
 
 		IEnumerable SkillDropdown() => SkillDatabase.GetAllSkillInfo().Select(x => new ValueDropdownItem(x.name, x));
+
+		[Button("Add All Adv. Skills"), PropertyOrder(100)]
+		void AddAllAdvancedSKills()
+		{
+			foreach(var skill in SkillDatabase.GetSkillsByType(Skill.Type.Advanced))
+				Add(skill, skill.type);
+		}
 
 		// */
 
