@@ -8,7 +8,6 @@ using JollyRoger.Collections;
 using JollyRoger.DarkHeresy.Data;
 using System.Collections.Generic;
 using System.ComponentModel;
-using static UnityEngine.UIElements.UxmlAttributeDescription;
 
 namespace JollyRoger.DarkHeresy
 {
