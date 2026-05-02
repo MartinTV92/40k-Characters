@@ -41,8 +41,8 @@ namespace JollyRoger.DarkHeresy
 
 		public void GameStateChanged(GameManager.State lastState, GameManager.State newState)
 		{
-			MainMenuView.Instance.ShowUI(lastState, false);
-			MainMenuView.Instance.ShowUI(newState, true);
+			//MainMenuView.Instance.ShowUI(lastState, false);
+			//MainMenuView.Instance.ShowUI(newState, true);
 		}
 
 		public void UpdateController(GameManager.State state)
@@ -50,7 +50,7 @@ namespace JollyRoger.DarkHeresy
 			switch(state)
 			{
 				case GameManager.State.Loading:
-					MainMenuView.Instance.UpdateLoadingDialogue();
+					//MainMenuView.Instance.UpdateLoadingDialogue();
 					break;
 			}
 		}

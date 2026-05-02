@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
 	#region----- VARIABLES -----
 
 	public PopupManager popupManager;
-	public CharacterSheetPageView characterView;
+	//public CharacterSheetPageView characterView;
 
 	// State Machine
 	public StateMachine<State>	stateMachine {get; private set;} = new();

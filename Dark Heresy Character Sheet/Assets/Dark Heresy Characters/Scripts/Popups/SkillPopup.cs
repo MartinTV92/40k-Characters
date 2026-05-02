@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 using System;
 
 namespace JollyRoger.DarkHeresy
@@ -12,8 +11,8 @@ namespace JollyRoger.DarkHeresy
     {
 		#region----- VARIABLES -----
 
-		public TextMeshProUGUI title;
-        public TextMeshProUGUI description;
+		//public TextMeshProUGUI title;
+        //public TextMeshProUGUI description;
 		public ScrollRect scrollRect;
 
 		#endregion
@@ -37,8 +36,8 @@ namespace JollyRoger.DarkHeresy
 
 		public void Redraw(Skill skill)
         {
-			title.text = skill.name;
-            description.text = skill.description;
+			//title.text = skill.name;
+            //description.text = skill.description;
 			scrollRect.verticalNormalizedPosition = 1;
         }
 

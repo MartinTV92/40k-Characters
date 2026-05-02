@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,7 +8,7 @@ namespace JollyRoger.DarkHeresy
     {
 		#region----- VARIABLES -----
 
-		public TalentView view;
+		//public TalentView view;
 		public Button moreInfoButton;
 
 		#endregion
@@ -25,7 +23,7 @@ namespace JollyRoger.DarkHeresy
 
 		#region----- CUSTOM BEHAVIORUS -----
 
-		void Open() => PopupManager.Open(view.talent);
+		void Open() { } //=> PopupManager.Open(view.talent);
 
 		#endregion
 	}

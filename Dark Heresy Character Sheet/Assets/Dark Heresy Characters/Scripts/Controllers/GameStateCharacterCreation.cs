@@ -1,4 +1,3 @@
-using TMPro;
 using System;
 using UnityEngine;
 using Sirenix.OdinInspector;
@@ -10,8 +9,8 @@ public class GameStateCharacterCreation : State<GameManager.State>
 {
 	#region ----- VARIABLES -----
 
-	[PropertyOrder(-1), SerializeField] TMP_InputField nameText;
-	[PropertyOrder(-1), SerializeField]	TMP_Dropdown careerSelect;
+	// TMP_InputField nameText;
+	// TMP_Dropdown careerSelect;
 
 	#endregion
 
@@ -25,13 +24,11 @@ public class GameStateCharacterCreation : State<GameManager.State>
 
 	public void SetupCareerSelectUI()
 	{
-		careerSelect.options.Clear();
-		foreach (var val in Enum.GetValues(typeof(Character.Career)))
-			careerSelect.options.Add(new TMP_Dropdown.OptionData(val.ToString()));
+
 	}
 
-	public string GetEnteredName() => nameText.text;
-	public Character.Career GetCareerSelection() => (Character.Career)careerSelect.value;
+	public string GetEnteredName() => "Name from text";
+	public Character.Career GetCareerSelection() => Character.Career.Adept;
 
 	#endregion
 }

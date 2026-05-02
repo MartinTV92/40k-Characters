@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
@@ -12,8 +9,8 @@ namespace JollyRoger.DarkHeresy
     {
 		#region----- VARIABLES -----
 
-		public TextMeshProUGUI title;
-		public TextMeshProUGUI description;
+		//public TextMeshProUGUI title;
+		//public TextMeshProUGUI description;
 		public ScrollRect scrollRect;
 
 		#endregion
@@ -36,8 +33,8 @@ namespace JollyRoger.DarkHeresy
 
 		public void Redraw(Talent talent)
 		{
-			title.text = talent.Name;
-			description.text = talent.Description;
+			//title.text = talent.Name;
+			//description.text = talent.Description;
 			scrollRect.verticalNormalizedPosition = 1;
 		}
 
