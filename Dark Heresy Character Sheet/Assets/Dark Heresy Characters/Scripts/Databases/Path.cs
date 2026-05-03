@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace JollyRoger.DarkHeresy
+namespace RegistrumPersonae
 {
 
 	[CreateAssetMenu(menuName = "Database Object / Career Path")]

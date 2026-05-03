@@ -1,7 +1,7 @@
 using UnityEngine;
 using Sirenix.OdinInspector;
 
-namespace JollyRoger.DarkHeresy
+namespace RegistrumPersonae
 {
     /// <summary>
     /// Handles defining when the user is presented with a choice of some sort in any combination. 

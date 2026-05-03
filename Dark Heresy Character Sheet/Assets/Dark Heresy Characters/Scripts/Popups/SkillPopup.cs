@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-namespace JollyRoger.DarkHeresy
+namespace RegistrumPersonae
 {
     /// <summary>
     /// Popup window for showing more detailed information on a skill.

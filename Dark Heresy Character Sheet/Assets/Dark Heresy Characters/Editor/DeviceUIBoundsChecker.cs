@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEditor;
-using JollyRoger.UI.Utilities;
-using JollyRoger.Editor.Mobile.Testing;
+using RegistrumPersonae.UI.Utilities;
+using RegistrumPersonae.Editor.Mobile.Testing;
 
-namespace JollyRoger.DarkHeresy.EditorTools
+namespace RegistrumPersonae.EditorTools
 {
     public static class DeviceUIBoundsChecker
     {

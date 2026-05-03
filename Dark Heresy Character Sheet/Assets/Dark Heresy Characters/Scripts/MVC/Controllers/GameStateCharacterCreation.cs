@@ -1,8 +1,8 @@
 using System;
 using UnityEngine;
 using Sirenix.OdinInspector;
-using JollyRoger.DarkHeresy;
-using JollyRoger.FinateStateMachine;
+using RegistrumPersonae;
+using RegistrumPersonae.FinateStateMachine;
 
 [System.Serializable, HideLabel, InlineProperty, FoldoutGroup("Character Creation State")]
 public class GameStateCharacterCreation : State<GameManager.State>

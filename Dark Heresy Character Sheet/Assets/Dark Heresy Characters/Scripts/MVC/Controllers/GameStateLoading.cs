@@ -1,4 +1,4 @@
-using JollyRoger.FinateStateMachine;
+using RegistrumPersonae.FinateStateMachine;
 using UnityEngine;
 using Sirenix.OdinInspector;
 

@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using JollyRoger.Attributes;
+using RegistrumPersonae.Attributes;
 using System;
 using Sirenix.OdinInspector;
 using UnityEngine.EventSystems;
 
-namespace JollyRoger.UI.Utilities
+namespace RegistrumPersonae.UI.Utilities
 {
     [System.Serializable]
     public abstract class PropegateMethod

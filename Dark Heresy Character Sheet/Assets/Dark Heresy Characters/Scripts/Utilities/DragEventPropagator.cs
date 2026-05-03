@@ -2,12 +2,12 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using Sirenix.OdinInspector;
-using JollyRoger.Attributes;
+using RegistrumPersonae.Attributes;
 using System.Collections.Generic;
 using System;
 using System.Collections;
 
-namespace JollyRoger.UI.Utilities
+namespace RegistrumPersonae.UI.Utilities
 { 
 
 	public class DragEventPropagator : EventPropagator, IBeginDragHandler, IEndDragHandler, IDragHandler, IScrollHandler, IInitializePotentialDragHandler

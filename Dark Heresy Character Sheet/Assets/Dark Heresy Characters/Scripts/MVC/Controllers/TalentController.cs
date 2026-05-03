@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace JollyRoger.DarkHeresy
+namespace RegistrumPersonae
 { 
 
     public class TalentController : MonoBehaviour

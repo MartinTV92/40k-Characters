@@ -1,9 +1,9 @@
-using JollyRoger.FinateStateMachine;
+using RegistrumPersonae.FinateStateMachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace JollyRoger.DarkHeresy
+namespace RegistrumPersonae
 { 
 
     public class MainMenuController : MonoBehaviour

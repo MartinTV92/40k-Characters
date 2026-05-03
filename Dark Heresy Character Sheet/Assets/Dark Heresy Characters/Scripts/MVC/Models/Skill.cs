@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
 using Sirenix.OdinInspector;
-using JollyRoger.Collections;
+using RegistrumPersonae.Collections;
 
-namespace JollyRoger.DarkHeresy
+namespace RegistrumPersonae
 {
     /// <summary>
     /// Defines an apptitude for a given area of expertise such as driving, knowledge or tech-use.
@@ -146,7 +146,7 @@ namespace JollyRoger.DarkHeresy
 		}
 
         public string GetNameWithSkill() => $"{name}...({Characteristic.GetShortName(characteristicType)})";
-        public string GetBonusString() => mastery >= 0 ? $"{bonus:+#;-#;+0}" : "-½";
+        public string GetBonusString() => mastery >= 0 ? $"{bonus:+#;-#;+0}" : "-ï¿½";
         public string GetNameWithSkillAndBonus() => GetNameWithSkill() + GetBonusString();
 
 		#endregion

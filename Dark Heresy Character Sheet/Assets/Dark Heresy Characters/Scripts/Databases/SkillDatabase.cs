@@ -4,7 +4,7 @@ using Sirenix.OdinInspector;
 using System.Linq;
 using System.Collections;
 
-namespace JollyRoger.DarkHeresy
+namespace RegistrumPersonae
 {
     [CreateAssetMenu(menuName = "Database Object / Skills")]
     public class SkillDatabase : ScriptableObject

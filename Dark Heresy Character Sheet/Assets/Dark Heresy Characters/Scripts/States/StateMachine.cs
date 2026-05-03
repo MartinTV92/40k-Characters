@@ -1,7 +1,7 @@
 using System;
 using Sirenix.OdinInspector;
 
-namespace JollyRoger.FinateStateMachine
+namespace RegistrumPersonae.FinateStateMachine
 {
 	[Serializable]
 	public class StateMachine<T> where T : Enum

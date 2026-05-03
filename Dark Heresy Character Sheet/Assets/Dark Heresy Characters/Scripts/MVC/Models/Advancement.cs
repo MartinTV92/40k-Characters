@@ -2,9 +2,9 @@ using System.Collections;
 using System;
 using UnityEngine;
 using Sirenix.OdinInspector;
-using JollyRoger.Collections;
+using RegistrumPersonae.Collections;
 
-namespace JollyRoger.DarkHeresy
+namespace RegistrumPersonae
 {
     [InlineProperty, System.Serializable]
     public class Advancement : NotifyPropertyChangedWrapper

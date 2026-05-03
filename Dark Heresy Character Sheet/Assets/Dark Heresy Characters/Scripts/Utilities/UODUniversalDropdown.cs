@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
-namespace JollyRoger.DarkHeresy
+namespace RegistrumPersonae
 {
 	/// <summary>
 	/// Utility class for defining a field with a dropdown and relevant options for sh

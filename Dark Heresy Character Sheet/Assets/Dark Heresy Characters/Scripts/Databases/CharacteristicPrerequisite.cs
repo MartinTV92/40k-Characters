@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace JollyRoger.DarkHeresy
+namespace RegistrumPersonae
 {
 	/// <summary>
 	/// Prerequisite for defining minimum characteristic requirement for a Talent advancement.

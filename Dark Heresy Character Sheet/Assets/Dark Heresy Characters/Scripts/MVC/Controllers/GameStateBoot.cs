@@ -1,5 +1,5 @@
 using Sirenix.OdinInspector;
-using JollyRoger.FinateStateMachine;
+using RegistrumPersonae.FinateStateMachine;
 
 /// <summary>
 /// Boot state for applicaiton, it just setups the UIs so none are active when uneeded.

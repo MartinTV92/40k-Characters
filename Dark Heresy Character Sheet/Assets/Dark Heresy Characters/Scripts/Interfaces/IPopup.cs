@@ -1,6 +1,6 @@
 using System;
 
-namespace JollyRoger.DarkHeresy
+namespace RegistrumPersonae
 {   
     public interface IPopup
     {

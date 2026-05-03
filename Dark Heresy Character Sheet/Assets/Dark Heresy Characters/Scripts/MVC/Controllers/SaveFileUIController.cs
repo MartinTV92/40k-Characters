@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
-using JollyRoger.Utilities;
-using JollyRoger.Data;
+using RegistrumPersonae.Utilities;
+using RegistrumPersonae.Data;
 
-namespace JollyRoger.DarkHeresy
+namespace RegistrumPersonae
 {
 
 	public class SaveFileUIController : MonoBehaviour

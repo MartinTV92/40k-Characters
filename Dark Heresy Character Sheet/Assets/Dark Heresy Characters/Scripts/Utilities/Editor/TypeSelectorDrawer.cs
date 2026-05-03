@@ -3,7 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using JollyRoger.Attributes;
+using RegistrumPersonae.Attributes;
 
 [CustomPropertyDrawer(typeof(TypeSelectorAttribute))]
 public class TypeSelectorDrawer : PropertyDrawer

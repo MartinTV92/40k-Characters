@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace JollyRoger.UI.Utilities
+namespace RegistrumPersonae.UI.Utilities
 {
     /// <summary>
     /// Resizes a UI element to the mobile device's safe area.

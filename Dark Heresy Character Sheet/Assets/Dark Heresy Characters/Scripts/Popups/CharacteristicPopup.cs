@@ -1,7 +1,7 @@
 using UnityEngine;
 using System;
 
-namespace JollyRoger.DarkHeresy
+namespace RegistrumPersonae
 { 
     public class CharacteristicPopup : MonoBehaviour, IPopup
     {

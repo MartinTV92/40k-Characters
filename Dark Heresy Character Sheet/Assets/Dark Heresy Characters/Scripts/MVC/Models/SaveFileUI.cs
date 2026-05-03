@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
-using JollyRoger.Data;
+using RegistrumPersonae.Data;
 
 
-namespace JollyRoger.DarkHeresy
+namespace RegistrumPersonae
 { 
     public class SaveFileUI : MonoBehaviour
     {

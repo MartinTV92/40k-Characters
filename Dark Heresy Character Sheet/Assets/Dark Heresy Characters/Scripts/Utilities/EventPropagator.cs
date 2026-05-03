@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace JollyRoger.UI.Utilities
+namespace RegistrumPersonae.UI.Utilities
 { 
     public abstract class EventPropagator : MonoBehaviour
     {

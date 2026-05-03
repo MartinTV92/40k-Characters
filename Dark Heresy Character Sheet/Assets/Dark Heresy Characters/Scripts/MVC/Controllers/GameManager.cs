@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
-using JollyRoger.FinateStateMachine;
-using JollyRoger.DarkHeresy;
+using RegistrumPersonae.FinateStateMachine;
+using RegistrumPersonae;
 using System;
 using Sirenix.OdinInspector;
-using JollyRoger.Data;
+using RegistrumPersonae.Data;
 using static UnityEngine.Rendering.DebugUI;
 
 public class GameManager : MonoBehaviour

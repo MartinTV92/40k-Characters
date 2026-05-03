@@ -1,9 +1,9 @@
 ﻿using System;
 using UnityEngine;
 using Sirenix.OdinInspector;
-using JollyRoger.Collections;
+using RegistrumPersonae.Collections;
 
-namespace JollyRoger.DarkHeresy
+namespace RegistrumPersonae
 { 
     /// <summary>
     /// A number beteen 0-100 that represents the character's natural capacity in some regard.

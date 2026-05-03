@@ -1,7 +1,7 @@
 using Sirenix.OdinInspector;
-using JollyRoger.Collections;
+using RegistrumPersonae.Collections;
 
-namespace JollyRoger.DarkHeresy
+namespace RegistrumPersonae
 {
 	/* TODO
 	 * Add starting characteristics, as +/- from standard starting value of 20

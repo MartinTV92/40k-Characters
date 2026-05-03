@@ -2,7 +2,7 @@ using System;
 using UnityEngine.Events;
 using Sirenix.OdinInspector;
 
-namespace JollyRoger.FinateStateMachine
+namespace RegistrumPersonae.FinateStateMachine
 {
     [Serializable]
     public abstract class State <T> where T : Enum

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
-namespace JollyRoger.DarkHeresy
+namespace RegistrumPersonae
 {
 	[CreateAssetMenu(menuName = "Database Object / Career")]
     public class Career : ScriptableObject

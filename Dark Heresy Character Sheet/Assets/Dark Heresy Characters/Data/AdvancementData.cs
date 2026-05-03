@@ -1,4 +1,4 @@
-namespace JollyRoger.DarkHeresy.Data
+namespace RegistrumPersonae.Data
 {
     [System.Serializable]
 	public class AdvancementData

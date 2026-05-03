@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TS.PageSlider;
-using JollyRoger.UI.Utilities;
+using RegistrumPersonae.UI.Utilities;
 
-namespace JollyRoger.DarkHeresy.Utilities
+namespace RegistrumPersonae.Utilities
 { 
 
     public class PageSliderSetup : MonoBehaviour

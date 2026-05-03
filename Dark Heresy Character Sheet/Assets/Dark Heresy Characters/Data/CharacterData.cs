@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using JollyRoger.DarkHeresy;
+using RegistrumPersonae;
 
-namespace JollyRoger.DarkHeresy.Data
+namespace RegistrumPersonae.Data
 {
     [System.Serializable]
     public class CharacterData

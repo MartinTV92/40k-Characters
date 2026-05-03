@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Pool;
 
-namespace JollyRoger.Utilities
+namespace RegistrumPersonae.Utilities
 { 
     /// <summary>
     /// Simple helper to encapsulate basic object pool behaviour for use with Unity's object pools.

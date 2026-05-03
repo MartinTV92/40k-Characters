@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
 using Sirenix.OdinInspector;
-using JollyRoger.Collections;
+using RegistrumPersonae.Collections;
 
-namespace JollyRoger.DarkHeresy
+namespace RegistrumPersonae
 { 
     /// <summary>
     /// Defines a trait or action the character has that don't need to be tested (i.e rolled).

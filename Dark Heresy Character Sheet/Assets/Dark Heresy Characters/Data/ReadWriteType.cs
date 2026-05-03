@@ -1,4 +1,4 @@
-namespace JollyRoger.Data
+namespace RegistrumPersonae.Data
 { 
     /// <summary>
     /// Enum determining how a file is written to / read from file.

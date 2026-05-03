@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Collections;
 using Sirenix.OdinInspector;
-using JollyRoger.Collections;
-using JollyRoger.DarkHeresy.Data;
+using RegistrumPersonae.Collections;
+using RegistrumPersonae.Data;
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace JollyRoger.DarkHeresy
+namespace RegistrumPersonae
 {
 	//[Serializable]
     public class Character : NotifyPropertyChangedWrapper

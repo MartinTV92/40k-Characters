@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace JollyRoger.Attributes
+namespace RegistrumPersonae.Attributes
 {
     internal class InstanceTypeAttribute : Attribute
     {

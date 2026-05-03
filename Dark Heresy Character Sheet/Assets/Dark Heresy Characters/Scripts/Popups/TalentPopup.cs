@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-namespace JollyRoger.DarkHeresy
+namespace RegistrumPersonae
 { 
 
     public class TalentPopup : MonoBehaviour, IPopup

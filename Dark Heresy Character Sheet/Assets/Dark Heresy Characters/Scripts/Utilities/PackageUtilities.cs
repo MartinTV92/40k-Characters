@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEditor;
 using UnityEditor.PackageManager;
 
-namespace JollyRoger.Utilities
+namespace RegistrumPersonae.Utilities
 {
     
     public static class PackageUtilities
