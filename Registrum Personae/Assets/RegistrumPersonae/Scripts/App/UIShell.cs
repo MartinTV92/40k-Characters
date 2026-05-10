@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -22,7 +23,6 @@ namespace RegistrumPersonae
 			}
 
 			set => _instance = value;
-			
 		}
 
 		#endregion
@@ -30,9 +30,17 @@ namespace RegistrumPersonae
 
 		#region Instance
 
+		public StyleSheet styleSheet;
 		public UIDocument uIDocument;
 		public PanelSettings panelSettings;
 		public VisualTreeAsset sourceAsset;
+
+		public VisualElement backgroundUI;
+		public VisualElement safeArea;
+
+		#endregion
+
+		#region DEBUG
 
 		#endregion
 
@@ -45,11 +53,12 @@ namespace RegistrumPersonae
 		{
 			HandleSignleton();
 			FindReferences();
+			CreateUI();
 		}
 
-		#if UNITY_EDITOR
+#if UNITY_EDITOR
 
-		private void OnValidate()
+        private void OnValidate()
 		{
 			FindReferences();
 		}
@@ -63,27 +72,25 @@ namespace RegistrumPersonae
 
 		public static void Init()
 		{
-			Debug.Log("Initializing UIShell");
+			if (_instance != null)
+				return;
+			
+			_instance = FindObjectOfType<UIShell>(true);
 			if (_instance == null)
 			{
-				Debug.Log("Finding UIShell in scene");
-				_instance = FindObjectOfType<UIShell>();
-				if(_instance == null)
-				{
-					Debug.Log("Instantiating UIShell from Resources");
-					_instance = Instantiate(Resources.Load<UIShell>("Prefabs/UIShell"), Vector3.zero, Quaternion.identity);
-					Debug.Log($"Instantiated UIShell as '{_instance.name}'");
-				}
+				var prefab = Resources.Load<UIShell>("Prefabs/UIShell");
+				if(prefab)	
+					_instance = Instantiate(prefab);
+				else
+					Debug.LogError($"[UISHELL] - No prefab for UIShell at path 'Prefabs/UIShell'");
 			}
-
-			//Instance.HandleSignleton();
 		}
 
 		void HandleSignleton()
 		{
-			if (Instance && Instance != this)
+			if (_instance && _instance != this)
 			{
-				Destroy(Instance.gameObject);
+				Destroy(this.gameObject);
 				return;	
 			}
 
@@ -101,6 +108,34 @@ namespace RegistrumPersonae
 			}
 
 			uIDocument = gameObject.AddComponent<UIDocument>();
+		}
+
+
+		void CreateUI()
+		{
+			if(styleSheet == null)
+				styleSheet = Resources.Load<StyleSheet>("MainAppStyleSheet");
+
+			backgroundUI = new VisualElement();
+			backgroundUI.styleSheets.Add(styleSheet);
+			backgroundUI.AddToClassList("app_background");
+
+			safeArea = new VisualElement();
+			safeArea.AddToClassList("app_safe_area");
+			
+			backgroundUI.Add(safeArea);
+
+			uIDocument.rootVisualElement.Add(backgroundUI);
+			uIDocument.rootVisualElement.RegisterCallback<GeometryChangedEvent>(_ => FitToSafeArea());
+		}
+
+		void FitToSafeArea()
+		{
+			Rect safe = Screen.safeArea;
+			safeArea.style.left = safe.xMin;
+			safeArea.style.top = Screen.height - safe.yMax;
+			safeArea.style.width = safe.width;
+			safeArea.style.height = safe.height;
 		}
 
 		#endregion

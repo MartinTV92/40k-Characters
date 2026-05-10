@@ -56,33 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Dark Heresy Character Sheet.sln",
-    "editor.acceptSuggestionOnCommitCharacter": false,
-    "editor.acceptSuggestionOnEnter": "off",
-    "editor.quickSuggestions": {
-		"comments": "off",
-		"strings": "off",
-		"other": "off"
-	},
-    "editor.suggestOnTriggerCharacters": false,
-    "editor.tabCompletion": "off",
-    "editor.formatOnSave": false,
-    "editor.formatOnPaste": false,
-    "editor.formatOnType": false,
-    "editor.suggest.showWords": false,
-    "editor.wordBasedSuggestions": "off",
-    "editor.suggest.snippetsPreventQuickSuggestions": false,
-    "editor.suggest.localityBonus": false,
-    "editor.hover.enabled": "off",
-    "[csharp]": {
-        "editor.quickSuggestions": {
-			"comments": "off",
-			"strings": "off",
-			"other": "off"
-		},
-        "editor.tabCompletion": "off",
-        "editor.formatOnSave": false,
-        "editor.formatOnPaste": false,
-        "editor.formatOnType": false
-    }
+    "dotnet.defaultSolution": "Registrum Personae.slnx"
 }

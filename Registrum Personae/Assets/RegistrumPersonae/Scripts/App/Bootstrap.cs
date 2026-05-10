@@ -10,6 +10,12 @@ namespace RegistrumPersonae
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         private static void Init()
         {
+			
+        }
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+        private static void SceneInit()
+        {
 			UIShell.Init();
         }
     }
