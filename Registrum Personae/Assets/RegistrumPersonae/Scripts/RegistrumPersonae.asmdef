@@ -1,0 +1,16 @@
+{
+    "name": "RegistrumPersonae",
+    "rootNamespace": "",
+    "references": [
+        "GUID:7d8473fa5c4fcc24b94b6226297d478f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

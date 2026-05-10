@@ -30,19 +30,18 @@ namespace RegistrumPersonae
 
 		#region Instance
 
-		public StyleSheet styleSheet;
-		public UIDocument uIDocument;
-		public PanelSettings panelSettings;
-		public VisualTreeAsset sourceAsset;
+		// Asset References
+		private StyleSheet styleSheet;
+		private UIDocument uIDocument;
+		private PanelSettings panelSettings;
+		private VisualTreeAsset sourceAsset;
 
-		public VisualElement backgroundUI;
-		public VisualElement safeArea;
-
-		#endregion
-
-		#region DEBUG
+		// UI objects
+		private VisualElement backgroundUI;
+		private VisualElement safeArea;
 
 		#endregion
+
 
 		#endregion
 
@@ -55,15 +54,6 @@ namespace RegistrumPersonae
 			FindReferences();
 			CreateUI();
 		}
-
-#if UNITY_EDITOR
-
-        private void OnValidate()
-		{
-			FindReferences();
-		}
-
-		#endif
 
 		#endregion
 
@@ -109,7 +99,6 @@ namespace RegistrumPersonae
 
 			uIDocument = gameObject.AddComponent<UIDocument>();
 		}
-
 
 		void CreateUI()
 		{

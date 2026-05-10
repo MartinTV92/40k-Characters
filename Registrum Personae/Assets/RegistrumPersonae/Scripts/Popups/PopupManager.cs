@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using JollyRoger.Collections;
 
 namespace RegistrumPersonae
 { 

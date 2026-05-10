@@ -1,15 +1,19 @@
 using Sirenix.OdinInspector;
-using RegistrumPersonae.FinateStateMachine;
+using JollyRoger.DesignPatterns;
 
-/// <summary>
-/// Boot state for applicaiton, it just setups the UIs so none are active when uneeded.
-/// </summary>
-[System.Serializable, HideLabel, InlineProperty, FoldoutGroup("Boot State")]
-public class GameStateBoot : State<GameManager.State>
+
+namespace RegistrumPersonae
 {
-	public override void Update()
+	/// <summary>
+	/// Boot state for applicaiton, it just setups the UIs so none are active when uneeded.
+	/// </summary>
+	[System.Serializable, HideLabel, InlineProperty, FoldoutGroup("Boot State")]
+	public class GameStateBoot : State<GameManager.State>
 	{
-		stateMachine.ChangeState(GameManager.State.Loading);
+		public override void Update()
+		{
+			stateMachine.ChangeState(GameManager.State.Loading);
+		}
 	}
-}
 
+}

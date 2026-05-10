@@ -1,275 +1,276 @@
 using UnityEngine;
-using RegistrumPersonae.FinateStateMachine;
+using JollyRoger.DesignPatterns;
 using RegistrumPersonae;
 using System;
 using Sirenix.OdinInspector;
 using RegistrumPersonae.Data;
-using static UnityEngine.Rendering.DebugUI;
-
-public class GameManager : MonoBehaviour
+namespace RegistrumPersonae
 {
-	#region----- NESTED -----
-
-	/// <summary>
-	/// The general state of the application.
-	/// </summary>
-	public enum State
+	public class GameManager : MonoBehaviour
 	{
-		None,
-		Boot,
-		Loading,
-		MainMenu,
-		CharacterCreation,
-		CharacterSheet,
-		LoadCharacter,
-	}
+		#region----- NESTED -----
 
-	#endregion
-
-
-	#region----- CONSTANT/STATIC -----
-
-	public static GameManager Instance { get; private set; }
-
-	private static Character _current;
-	//[ShowInInspector, PropertyOrder(-1), BoxGroup("Character/Class"), HideLabel]
-	public static Character Current 
-	{ 
-		get => _current;
-		private set
+		/// <summary>
+		/// The general state of the application.
+		/// </summary>
+		public enum State
 		{
-			_current = value;
-			//CurrentReadout = value != null ? value.ToString() : "NULL";
+			None,
+			Boot,
+			Loading,
+			MainMenu,
+			CharacterCreation,
+			CharacterSheet,
+			LoadCharacter,
 		}
-	}
 
-	public Character _testChar; 
-	[FoldoutGroup("Character")]
-	[ShowInInspector, PropertyOrder(-1), BoxGroup("Character/Class")] 
-	public Character TestChar
-	{
-		get => _testChar;
-		private set
+		#endregion
+
+
+		#region----- CONSTANT/STATIC -----
+
+		public static GameManager Instance { get; private set; }
+
+		private static Character _current;
+		//[ShowInInspector, PropertyOrder(-1), BoxGroup("Character/Class"), HideLabel]
+		public static Character Current 
+		{ 
+			get => _current;
+			private set
+			{
+				_current = value;
+				//CurrentReadout = value != null ? value.ToString() : "NULL";
+			}
+		}
+
+		public Character _testChar; 
+		[FoldoutGroup("Character")]
+		[ShowInInspector, PropertyOrder(-1), BoxGroup("Character/Class")] 
+		public Character TestChar
 		{
-			if(_testChar != null)
-				_testChar.OnCharacterChanged -= UpdateReadout;
-			
-			_testChar = value;
-			
-			if(_testChar != null)
-				_testChar.OnCharacterChanged += UpdateReadout;
+			get => _testChar;
+			private set
+			{
+				if(_testChar != null)
+					_testChar.OnCharacterChanged -= UpdateReadout;
+				
+				_testChar = value;
+				
+				if(_testChar != null)
+					_testChar.OnCharacterChanged += UpdateReadout;
 
-			UpdateReadout();
+				UpdateReadout();
+			}
 		}
-	}
 
-	[ShowInInspector, BoxGroup("Character/To String"), HideLabel, TextArea(3, 200)]
-	public string CurrentReadout;
+		[ShowInInspector, BoxGroup("Character/To String"), HideLabel, TextArea(3, 200)]
+		public string CurrentReadout;
 
-	[Button("Manual Update"), PropertyOrder(-1)]
-	void UpdateReadout()
-	{
-		if(TestChar != null)
-			CurrentReadout = TestChar.ToString();
-		else
-			CurrentReadout = "NULL";
-	}
+		[Button("Manual Update"), PropertyOrder(-1)]
+		void UpdateReadout()
+		{
+			if(TestChar != null)
+				CurrentReadout = TestChar.ToString();
+			else
+				CurrentReadout = "NULL";
+		}
 
-	#endregion
-
-
-	#region----- VARIABLES -----
-
-	public PopupManager popupManager;
-	//public CharacterSheetPageView characterView;
-
-	// State Machine
-	public StateMachine<State>	stateMachine {get; private set;} = new();
-	public GameStateBoot bootState = new();
-	public GameStateLoading loadingState = new();
-	public GameStateMenu menuState = new();
-	public GameStateCharacterCreation characterCreationState = new();
-	public GameStateCharacterSheet characterSheetState = new();
-	public GameStateLoadCharacter loadCharacterState = new();
-
-	#endregion
+		#endregion
 
 
-	#region----- MONOBEHAVIOURS -----
-	
-	void Awake()
-	{
-		if (Instance == null)
-			Instance = this;
+		#region----- VARIABLES -----
 
-		SaveManager.Init();
-		//popupManager.Setup();
-		RegisterStates();
-	}
+		public PopupManager popupManager;
+		//public CharacterSheetPageView characterView;
 
-	private void Start()
-	{
-		foreach(var state in stateMachine.states.Values)
-			state.Exit();
+		// State Machine
+		public StateMachine<State>	stateMachine {get; private set;} = new();
+		public GameStateBoot bootState = new();
+		public GameStateLoading loadingState = new();
+		public GameStateMenu menuState = new();
+		public GameStateCharacterCreation characterCreationState = new();
+		public GameStateCharacterSheet characterSheetState = new();
+		public GameStateLoadCharacter loadCharacterState = new();
 
-		stateMachine.ChangeState(State.Boot);
-	}
-
-	void Update()
-	{
-	    stateMachine.Run();
-	}
-
-	private void OnApplicationQuit()
-	{
-		//SaveManager.SaveCharacter(Current);
-	}
-
-	#endregion
+		#endregion
 
 
-	#region----- CUSTOM BEHAVIOURS -----
+		#region----- MONOBEHAVIOURS -----
+		
+		void Awake()
+		{
+			if (Instance == null)
+				Instance = this;
 
-	/// <summary> 
-	/// Registers all states to the state machine. 
-	/// </summary>
-	private void RegisterStates()
-	{
-		stateMachine.RegisterState(State.Boot, bootState);
-		stateMachine.RegisterState(State.Loading, loadingState);
-		stateMachine.RegisterState(State.MainMenu, menuState);
-		stateMachine.RegisterState(State.CharacterCreation, characterCreationState);
-		stateMachine.RegisterState(State.CharacterSheet, characterSheetState);
-		stateMachine.RegisterState(State.LoadCharacter, loadCharacterState);
-	}
+			SaveManager.Init();
+			//popupManager.Setup();
+			RegisterStates();
+		}
 
-	/// <summary> 
-	/// Gets the currents tate of the application. 
-	/// </summary>
-	/// <returns> The state of the game (a state greater than 'None') or 'None' if no game manager is available. </returns>
-	public static State GetState() => Instance ? Instance.stateMachine.currentState : State.None;
+		private void Start()
+		{
+			foreach(var state in stateMachine.states.Values)
+				state.Exit();
 
-	/// <summary> 
-	/// Adds a listener to the update of the state machine. 
-	/// </summary>
-	/// <param name="callBack">The Listener. </param>
-	public static void AddStateUpdateListener(Action<State> callBack)
-	{
-		if (Instance == null)
-			return;
+			stateMachine.ChangeState(State.Boot);
+		}
 
-		Instance.stateMachine.OnStateUpdate += callBack;
-	}
+		void Update()
+		{
+			stateMachine.Run();
+		}
 
-	/// <summary> 
-	/// Adds a listener to the ChangeState event in the state machine. 
-	/// </summary>
-	/// <param name="callBack">The listener </param>
-	public static void AddStateChangeListener(Action<State, State> callBack)
-	{
-		if(Instance == null)
-			return;
+		private void OnApplicationQuit()
+		{
+			//SaveManager.SaveCharacter(Current);
+		}
 
-		Instance.stateMachine.OnStateChanged += callBack;
-	}
+		#endregion
 
-	/// <summary> 
-	/// Removes a listener to the update of the state machine. 
-	/// </summary>
-	/// <param name="callBack">The Listener. </param>
-	public static void RemoveStateUpdateListener(Action<State> callBack)
-	{
-		if (Instance == null)
-			return;
 
-		Instance.stateMachine.OnStateUpdate -= callBack;
-	}
+		#region----- CUSTOM BEHAVIOURS -----
 
-	/// <summary> 
-	/// Removes a listener to the ChangeState event in the state machine. 
-	/// </summary>
-	/// <param name="callBack">The listener </param>
-	public static void RemoveStateChangeListener(Action<State, State> callBack)
-	{
-		if(Instance == null) 
-			return;
+		/// <summary> 
+		/// Registers all states to the state machine. 
+		/// </summary>
+		private void RegisterStates()
+		{
+			stateMachine.RegisterState(State.Boot, bootState);
+			stateMachine.RegisterState(State.Loading, loadingState);
+			stateMachine.RegisterState(State.MainMenu, menuState);
+			stateMachine.RegisterState(State.CharacterCreation, characterCreationState);
+			stateMachine.RegisterState(State.CharacterSheet, characterSheetState);
+			stateMachine.RegisterState(State.LoadCharacter, loadCharacterState);
+		}
 
-		Instance.stateMachine.OnStateChanged -= callBack;
-	}
+		/// <summary> 
+		/// Gets the currents tate of the application. 
+		/// </summary>
+		/// <returns> The state of the game (a state greater than 'None') or 'None' if no game manager is available. </returns>
+		public static State GetState() => Instance ? Instance.stateMachine.currentState : State.None;
 
-	/// <summary>
-	/// Helper method to allow UnityEvents (from UI) to go to charater creation state.
-	/// </summary>
-	public void GoToCharacterCreation() => stateMachine.ChangeState(State.CharacterCreation);
+		/// <summary> 
+		/// Adds a listener to the update of the state machine. 
+		/// </summary>
+		/// <param name="callBack">The Listener. </param>
+		public static void AddStateUpdateListener(Action<State> callBack)
+		{
+			if (Instance == null)
+				return;
 
-	/// <summary>
-	/// Helper method to allow UnityEvents (from UI) to go to Menu state.
-	/// </summary>
-	public void GoToMenu() => stateMachine.ChangeState(State.MainMenu);
+			Instance.stateMachine.OnStateUpdate += callBack;
+		}
 
-	/// <summary>
-	/// Helper method to allow UnityEvents (from UI) to go to charater creation state and creates a new character.
-	/// </summary>
-	public void CreateCharacter()
-	{
-		var charName = characterCreationState.GetEnteredName();
-		var charClass = characterCreationState.GetCareerSelection();
+		/// <summary> 
+		/// Adds a listener to the ChangeState event in the state machine. 
+		/// </summary>
+		/// <param name="callBack">The listener </param>
+		public static void AddStateChangeListener(Action<State, State> callBack)
+		{
+			if(Instance == null)
+				return;
 
-		if(Current != null)
-			Current.OnCharacterChanged -= OnCharacterChanged;
+			Instance.stateMachine.OnStateChanged += callBack;
+		}
 
-		Current = new Character(charName, charClass);
-		Current.OnCharacterChanged += OnCharacterChanged;
-		stateMachine.ChangeState(State.CharacterSheet);
-		SaveManager.SaveCharacter(Current);
-	}
+		/// <summary> 
+		/// Removes a listener to the update of the state machine. 
+		/// </summary>
+		/// <param name="callBack">The Listener. </param>
+		public static void RemoveStateUpdateListener(Action<State> callBack)
+		{
+			if (Instance == null)
+				return;
 
-	public void GoToLoadScreen() => stateMachine.ChangeState(State.LoadCharacter);
+			Instance.stateMachine.OnStateUpdate -= callBack;
+		}
 
-	/// <summary>
-	/// Loads a character from the given path.
-	/// </summary>
-	/// <param name="file">Complete filepath including extension. Not just the character's name </param>
-	public void LoadCharacter(string file)
-	{
-		var data = SaveManager.LoadCharacter(file);
-		if(data == null)
-			return;
+		/// <summary> 
+		/// Removes a listener to the ChangeState event in the state machine. 
+		/// </summary>
+		/// <param name="callBack">The listener </param>
+		public static void RemoveStateChangeListener(Action<State, State> callBack)
+		{
+			if(Instance == null) 
+				return;
 
-		stateMachine.ChangeState(State.CharacterSheet);
+			Instance.stateMachine.OnStateChanged -= callBack;
+		}
 
-		if (Current != null)
-			Current.OnCharacterChanged -= Save;
+		/// <summary>
+		/// Helper method to allow UnityEvents (from UI) to go to charater creation state.
+		/// </summary>
+		public void GoToCharacterCreation() => stateMachine.ChangeState(State.CharacterCreation);
 
-		Current.OnCharacterChanged += Save;
-	}
+		/// <summary>
+		/// Helper method to allow UnityEvents (from UI) to go to Menu state.
+		/// </summary>
+		public void GoToMenu() => stateMachine.ChangeState(State.MainMenu);
 
-	/// <summary>
-	/// Quits the application enforcing save (not implemented yet)
-	/// </summary>
-	public void Quit()
-	{
-		Application.Quit();
-	}
+		/// <summary>
+		/// Helper method to allow UnityEvents (from UI) to go to charater creation state and creates a new character.
+		/// </summary>
+		public void CreateCharacter()
+		{
+			var charName = characterCreationState.GetEnteredName();
+			var charClass = characterCreationState.GetCareerSelection();
 
-	[Button("Save")]
-	public void Save()
-	{
-		if (Application.isPlaying)
+			if(Current != null)
+				Current.OnCharacterChanged -= OnCharacterChanged;
+
+			Current = new Character(charName, charClass);
+			Current.OnCharacterChanged += OnCharacterChanged;
+			stateMachine.ChangeState(State.CharacterSheet);
 			SaveManager.SaveCharacter(Current);
+		}
 
-		Debug.Log($"Saving Character: {Current.Name}");
+		public void GoToLoadScreen() => stateMachine.ChangeState(State.LoadCharacter);
+
+		/// <summary>
+		/// Loads a character from the given path.
+		/// </summary>
+		/// <param name="file">Complete filepath including extension. Not just the character's name </param>
+		public void LoadCharacter(string file)
+		{
+			var data = SaveManager.LoadCharacter(file);
+			if(data == null)
+				return;
+
+			stateMachine.ChangeState(State.CharacterSheet);
+
+			if (Current != null)
+				Current.OnCharacterChanged -= Save;
+
+			Current.OnCharacterChanged += Save;
+		}
+
+		/// <summary>
+		/// Quits the application enforcing save (not implemented yet)
+		/// </summary>
+		public void Quit()
+		{
+			Application.Quit();
+		}
+
+		[Button("Save")]
+		public void Save()
+		{
+			if (Application.isPlaying)
+				SaveManager.SaveCharacter(Current);
+
+			Debug.Log($"Saving Character: {Current.Name}");
+		}
+
+		void OnCharacterChanged() => Save();
+
+		[Button("Delete")]
+		public void Delete()
+		{
+			//SaveManager.Delete(0);
+			SaveManager.Delete("cumblastahthemastah?");
+		}
+
+		#endregion
 	}
 
-	void OnCharacterChanged() => Save();
-
-	[Button("Delete")]
-	public void Delete()
-	{
-		//SaveManager.Delete(0);
-		SaveManager.Delete("cumblastahthemastah?");
-	}
-
-	#endregion
 }
-
