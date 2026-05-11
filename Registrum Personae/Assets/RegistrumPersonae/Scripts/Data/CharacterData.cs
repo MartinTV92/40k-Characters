@@ -33,4 +33,3 @@ namespace RegistrumPersonae.Data
 		}
 	}
 }
-

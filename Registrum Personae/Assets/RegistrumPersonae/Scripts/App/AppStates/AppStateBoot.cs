@@ -8,11 +8,11 @@ namespace RegistrumPersonae
 	/// Boot state for applicaiton, it just setups the UIs so none are active when uneeded.
 	/// </summary>
 	[System.Serializable, HideLabel, InlineProperty, FoldoutGroup("Boot State")]
-	public class GameStateBoot : State<GameManager.State>
+	public class AppStateBoot : State<App.State>
 	{
 		public override void Update()
 		{
-			stateMachine.ChangeState(GameManager.State.Loading);
+			stateMachine.ChangeState(App.State.Loading);
 		}
 	}
 

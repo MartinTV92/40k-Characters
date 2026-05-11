@@ -7,7 +7,7 @@ using JollyRoger.DesignPatterns;
 namespace RegistrumPersonae
 {		
 	[System.Serializable, HideLabel, InlineProperty, FoldoutGroup("Character Creation State")]
-	public class GameStateCharacterCreation : State<GameManager.State>
+	public class AppStateCharacterCreation : State<App.State>
 	{
 		#region ----- VARIABLES -----
 
@@ -18,7 +18,7 @@ namespace RegistrumPersonae
 
 		#region----- METHODS -----
 
-		public override void Setup(StateMachine<GameManager.State> sm)
+		public override void Setup(StateMachine<App.State> sm)
 		{
 			base.Setup(sm);
 			SetupCareerSelectUI();

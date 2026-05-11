@@ -24,14 +24,14 @@ namespace RegistrumPersonae
 
 		private void Start()
 		{
-			GameManager.AddStateUpdateListener(UpdateController);
-			GameManager.AddStateChangeListener(GameStateChanged);
+			App.AddStateUpdateListener(UpdateController);
+			App.AddStateChangeListener(GameStateChanged);
 		}
 
 		private void OnDisable()
 		{
-			GameManager.RemoveStateUpdateListener(UpdateController);
-			GameManager.RemoveStateChangeListener(GameStateChanged);
+			App.RemoveStateUpdateListener(UpdateController);
+			App.RemoveStateChangeListener(GameStateChanged);
 		}
 
 		#endregion
@@ -39,17 +39,17 @@ namespace RegistrumPersonae
 
 		#region----- CUSTOM BEHAVIOURS -----
 
-		public void GameStateChanged(GameManager.State lastState, GameManager.State newState)
+		public void GameStateChanged(App.State lastState, App.State newState)
 		{
 			//MainMenuView.Instance.ShowUI(lastState, false);
 			//MainMenuView.Instance.ShowUI(newState, true);
 		}
 
-		public void UpdateController(GameManager.State state)
+		public void UpdateController(App.State state)
 		{
 			switch(state)
 			{
-				case GameManager.State.Loading:
+				case App.State.Loading:
 					//MainMenuView.Instance.UpdateLoadingDialogue();
 					break;
 			}

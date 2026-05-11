@@ -34,7 +34,7 @@ namespace RegistrumPersonae
 
 	    public void Load()
 	    {
-	        GameManager.Instance.LoadCharacter(fileName);
+	        App.Instance.LoadCharacter(fileName);
 	    }
 
 	    public void Delete()

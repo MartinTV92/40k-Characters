@@ -1,12 +1,13 @@
-using UnityEngine;
-using JollyRoger.DesignPatterns;
-using RegistrumPersonae;
 using System;
+using UnityEngine;
 using Sirenix.OdinInspector;
 using RegistrumPersonae.Data;
+using JollyRoger.DesignPatterns;
+
+
 namespace RegistrumPersonae
 {
-	public class GameManager : MonoBehaviour
+	public class App : MonoBehaviour
 	{
 		#region----- NESTED -----
 
@@ -29,7 +30,7 @@ namespace RegistrumPersonae
 
 		#region----- CONSTANT/STATIC -----
 
-		public static GameManager Instance { get; private set; }
+		public static App Instance { get; private set; }
 
 		private static Character _current;
 		//[ShowInInspector, PropertyOrder(-1), BoxGroup("Character/Class"), HideLabel]
@@ -85,12 +86,12 @@ namespace RegistrumPersonae
 
 		// State Machine
 		public StateMachine<State>	stateMachine {get; private set;} = new();
-		public GameStateBoot bootState = new();
-		public GameStateLoading loadingState = new();
-		public GameStateMenu menuState = new();
-		public GameStateCharacterCreation characterCreationState = new();
-		public GameStateCharacterSheet characterSheetState = new();
-		public GameStateLoadCharacter loadCharacterState = new();
+		public AppStateBoot bootState = new();
+		public AppStateLoading loadingState = new();
+		public AppStateMenu menuState = new();
+		public AppStateCharacterCreation characterCreationState = new();
+		public AppStateCharacterSheet characterSheetState = new();
+		public AppStateLoadCharacter loadCharacterState = new();
 
 		#endregion
 

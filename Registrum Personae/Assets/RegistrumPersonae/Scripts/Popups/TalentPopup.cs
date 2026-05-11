@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 using System;
 
 namespace RegistrumPersonae
@@ -11,7 +10,7 @@ namespace RegistrumPersonae
 
 		//public TextMeshProUGUI title;
 		//public TextMeshProUGUI description;
-		public ScrollRect scrollRect;
+		//public ScrollRect scrollRect;
 
 		#endregion
 
@@ -35,7 +34,7 @@ namespace RegistrumPersonae
 		{
 			//title.text = talent.Name;
 			//description.text = talent.Description;
-			scrollRect.verticalNormalizedPosition = 1;
+			//scrollRect.verticalNormalizedPosition = 1;
 		}
 
 		public Type GetPopupType() => typeof(Talent);

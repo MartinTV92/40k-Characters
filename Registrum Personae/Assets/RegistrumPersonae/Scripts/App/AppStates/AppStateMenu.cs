@@ -11,7 +11,7 @@ namespace RegistrumPersonae
     /// and options for the app (which may not do much at this point).
     /// </summary>
     [System.Serializable, HideLabel, InlineProperty, FoldoutGroup("Menu State")]
-    public class GameStateMenu : State<GameManager.State>
+    public class AppStateMenu : State<App.State>
     {
         
     }

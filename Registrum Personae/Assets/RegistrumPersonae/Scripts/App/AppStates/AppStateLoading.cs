@@ -9,7 +9,7 @@ namespace RegistrumPersonae
 	/// For now, the loading screen is waiting a small amount of time before going into the main menu.
 	/// </summary>
 	[System.Serializable, HideLabel, InlineProperty, FoldoutGroup("Loading State")]
-	public class GameStateLoading : State<GameManager.State>
+	public class AppStateLoading : State<App.State>
 	{
 		private float loadingStateTimeBuffer = 3;
 		private float loadingStateEndTime;
@@ -25,7 +25,7 @@ namespace RegistrumPersonae
 			if(IsLoading())
 				return;
 
-			stateMachine.ChangeState(GameManager.State.MainMenu);
+			stateMachine.ChangeState(App.State.MainMenu);
 		}
 
 		public bool IsLoading()
